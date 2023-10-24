@@ -1,6 +1,3 @@
-import Image from "next/image";
-import { Inter } from "next/font/google";
-// Use next/font to optimize images
 import Navbar from "@/components/NavBar";
 import Hero from "@/components/Hero";
 import TechStack from "@/components/TechStack";
