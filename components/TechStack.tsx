@@ -17,41 +17,61 @@ const TechIcons = [
     icon: "/images/skillIcons/React.svg",
   },
   {
-    name: "TypeScript",
-    icon: "/images/skillIcons/TS.svg",
+    name: "NextJs",
+    icon: "/images/skillIcons/nextjs.svg",
   },
   {
-    name: "TypeScript",
-    icon: "/images/skillIcons/TS.svg",
+    name: "Prisma",
+    icon: "/images/skillIcons/prisma.svg",
   },
   {
-    name: "TypeScript",
-    icon: "/images/skillIcons/TS.svg",
+    name: "NodeJs",
+    icon: "/images/skillIcons/nodejs.svg",
   },
   {
-    name: "TypeScript",
-    icon: "/images/skillIcons/TS.svg",
+    name: "PostgreSQL",
+    icon: "/images/skillIcons/postgres.svg",
   },
   {
-    name: "TypeScript",
-    icon: "/images/skillIcons/TS.svg",
+    name: "TailwindCSS",
+    icon: "/images/skillIcons/tailwind.svg",
   },
   {
-    name: "TypeScript",
-    icon: "/images/skillIcons/TS.svg",
+    name: "Sanity",
+    icon: "/images/skillIcons/sanity.svg",
+  },
+  {
+    name: "HTML5",
+    icon: "/images/skillIcons/html.svg",
+  },
+  {
+    name: "CSS",
+    icon: "/images/skillIcons/css.svg",
+  },
+  {
+    name: "Redux",
+    icon: "/images/skillIcons/redux.svg",
+  },
+  {
+    name: "SCSS",
+    icon: "/images/skillIcons/scss.svg",
+  },
+  {
+    name: "Git",
+    icon: "/images/skillIcons/git.svg",
+  },
+  {
+    name: "ExpressJs",
+    icon: "/images/skillIcons/expressjs.svg",
   },
 ];
 
 const TechStack: React.FC = () => {
   return (
-    <section
-      aria-labelledby="feature-five"
-      id="feature-five"
-      className="overflow-y-auto bg-white lg:h-screen"
-    >
+    <section className="bg-white">
       <div className="px-8 py-24 mx-auto lg:px-16 max-w-7xl md:px-12 lg:flex">
         <div className="lg:w-1/2 ">
-          <div className="top-0 pt-8 pb-16 lg:sticky">
+          <div className="top-0 pt-8 pb-16">
             <div className="lg:pr-24 md:pr-12 grid grid-cols-3 gap-y-12 mx-auto  justify-items-center w-full ">
               {TechIcons.map((icon, idx) => (
                 <div
@@ -77,9 +97,9 @@ const TechStack: React.FC = () => {
           </div>
         </div>
         <div className="lg:w-1/2">
-          <div className="flex-shrink-0">
+          <div className=" h-full pt-8 ">
             <ul
-              className="grid grid-cols-1 gap-12 mt-6 list-none lg:mt-0 lg:gap-24"
+              className="grid grid-cols-1 sticky top-24 gap-12 mt-6 list-none lg:mt-0 lg:gap-24"
               role="list"
             >
               {/* You can also map over an array if these items are repetitive */}
