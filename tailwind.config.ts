@@ -18,6 +18,9 @@ module.exports = {
       },
     },
     extend: {
+      fontFamily: {
+        sans: ["var(--font-nunito)"],
+      },
       keyframes: {
         "accordion-down": {
           from: { height: 0 },
