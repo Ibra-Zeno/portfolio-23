@@ -23,6 +23,24 @@ const Minesweeper: React.FC = () => {
     setBoard([]);
     setGameOver(false);
     setWin(false);
+    const initialBoard: Cell[][] = Array.from({ length: numRows }, () =>
+      Array.from({ length: numCols }, () => ({
+        isMine: false,
+        isRevealed: false,
+        isFlagged: false,
+      })),
+    );
+    setBoard(initialBoard);
+
+    // Place mines randomly on the board
+    for (let i = 0; i < numMines; i++) {
+      let row, col;
+      do {
+        row = Math.floor(Math.random() * numRows);
+        col = Math.floor(Math.random() * numCols);
+      } while (initialBoard[row][col].isMine);
+      initialBoard[row][col].isMine = true;
+    }
     // Initialize the board and mines again (you can reuse the code from the useEffect)
     // ...
   };
