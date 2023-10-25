@@ -12,36 +12,36 @@ import {
 const projArr = [
   {
     name: "Odyssey",
-    img: "/images/Bg/cardBg.jpg",
-    icon: "/images/skillsIcon/TS.png",
+    img: "/images/Bg/cardBg.svg",
+    icon: "/images/skillIcons/TS.svg",
     desc: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Corrupti molestiae quis dolores provident",
     tech: ["React", "Next.js", "Tailwindcss", "Typescript"],
   },
   {
     name: "Odyssey",
     img: "/images/Bg/cardBg.jpg",
-    icon: "/images/skillsIcon/TS.png",
+    icon: "/images/skillIcons/TS.svg",
     desc: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Corrupti molestiae quis dolores provident",
     tech: ["React", "Next.js", "Tailwindcss", "Typescript"],
   },
   {
     name: "Odyssey",
     img: "/images/Bg/cardBg.jpg",
-    icon: "/images/skillsIcon/TS.png",
+    icon: "/images/skillIcons/TS.svg",
     desc: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Corrupti molestiae quis dolores provident",
     tech: ["React", "Next.js", "Tailwindcss", "Typescript"],
   },
   {
     name: "Odyssey",
     img: "/images/Bg/cardBg.jpg",
-    icon: "/images/skillsIcon/TS.png",
+    icon: "/images/skillIcons/TS.svg",
     desc: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Corrupti molestiae quis dolores provident",
     tech: ["React", "Next.js", "Tailwindcss", "Typescript"],
   },
   {
     name: "Odyssey",
     img: "/images/Bg/cardBg.jpg",
-    icon: "/images/skillsIcon/TS.png",
+    icon: "/images/skillIcons/TS.svg",
     desc: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Corrupti molestiae quis dolores provident",
     tech: ["React", "Next.js", "Tailwindcss", "Typescript"],
   },
@@ -49,55 +49,77 @@ const projArr = [
 
 const Projects: React.FC = () => {
   return (
-    <section className="min-h-screen mt-12 w-full mx-auto bg-gradient-to-tr from-rose-950 p-8 to-sky-950">
-      <h1 className="text-3xl mx-auto text-center font-bold py-5">Projects</h1>
+    <section className="mx-auto mt-12 min-h-screen w-full bg-gradient-to-tr from-stone-500 to-emerald-50 p-8">
+      <h1 className="mx-auto py-12 text-center text-5xl font-bold text-rose-50">
+        Projects
+      </h1>
       <div className="">
         <Card
-          className="w-full max-w-7xl mx-auto flex flex-col p-12 flex-wrap gap-x-6 gap-y-12 px-36 justify-center"
+          className="mx-auto flex w-full max-w-7xl flex-col flex-wrap justify-center gap-x-6  p-12 px-24"
           isBlurred
         >
-          {projArr.map((proj, idx) => (
-            <div key={idx} className="flex flex-row gap-x-12">
-              <Card
-                className="h-[450px] w-[370px] group max-w-xs"
-                isPressable
-                isHoverable
-                shadow="lg"
+          <div className="flex w-full flex-col gap-y-16">
+            {projArr.map((proj, idx) => (
+              <div
+                key={idx}
+                className="relative flex w-full flex-grow flex-row justify-center gap-x-12"
               >
-                <Image
-                  removeWrapper
-                  alt="Card background"
-                  className="object-cover  w-full h-full z-0"
-                  src="/images/Bg/cardBg.jpg"
-                />
-              </Card>
-              <div className="flex relative flex-col justify-center gap-y-12">
-                <div className="flex gap-x-4 absolute top-0 ">
-                  {proj.tech.map((tech, idx) => (
-                    <div key={idx} className="flex flex-row">
-                      <Button
-                        variant="shadow"
-                        className="font-bold bg-gradient-to-r from-[#005872] via-[#00848a] to-[#15b18a]  text-white text-xs tracking-wide"
-                      >
-                        {tech}
-                      </Button>
+                <Card
+                  className="group max-w-[20rem]"
+                  isPressable
+                  isHoverable
+                  shadow="lg"
+                >
+                  <Image
+                    removeWrapper
+                    alt="Card background"
+                    className="z-0 aspect-square h-full w-full object-cover"
+                    src={proj.img}
+                  />
+                  <div className="absolute inset-0 flex items-center justify-items-center">
+                    <Image
+                      removeWrapper
+                      src={proj.icon}
+                      alt="icon"
+                      isBlurred
+                      className="mx-auto h-14 w-14 object-cover"
+                    />
+                  </div>
+                </Card>
+                <div className="relative flex flex-col justify-start gap-y-12">
+                  <div className="">
+                    <h3 className="my-4 text-5xl font-bold">{proj.name}</h3>
+                    <div className="mb-8 flex flex-row gap-x-2">
+                      {proj.tech.map((tech, idx) => (
+                        <div key={idx} className="flex flex-row">
+                          <Button
+                            variant="shadow"
+                            size="sm"
+                            className="bg-stone-400/40 text-xs  font-bold tracking-wide text-slate-700"
+                          >
+                            {tech}
+                          </Button>
+                        </div>
+                      ))}
                     </div>
-                  ))}
+                    <p className="max-w-xl pb-16 text-lg text-gray-600">
+                      {proj.desc}
+                    </p>
+                  </div>
+                  <Button
+                    className="absolute bottom-0 left-0 w-fit border-2 border-slate-800/30 bg-transparent text-sm font-bold text-slate-800"
+                    size="md"
+                  >
+                    Showcase &rarr;
+                  </Button>
+                  {/* <div className="flex flex-row absolute bottom-0 items-center gap-x-4 italic">
+                      <Avatar src="https://i.pravatar.cc/200" size="lg" />
+                      <p>Lorem ipsum dolor sit </p>
+                    </div> */}
                 </div>
-                <div>
-                  <h3 className="text-5xl mb-6 font-bold">{proj.name}</h3>
-                  <p className="text-gray-600 text-lg">{proj.desc}</p>
-                </div>
-                <Button className="w-fit" size="lg">
-                  Showcase &rarr;
-                </Button>
-                {/* <div className="flex flex-row absolute bottom-0 items-center gap-x-4 italic">
-                  <Avatar src="https://i.pravatar.cc/200" size="lg" />
-                  <p>Lorem ipsum dolor sit </p>
-                </div> */}
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </Card>
       </div>
     </section>
