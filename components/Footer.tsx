@@ -4,29 +4,29 @@ import { Instagram, Github, Twitter } from "lucide-react";
 const Footer: React.FC = () => {
   return (
     <footer className="bg-white">
-      <div className="px-4 py-12 mx-auto overflow-hidden max-w-7xl sm:px-6 lg:px-8">
-        <div className="font-bold mx-auto items-center text-center text-2xl">
+      <div className="mx-auto max-w-7xl overflow-hidden px-4 py-12 sm:px-6 lg:px-8">
+        <div className="mx-auto items-center text-center text-2xl font-bold">
           IK
         </div>
-        <div className="flex justify-center mt-8 space-x-6">
-          <span className="inline-flex justify-center w-full gap-3 m-auto md:justify-start md:w-auto">
+        <div className="mt-8 flex justify-center space-x-6">
+          <span className="m-auto inline-flex w-full justify-center gap-3 md:w-auto md:justify-start">
             <Link
               href="#"
-              className="w-6 h-6 transition fill-black hover:text-blue-500"
+              className="h-6 w-6 fill-black transition hover:text-blue-500"
             >
               <span className="sr-only">github</span>
               <Github />
             </Link>
             <Link
               href="#"
-              className="w-6 h-6 transition fill-black hover:text-blue-500"
+              className="h-6 w-6 fill-black transition hover:text-blue-500"
             >
               <span className="sr-only">twitter</span>
               <Twitter />
             </Link>
             <Link
               href="#"
-              className="w-6 h-6 transition fill-black hover:text-blue-500"
+              className="h-6 w-6 fill-black transition hover:text-blue-500"
             >
               <span className="sr-only">Instagram</span>
               <Instagram />
