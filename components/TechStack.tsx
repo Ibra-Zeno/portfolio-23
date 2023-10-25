@@ -69,21 +69,21 @@ const TechIcons = [
 const TechStack: React.FC = () => {
   return (
     <section className="bg-white">
-      <div className="px-8 py-24 mx-auto lg:px-16 max-w-7xl md:px-12 lg:flex">
+      <div className="mx-auto max-w-7xl px-8 py-24 md:px-12 lg:flex lg:px-16">
         <div className="lg:w-1/2 ">
-          <div className="top-0 pt-8 pb-16">
-            <div className="lg:pr-24 md:pr-12 grid grid-cols-3 gap-y-12 mx-auto  justify-items-center w-full ">
+          <div className="top-0 pb-16 pt-8">
+            <div className="mx-auto grid w-full grid-cols-3 justify-items-center gap-y-12  md:pr-12 lg:pr-24 ">
               {TechIcons.map((icon, idx) => (
                 <div
                   key={idx}
-                  className="flex  items-center flex-col text-black rounded-full"
+                  className="flex  flex-col items-center rounded-full text-black"
                 >
                   <div className="rounded-full bg-gray-100 p-3.5 shadow-sm">
                     <Image
                       src={icon.icon}
                       alt={icon.name}
                       isBlurred
-                      className="p-3 w-20"
+                      className="w-20 p-3"
                       height={100}
                       width={100}
                     />
@@ -97,16 +97,16 @@ const TechStack: React.FC = () => {
           </div>
         </div>
         <div className="lg:w-1/2">
-          <div className=" h-full pt-8 ">
+          <div className=" h-full pb-16 pt-8 ">
             <ul
-              className="grid grid-cols-1 sticky top-24 gap-12 mt-6 list-none lg:mt-0 lg:gap-24"
+              className="sticky top-24 mt-6 grid list-none grid-cols-1 gap-12 lg:mt-0 lg:gap-24"
               role="list"
             >
               {/* You can also map over an array if these items are repetitive */}
               {/* This is just a single item as an example */}
               <li>
-                <div className="flex flex-row gap-x-6 items-center align-middle">
-                  <div className="flex items-center justify-center w-12 h-12 text-black bg-gray-100 rounded-xl">
+                <div className="flex flex-row items-center gap-x-6 align-middle">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-gray-100 text-black">
                     <DatabaseZap />
                   </div>
                   <p className="text-lg font-bold leading-6 text-black">
@@ -121,8 +121,8 @@ const TechStack: React.FC = () => {
                 </div>
               </li>
               <li>
-                <div className="flex flex-row gap-x-6 items-center align-middle">
-                  <div className="flex items-center justify-center w-12 h-12 text-black bg-gray-100 rounded-xl">
+                <div className="flex flex-row items-center gap-x-6 align-middle">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-gray-100 text-black">
                     <Image
                       src="/images/Icons/React.svg"
                       alt="React icon"
@@ -143,8 +143,8 @@ const TechStack: React.FC = () => {
                 </div>
               </li>
               <li>
-                <div className="flex flex-row gap-x-6 items-center align-middle">
-                  <div className="flex items-center justify-center w-12 h-12 text-black bg-gray-100 rounded-xl">
+                <div className="flex flex-row items-center gap-x-6 align-middle">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-gray-100 text-black">
                     <Brush />
                   </div>
                   <p className="text-lg font-bold leading-6 text-black">
