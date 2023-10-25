@@ -18,40 +18,45 @@ const projArr = [
     icon: "/images/skillIcons/TS.svg",
     desc: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Corrupti molestiae quis dolores provident",
     tech: ["React", "Next.js", "Tailwindcss", "Typescript"],
+    link: "/odyssey",
   },
   {
-    name: "Odyssey",
+    name: "Optima",
     img: "/images/Bg/cardBg1.png",
     icon: "/images/skillIcons/TS.svg",
     desc: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Corrupti molestiae quis dolores provident",
     tech: ["React", "Next.js", "Tailwindcss", "Typescript"],
+    link: "/optima",
   },
   {
-    name: "Odyssey",
+    name: "Ecommerce Store",
     img: "/images/Bg/cardBg.jpg",
     icon: "/images/skillIcons/TS.svg",
     desc: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Corrupti molestiae quis dolores provident",
     tech: ["React", "Next.js", "Tailwindcss", "Typescript"],
+    link: "/ecommerce",
   },
   {
-    name: "Odyssey",
+    name: "Architectural Portfolio",
     img: "/images/Bg/cardBg.jpg",
     icon: "/images/skillIcons/TS.svg",
     desc: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Corrupti molestiae quis dolores provident",
     tech: ["React", "Next.js", "Tailwindcss", "Typescript"],
+    link: "/arch",
   },
   {
-    name: "Odyssey",
+    name: "AI Summariser",
     img: "/images/Bg/cardBg.jpg",
     icon: "/images/skillIcons/TS.svg",
     desc: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Corrupti molestiae quis dolores provident",
     tech: ["React", "Next.js", "Tailwindcss", "Typescript"],
+    link: "/summariser",
   },
 ];
 
 const Projects: React.FC = () => {
   return (
-    <section className="mx-auto mt-12 min-h-screen w-full bg-gradient-to-tr from-stone-500 to-emerald-50 p-8">
+    <section className="mx-auto mt-12 min-h-screen w-full bg-gradient-to-tr from-stone-500 to-emerald-50 p-8 pb-28 pt-8">
       <h1 className="mx-auto py-12 text-center text-5xl font-bold text-rose-50">
         Projects
       </h1>
@@ -109,12 +114,14 @@ const Projects: React.FC = () => {
                       {proj.desc}
                     </p>
                   </div>
-                  <Button
-                    className="absolute bottom-4 left-0 w-fit border-2 border-slate-800/30 bg-transparent text-sm font-bold text-slate-800"
-                    size="md"
-                  >
-                    Showcase &rarr;
-                  </Button>
+                  <Link href={proj.link}>
+                    <Button
+                      className="absolute bottom-10 left-0 w-fit border-2 border-slate-800/30 bg-transparent text-sm font-bold text-slate-800"
+                      size="md"
+                    >
+                      Showcase &rarr;
+                    </Button>
+                  </Link>
                   {/* <div className="flex flex-row absolute bottom-0 items-center gap-x-4 italic">
                       <Avatar src="https://i.pravatar.cc/200" size="lg" />
                       <p>Lorem ipsum dolor sit </p>
