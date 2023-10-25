@@ -5,8 +5,10 @@ import {
   CardBody,
   CardFooter,
   Image,
+  Chip,
   Button,
   Avatar,
+  Divider,
 } from "@nextui-org/react";
 
 const projArr = [
@@ -19,7 +21,7 @@ const projArr = [
   },
   {
     name: "Odyssey",
-    img: "/images/Bg/cardBg.jpg",
+    img: "/images/Bg/cardBg1.png",
     icon: "/images/skillIcons/TS.svg",
     desc: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Corrupti molestiae quis dolores provident",
     tech: ["React", "Next.js", "Tailwindcss", "Typescript"],
@@ -89,25 +91,26 @@ const Projects: React.FC = () => {
                 <div className="relative flex flex-col justify-start gap-y-12">
                   <div className="">
                     <h3 className="my-4 text-5xl font-bold">{proj.name}</h3>
-                    <div className="mb-8 flex flex-row gap-x-2">
+                    <div className="mb-4 flex flex-row gap-x-2">
                       {proj.tech.map((tech, idx) => (
                         <div key={idx} className="flex flex-row">
-                          <Button
+                          <Chip
                             variant="shadow"
                             size="sm"
                             className="bg-stone-400/40 text-xs  font-bold tracking-wide text-slate-700"
                           >
                             {tech}
-                          </Button>
+                          </Chip>
                         </div>
                       ))}
                     </div>
+                    <Divider orientation="horizontal" className="mb-8" />
                     <p className="max-w-xl pb-16 text-lg text-gray-600">
                       {proj.desc}
                     </p>
                   </div>
                   <Button
-                    className="absolute bottom-0 left-0 w-fit border-2 border-slate-800/30 bg-transparent text-sm font-bold text-slate-800"
+                    className="absolute bottom-4 left-0 w-fit border-2 border-slate-800/30 bg-transparent text-sm font-bold text-slate-800"
                     size="md"
                   >
                     Showcase &rarr;
