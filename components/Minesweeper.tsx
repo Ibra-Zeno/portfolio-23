@@ -17,10 +17,8 @@ const Minesweeper: React.FC = () => {
   const [board, setBoard] = useState<Cell[][]>([]);
   const [gameOver, setGameOver] = useState(false);
   const [win, setWin] = useState(false);
-  let gamesPlayed = 0;
 
   const resetGame = () => {
-    gamesPlayed++;
     setBoard([]);
     setGameOver(false);
     setWin(false);
@@ -55,6 +53,11 @@ const Minesweeper: React.FC = () => {
     ) {
       return;
     }
+    const isFlagged = board[row][col].isFlagged;
+    if (isFlagged) {
+      // Do nothing if the cell is flagged
+      return;
+    }
     if (board[row][col].isMine) {
       setGameOver(true);
       const newBoard = board.map((rowArr, rIndex) =>
@@ -76,7 +79,8 @@ const Minesweeper: React.FC = () => {
         r >= numRows ||
         c < 0 ||
         c >= numCols ||
-        newBoard[r][c].isRevealed
+        newBoard[r][c].isRevealed ||
+        newBoard[r][c].isFlagged
       )
         return;
       newBoard[r][c].isRevealed = true;
@@ -140,7 +144,9 @@ const Minesweeper: React.FC = () => {
   return (
     <>
       <section className="mx-auto flex w-fit flex-col justify-center rounded-xl ">
-        <span className="mb-1 text-xs">Right click to add a flag</span>
+        <h2 className="mb-2 bg-gradient-to-r from-[#C33764] to-[#1D2671] bg-clip-text text-base font-semibold leading-7 text-transparent">
+          Minesweeper
+        </h2>
         <section className="mx-auto flex w-fit flex-col justify-center rounded-xl bg-gray-200 p-4">
           {board.map((row, rowIndex) => (
             <div key={rowIndex} className="flex w-fit rounded-xl">
@@ -179,13 +185,19 @@ const Minesweeper: React.FC = () => {
           ))}
         </section>
         <div className="flex flex-col">
+          {!gameOver && !win && (
+            <div className="my-4 text-center text-lg font-bold text-gray-500">
+              Right click to flag a cell
+            </div>
+          )}
           {gameOver && (
             <>
               <div className="my-4 text-center text-2xl font-bold text-red-500">
-                Game Over!
+                Try again!
               </div>
               <Button
-                className=" mx-auto w-fit text-lg font-medium"
+                size="sm"
+                className=" mx-auto w-fit p-4 !py-5 text-sm font-bold tracking-wider"
                 variant="shadow"
                 onClick={resetGame}
               >
@@ -196,10 +208,10 @@ const Minesweeper: React.FC = () => {
           {win && (
             <>
               <div className="my-4 text-center text-2xl font-bold text-green-500">
-                You Win!
+                You Win! 🏆
               </div>
               <Button
-                className=" mx-auto w-fit text-lg font-medium"
+                className=" mx-auto w-fit text-sm font-bold tracking-wider"
                 variant="shadow"
                 onClick={resetGame}
               >
