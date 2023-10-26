@@ -1,3 +1,4 @@
+import { Bomb } from "lucide-react";
 import React, { useState, useEffect } from "react";
 // import "./Minesweeper.css"; // You'll need to create the CSS for styling
 
@@ -136,13 +137,13 @@ const Minesweeper: React.FC = () => {
   };
 
   return (
-    <div className="minesweeper bg-gray-200 p-4">
+    <section className="minesweeper mx-auto flex w-fit flex-col justify-center bg-gray-200 p-4">
       {board.map((row, rowIndex) => (
-        <div key={rowIndex} className="flex">
+        <div key={rowIndex} className="flex w-fit">
           {row.map((cell, colIndex) => (
             <div
               key={colIndex}
-              className={`cell h-8 w-8 border border-gray-300 p-2 ${
+              className={`cell flex h-12 w-12 items-center justify-center border border-gray-300 p-1 font-sans font-bold ${
                 cell.isRevealed ? "bg-white" : ""
               } ${cell.isFlagged ? "bg-blue-200" : ""}`}
               onClick={() => handleCellClick(rowIndex, colIndex)}
@@ -153,7 +154,9 @@ const Minesweeper: React.FC = () => {
               countAdjacentMines(rowIndex, colIndex) > 0
                 ? countAdjacentMines(rowIndex, colIndex)
                 : null}
-              {cell.isRevealed && cell.isMine ? "💣" : null}
+              {cell.isRevealed && cell.isMine ? (
+                <Bomb className="fill-slate-900" />
+              ) : null}
             </div>
           ))}
         </div>
@@ -180,7 +183,7 @@ const Minesweeper: React.FC = () => {
           </button>
         </>
       )}
-    </div>
+    </section>
   );
 };
 
