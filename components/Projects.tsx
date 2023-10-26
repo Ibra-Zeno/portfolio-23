@@ -56,8 +56,8 @@ const projArr = [
 
 const Projects: React.FC = () => {
   return (
-    <section className="mx-auto mt-12 min-h-screen w-full bg-gradient-to-tr from-stone-500 to-emerald-50 p-8 pb-28 pt-8">
-      <h1 className="mx-auto py-12 text-center text-5xl font-bold text-rose-50">
+    <section className="mx-auto min-h-screen w-full p-8">
+      <h1 className="mx-auto py-12 text-center text-5xl font-bold text-slate-900">
         Projects
       </h1>
       <div className="">
