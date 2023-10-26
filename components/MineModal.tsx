@@ -9,7 +9,14 @@ import {
   useDisclosure,
 } from "@nextui-org/react";
 import { HelpCircle } from "lucide-react";
-import { CloudIcon, BombIcon } from "lucide-react";
+import { BombIcon } from "lucide-react";
+import { Nunito } from "next/font/google";
+
+const nunito = Nunito({
+  preload: true,
+  subsets: ["latin-ext"],
+  variable: "--font-nunito",
+});
 
 const features = [
   {
@@ -53,15 +60,23 @@ const MineModal: React.FC = () => {
         isOpen={isOpen}
         onOpenChange={onOpenChange}
         className="custom-font font-sans"
+        classNames={{
+          body: `${nunito.variable} font-sans}`,
+          header: `${nunito.variable} font-sans}`,
+          footer: `${nunito.variable} font-sans}`,
+          closeButton: `${nunito.variable} font-sans}`,
+        }}
       >
         <ModalContent className="font-sans">
           {(onClose) => (
             <>
-              <ModalHeader className="flex flex-col gap-1">
+              <ModalHeader
+                className={`${nunito.variable} flex flex-col gap-1 font-sans`}
+              >
                 How to Play Minesweeper
               </ModalHeader>
               <ModalBody className="font-sans">
-                <dl className="xs:space-y-6 xs:text-sm max-w-xl space-y-2 text-xs leading-7 text-gray-600 lg:max-w-none">
+                <dl className="xs:space-y-6 xs:text-sm max-w-xl space-y-2 text-xs leading-7 text-gray-600 md:text-base lg:max-w-none">
                   {features.map((feature) => (
                     <div key={feature.name} className="relative pl-9">
                       <dt className="inline font-semibold text-gray-900">
