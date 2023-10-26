@@ -1,4 +1,4 @@
-import { Button } from "@nextui-org/react";
+import { Button, Tooltip } from "@nextui-org/react";
 import { Bomb, Flag } from "lucide-react";
 import React, { useState, useEffect } from "react";
 import MineModal from "./MineModal";
@@ -19,6 +19,7 @@ const Minesweeper: React.FC = () => {
   const [gameOver, setGameOver] = useState(false);
   const [win, setWin] = useState(false);
   const [firstMove, setFirstMove] = useState(false);
+  const [flaggingMode, setFlaggingMode] = useState(false);
 
   const resetGame = () => {
     setBoard([]);
@@ -47,6 +48,12 @@ const Minesweeper: React.FC = () => {
   }, []);
 
   const handleCellClick = (row: number, col: number) => {
+    if (flaggingMode) {
+      const newBoard = [...board];
+      newBoard[row][col].isFlagged = !newBoard[row][col].isFlagged;
+      setBoard(newBoard);
+      return;
+    }
     if (
       gameOver ||
       win ||
@@ -55,6 +62,7 @@ const Minesweeper: React.FC = () => {
     ) {
       return;
     }
+
     if (!firstMove) {
       setFirstMove(true);
     }
@@ -119,6 +127,7 @@ const Minesweeper: React.FC = () => {
   ) => {
     e.preventDefault();
     if (gameOver || win || board[row][col].isRevealed) return;
+
     const newBoard = [...board];
     newBoard[row][col].isFlagged = !newBoard[row][col].isFlagged;
     setBoard(newBoard);
@@ -158,8 +167,7 @@ const Minesweeper: React.FC = () => {
           </div>
           {!firstMove && (
             <span className="animate-bounce bg-gradient-to-r from-[#C33764] to-[#1D2671] bg-clip-text font-sans text-xs font-semibold leading-7 text-transparent">
-              {" "}
-              Click a cell to reveal
+              Click to reveal
             </span>
           )}
         </div>
@@ -169,7 +177,7 @@ const Minesweeper: React.FC = () => {
               {row.map((cell, colIndex) => (
                 <div
                   key={colIndex}
-                  className={`cell flex h-7 w-7 items-center justify-center rounded-sm border border-slate-400 p-1 font-sans text-xs font-medium shadow-sm md:text-base lg:rounded lg:font-bold xl:h-12 xl:w-12 ${
+                  className={`cell xs:h-8 xs:w-8 flex h-[25px] w-[25px] items-center justify-center rounded-sm border border-slate-400 p-1 font-sans text-xs font-medium shadow-sm sm:h-[45px] sm:w-[45px] md:text-base lg:rounded lg:font-bold ${
                     cell.isRevealed ? "bg-white" : ""
                   } ${cell.isFlagged ? "bg-[#ffe3e7]" : ""} ${
                     cell.isRevealed && cell.isMine
@@ -199,6 +207,25 @@ const Minesweeper: React.FC = () => {
               ))}
             </div>
           ))}
+          {!gameOver && !win && (
+            <Tooltip
+              content="Right Click Cell to Flag"
+              className="custom-font text-xs"
+              placement="bottom"
+              closeDelay={-100}
+            >
+              <Button
+                className={`mx-auto mt-2 w-fit text-xs font-bold tracking-wider md:text-sm ${
+                  flaggingMode ? "bg-rose-200 text-white" : "bg-slate-200"
+                }`}
+                isIconOnly
+                variant="shadow"
+                onClick={() => setFlaggingMode(!flaggingMode)}
+              >
+                <Flag size={22} className="fill-[#FF416C] text-slate-700" />
+              </Button>
+            </Tooltip>
+          )}
         </section>
         <div className="flex flex-col">
           {/* {!gamePlaying && (
