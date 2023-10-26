@@ -61,7 +61,7 @@ const MineModal: React.FC = () => {
                 How to Play Minesweeper
               </ModalHeader>
               <ModalBody className="font-sans">
-                <dl className="max-w-xl space-y-4 text-sm leading-7 text-gray-600 lg:max-w-none">
+                <dl className="xs:space-y-6 xs:text-sm max-w-xl space-y-2 text-xs leading-7 text-gray-600 lg:max-w-none">
                   {features.map((feature) => (
                     <div key={feature.name} className="relative pl-9">
                       <dt className="inline font-semibold text-gray-900">
