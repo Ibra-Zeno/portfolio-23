@@ -1,4 +1,5 @@
-import { Bomb } from "lucide-react";
+import { Button } from "@nextui-org/react";
+import { Bomb, Flag } from "lucide-react";
 import React, { useState, useEffect } from "react";
 // import "./Minesweeper.css"; // You'll need to create the CSS for styling
 
@@ -8,9 +9,9 @@ interface Cell {
   isFlagged: boolean;
 }
 
-const numRows = 8;
-const numCols = 8;
-const numMines = 10;
+const numRows = 10;
+const numCols = 10;
+const numMines = 13;
 
 const Minesweeper: React.FC = () => {
   const [board, setBoard] = useState<Cell[][]>([]);
@@ -137,53 +138,78 @@ const Minesweeper: React.FC = () => {
   };
 
   return (
-    <section className="minesweeper mx-auto flex w-fit flex-col justify-center bg-gray-200 p-4">
-      {board.map((row, rowIndex) => (
-        <div key={rowIndex} className="flex w-fit">
-          {row.map((cell, colIndex) => (
-            <div
-              key={colIndex}
-              className={`cell flex h-12 w-12 items-center justify-center border border-gray-300 p-1 font-sans font-bold ${
-                cell.isRevealed ? "bg-white" : ""
-              } ${cell.isFlagged ? "bg-blue-200" : ""}`}
-              onClick={() => handleCellClick(rowIndex, colIndex)}
-              onContextMenu={(e) => handleCellRightClick(e, rowIndex, colIndex)}
-            >
-              {cell.isRevealed &&
-              !cell.isMine &&
-              countAdjacentMines(rowIndex, colIndex) > 0
-                ? countAdjacentMines(rowIndex, colIndex)
-                : null}
-              {cell.isRevealed && cell.isMine ? (
-                <Bomb className="fill-slate-900" />
-              ) : null}
+    <>
+      <section className="mx-auto flex w-fit flex-col justify-center rounded-xl ">
+        <span className="mb-1 text-xs">Right click to add a flag</span>
+        <section className="mx-auto flex w-fit flex-col justify-center rounded-xl bg-gray-200 p-4">
+          {board.map((row, rowIndex) => (
+            <div key={rowIndex} className="flex w-fit rounded-xl">
+              {row.map((cell, colIndex) => (
+                <div
+                  key={colIndex}
+                  className={`cell flex h-12 w-12 items-center justify-center rounded border border-gray-300 p-1 font-sans font-bold shadow-sm ${
+                    cell.isRevealed ? "bg-white" : ""
+                  } ${cell.isFlagged ? "bg-[#ffe3e7]" : ""} ${
+                    cell.isRevealed && cell.isMine
+                      ? "bg-gradient-to-r from-[#FF416C]/80 to-[#FF4B2B]/80"
+                      : ""
+                  }`}
+                  onClick={() => handleCellClick(rowIndex, colIndex)}
+                  onContextMenu={(e) =>
+                    handleCellRightClick(e, rowIndex, colIndex)
+                  }
+                >
+                  {cell.isRevealed &&
+                  !cell.isMine &&
+                  countAdjacentMines(rowIndex, colIndex) > 0
+                    ? countAdjacentMines(rowIndex, colIndex)
+                    : null}
+                  {cell.isRevealed && cell.isMine ? (
+                    <Bomb className="fill-slate-700" />
+                  ) : cell.isFlagged ? (
+                    <Flag
+                      size={18}
+                      className="fill-[#FF416C] text-slate-700"
+                      strokeWidth={1.2}
+                    />
+                  ) : null}
+                </div>
+              ))}
             </div>
           ))}
+        </section>
+        <div className="flex flex-col">
+          {gameOver && (
+            <>
+              <div className="my-4 text-center text-2xl font-bold text-red-500">
+                Game Over!
+              </div>
+              <Button
+                className=" mx-auto w-fit text-lg font-medium"
+                variant="shadow"
+                onClick={resetGame}
+              >
+                Reset Game
+              </Button>
+            </>
+          )}
+          {win && (
+            <>
+              <div className="my-4 text-center text-2xl font-bold text-green-500">
+                You Win!
+              </div>
+              <Button
+                className=" mx-auto w-fit text-lg font-medium"
+                variant="shadow"
+                onClick={resetGame}
+              >
+                Reset Game
+              </Button>
+            </>
+          )}{" "}
         </div>
-      ))}
-      {gameOver && (
-        <>
-          <div className="message font-bold text-red-500">Game Over!</div>
-          <button
-            className="reset-button mb-4 rounded-md bg-blue-500 px-2 py-1 text-white"
-            onClick={resetGame}
-          >
-            Reset Game
-          </button>
-        </>
-      )}
-      {win && (
-        <>
-          <div className="message font-bold text-green-500">You Win!</div>
-          <button
-            className="reset-button mb-4 rounded-md bg-blue-500 px-2 py-1 text-white"
-            onClick={resetGame}
-          >
-            Reset Game
-          </button>
-        </>
-      )}
-    </section>
+      </section>
+    </>
   );
 };
 
