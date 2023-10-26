@@ -29,6 +29,7 @@ const Hero: React.FC = () => {
                   <Image
                     className="mx-auto rounded-lg object-cover object-center"
                     alt="hero"
+                    draggable={false}
                     src="/images/Bg/Beary.jpg"
                   />
                 </div>

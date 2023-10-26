@@ -83,6 +83,7 @@ const TechStack: React.FC = () => {
                       src={icon.icon}
                       alt={icon.name}
                       isBlurred
+                      draggable={false}
                       className="w-20 p-3"
                       height={100}
                       width={100}
