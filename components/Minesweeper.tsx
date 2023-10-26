@@ -173,13 +173,13 @@ const Minesweeper: React.FC = () => {
             </span>
           )}
         </div>
-        <section className="mx-auto flex w-fit flex-col justify-center rounded-xl bg-slate-300 p-4 shadow-xl">
+        <section className="xs:p-4 mx-auto flex w-fit flex-col justify-center rounded-xl bg-slate-300 p-2 shadow-xl">
           {board.map((row, rowIndex) => (
             <div key={rowIndex} className="flex w-fit rounded-xl">
               {row.map((cell, colIndex) => (
                 <div
                   key={colIndex}
-                  className={`cell xs:h-8 xs:w-8 flex h-[25px] w-[25px] items-center justify-center rounded-sm border border-slate-400 p-1 font-sans text-xs font-medium shadow-sm sm:h-[45px] sm:w-[45px] md:text-base lg:rounded lg:font-bold ${
+                  className={`cell xs:h-8 xs:w-8 flex h-[28px] w-[28px] items-center justify-center rounded-sm border border-slate-400 p-1 font-sans text-xs font-medium shadow-sm sm:h-[45px] sm:w-[45px] md:text-base lg:rounded lg:font-bold ${
                     cell.isRevealed ? "bg-white" : ""
                   } ${cell.isFlagged ? "bg-[#ffe3e7]" : ""} ${
                     cell.isRevealed && cell.isMine
