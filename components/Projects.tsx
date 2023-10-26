@@ -14,7 +14,7 @@ import {
 const projArr = [
   {
     name: "Odyssey",
-    img: "/images/Bg/cardBg.svg",
+    img: "/images/projectPage/odyssey.png",
     icon: "/images/skillIcons/TS.svg",
     desc: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Corrupti molestiae quis dolores provident",
     tech: ["React", "Next.js", "Tailwindcss", "Typescript"],
@@ -22,7 +22,7 @@ const projArr = [
   },
   {
     name: "Optima",
-    img: "/images/Bg/cardBg1.png",
+    img: "/images/projectPage/optima.png",
     icon: "/images/skillIcons/TS.svg",
     desc: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Corrupti molestiae quis dolores provident",
     tech: ["React", "Next.js", "Tailwindcss", "Typescript"],
@@ -30,7 +30,7 @@ const projArr = [
   },
   {
     name: "Ecommerce Store",
-    img: "/images/Bg/cardBg.jpg",
+    img: "/images/projectPage/ecommerce.png",
     icon: "/images/skillIcons/TS.svg",
     desc: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Corrupti molestiae quis dolores provident",
     tech: ["React", "Next.js", "Tailwindcss", "Typescript"],
@@ -38,7 +38,7 @@ const projArr = [
   },
   {
     name: "Architectural Portfolio",
-    img: "/images/Bg/cardBg.jpg",
+    img: "/images/projectPage/arch.png",
     icon: "/images/skillIcons/TS.svg",
     desc: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Corrupti molestiae quis dolores provident",
     tech: ["React", "Next.js", "Tailwindcss", "Typescript"],
@@ -46,7 +46,7 @@ const projArr = [
   },
   {
     name: "AI Summariser",
-    img: "/images/Bg/cardBg.jpg",
+    img: "/images/projectPage/sum.png",
     icon: "/images/skillIcons/TS.svg",
     desc: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Corrupti molestiae quis dolores provident",
     tech: ["React", "Next.js", "Tailwindcss", "Typescript"],
@@ -56,81 +56,85 @@ const projArr = [
 
 const Projects: React.FC = () => {
   return (
-    <section className="mx-auto min-h-screen w-full p-8">
-      <h1 className="mx-auto py-12 text-center text-5xl font-bold text-slate-900">
-        Projects
-      </h1>
+    <section className="xs:p-8 mx-auto min-h-screen w-full p-4">
       <div className="">
-        <Card
+        {/*         <Card
           className="mx-auto flex w-full max-w-7xl flex-col flex-wrap justify-center gap-x-6  p-12 px-24"
           isBlurred
-        >
-          <div className="flex w-full flex-col gap-y-16">
-            {projArr.map((proj, idx) => (
-              <div
-                key={idx}
-                className="relative flex w-full flex-grow flex-row justify-center gap-x-12"
+        > */}
+        <h1 className="mb-20 text-center text-3xl font-bold text-slate-900">
+          Projects
+        </h1>
+        <div className="mx-auto flex w-full max-w-7xl flex-col gap-y-16">
+          {projArr.map((proj, idx) => (
+            <div
+              key={idx}
+              className="relative mx-auto flex w-fit flex-col justify-center justify-items-center gap-x-12 lg:flex-row"
+            >
+              <Card
+                className="group mx-auto flex w-fit max-w-[20rem] items-start justify-start"
+                isPressable
+                isHoverable
+                shadow="lg"
               >
-                <Card
-                  className="group max-w-[20rem]"
-                  isPressable
-                  isHoverable
-                  shadow="lg"
-                >
-                  <Image
+                <Image
+                  removeWrapper
+                  alt="Card background"
+                  loading="lazy"
+                  className="z-0 aspect-square h-full w-full object-cover"
+                  src={proj.img}
+                />
+                {/* Icon in center of image */}
+                <div className="absolute inset-0 flex items-center justify-items-center">
+                  {/* <Image
                     removeWrapper
-                    alt="Card background"
-                    className="z-0 aspect-square h-full w-full object-cover"
-                    src={proj.img}
-                  />
-                  <div className="absolute inset-0 flex items-center justify-items-center">
-                    <Image
-                      removeWrapper
-                      src={proj.icon}
-                      alt="icon"
-                      isBlurred
-                      className="mx-auto h-14 w-14 object-cover"
-                    />
+                    src={proj.icon}
+                    alt="icon"
+                    isBlurred
+                    className="mx-auto h-14 w-14 object-cover"
+                  /> */}
+                </div>
+              </Card>
+              <div className="relative flex flex-col justify-start gap-y-12">
+                <div className="w-fit">
+                  <h3 className="my-6 mb-4 text-center text-3xl font-extrabold text-gray-700 lg:text-left">
+                    {proj.name}
+                  </h3>
+                  <div className="mb-4 flex flex-row justify-center gap-x-2 lg:justify-start">
+                    {proj.tech.map((tech, idx) => (
+                      <div key={idx} className=" flex flex-row">
+                        <Chip
+                          variant="shadow"
+                          size="sm"
+                          className="bg-stone-400/40 text-xs  font-bold tracking-wide text-slate-700"
+                        >
+                          {tech}
+                        </Chip>
+                      </div>
+                    ))}
                   </div>
-                </Card>
-                <div className="relative flex flex-col justify-start gap-y-12">
-                  <div className="">
-                    <h3 className="my-4 text-5xl font-bold">{proj.name}</h3>
-                    <div className="mb-4 flex flex-row gap-x-2">
-                      {proj.tech.map((tech, idx) => (
-                        <div key={idx} className="flex flex-row">
-                          <Chip
-                            variant="shadow"
-                            size="sm"
-                            className="bg-stone-400/40 text-xs  font-bold tracking-wide text-slate-700"
-                          >
-                            {tech}
-                          </Chip>
-                        </div>
-                      ))}
-                    </div>
-                    <Divider orientation="horizontal" className="mb-8" />
-                    <p className="max-w-xl pb-16 text-lg text-gray-600">
-                      {proj.desc}
-                    </p>
-                  </div>
-                  <Link href={proj.link}>
-                    <Button
-                      className="absolute bottom-10 left-0 w-fit border-2 border-slate-800/30 bg-transparent text-sm font-bold text-slate-800"
-                      size="md"
-                    >
-                      Showcase &rarr;
-                    </Button>
-                  </Link>
-                  {/* <div className="flex flex-row absolute bottom-0 items-center gap-x-4 italic">
+                  <Divider orientation="horizontal" className="mb-8" />
+                  <p className="max-w-md pb-16 text-center text-base text-gray-600  lg:max-w-xl lg:text-left lg:text-lg">
+                    {proj.desc}
+                  </p>
+                </div>
+                <Link href={proj.link} className="w-full">
+                  <Button
+                    className="absolute inset-x-0 bottom-10 mx-auto w-fit border-2 border-slate-800/30 bg-transparent text-sm font-bold text-slate-800 lg:left-0 lg:mx-0"
+                    size="md"
+                  >
+                    Showcase &rarr;
+                  </Button>
+                </Link>
+                {/* <div className="flex flex-row absolute bottom-0 items-center gap-x-4 italic">
                       <Avatar src="https://i.pravatar.cc/200" size="lg" />
                       <p>Lorem ipsum dolor sit </p>
                     </div> */}
-                </div>
               </div>
-            ))}
-          </div>
-        </Card>
+            </div>
+          ))}
+        </div>
+        {/*         </Card> */}
       </div>
     </section>
   );
