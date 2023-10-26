@@ -18,6 +18,9 @@ module.exports = {
       },
     },
     extend: {
+      screens: {
+        xs: "375px",
+      },
       fontFamily: {
         sans: ["var(--font-nunito)"],
       },
