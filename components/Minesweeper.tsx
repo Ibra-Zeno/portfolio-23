@@ -17,6 +17,7 @@ const Minesweeper: React.FC = () => {
   const [board, setBoard] = useState<Cell[][]>([]);
   const [gameOver, setGameOver] = useState(false);
   const [win, setWin] = useState(false);
+  const [firstMove, setFirstMove] = useState(false);
 
   const resetGame = () => {
     setBoard([]);
@@ -52,6 +53,9 @@ const Minesweeper: React.FC = () => {
       board[row][col].isFlagged
     ) {
       return;
+    }
+    if (!firstMove) {
+      setFirstMove(true);
     }
     const isFlagged = board[row][col].isFlagged;
     if (isFlagged) {
@@ -144,16 +148,24 @@ const Minesweeper: React.FC = () => {
   return (
     <>
       <section className="mx-auto flex w-fit flex-col justify-center rounded-xl ">
-        <h2 className="mb-2 bg-gradient-to-r from-[#C33764] to-[#1D2671] bg-clip-text text-base font-semibold leading-7 text-transparent">
-          Minesweeper
-        </h2>
-        <section className="mx-auto flex w-fit flex-col justify-center rounded-xl bg-gray-200 p-4">
+        <div className="flex justify-between">
+          <p className="mb-2 bg-gradient-to-r from-[#C33764] to-[#1D2671] bg-clip-text text-base font-semibold leading-7 text-transparent">
+            Play Minesweeper
+          </p>
+          {!firstMove && (
+            <span className="animate-bounce bg-gradient-to-r from-[#C33764] to-[#1D2671] bg-clip-text font-sans text-xs font-semibold leading-7 text-transparent">
+              {" "}
+              Click a cell to reveal it
+            </span>
+          )}
+        </div>
+        <section className="mx-auto flex w-fit flex-col justify-center rounded-xl bg-slate-300 p-4 shadow-xl">
           {board.map((row, rowIndex) => (
             <div key={rowIndex} className="flex w-fit rounded-xl">
               {row.map((cell, colIndex) => (
                 <div
                   key={colIndex}
-                  className={`cell flex h-12 w-12 items-center justify-center rounded border border-gray-300 p-1 font-sans font-bold shadow-sm ${
+                  className={`cell flex h-12 w-12 items-center justify-center rounded border border-slate-400 p-1 font-sans font-bold shadow-sm ${
                     cell.isRevealed ? "bg-white" : ""
                   } ${cell.isFlagged ? "bg-[#ffe3e7]" : ""} ${
                     cell.isRevealed && cell.isMine
@@ -185,13 +197,14 @@ const Minesweeper: React.FC = () => {
           ))}
         </section>
         <div className="flex flex-col">
-          {!gameOver && !win && (
+          {/* {!gamePlaying && (
             <div className="my-4 text-center text-lg font-bold text-gray-500">
               Right click to flag a cell
             </div>
-          )}
+          )} */}
           {gameOver && (
             <>
+              {/* {setGamePlaying(false)} */}
               <div className="my-4 text-center text-2xl font-bold text-red-500">
                 Try again!
               </div>
@@ -207,6 +220,7 @@ const Minesweeper: React.FC = () => {
           )}
           {win && (
             <>
+              {/* {setGamePlaying(false)} */}
               <div className="my-4 text-center text-2xl font-bold text-green-500">
                 You Win! 🏆
               </div>
