@@ -1,6 +1,7 @@
 import { Button } from "@nextui-org/react";
 import { Bomb, Flag } from "lucide-react";
 import React, { useState, useEffect } from "react";
+import MineModal from "./MineModal";
 // import "./Minesweeper.css"; // You'll need to create the CSS for styling
 
 interface Cell {
@@ -149,13 +150,16 @@ const Minesweeper: React.FC = () => {
     <>
       <section className="mx-auto flex w-fit flex-col justify-center rounded-xl ">
         <div className="flex justify-between">
-          <p className="mb-2 bg-gradient-to-r from-[#C33764] to-[#1D2671] bg-clip-text text-base font-semibold leading-7 text-transparent">
-            Play Minesweeper
-          </p>
+          <div className="mb-2 flex items-center">
+            <p className=" bg-gradient-to-r from-[#C33764] to-[#1D2671] bg-clip-text text-base font-semibold leading-7 text-transparent">
+              Play Minesweeper
+            </p>
+            <MineModal />
+          </div>
           {!firstMove && (
             <span className="animate-bounce bg-gradient-to-r from-[#C33764] to-[#1D2671] bg-clip-text font-sans text-xs font-semibold leading-7 text-transparent">
               {" "}
-              Click a cell to reveal it
+              Click a cell to reveal
             </span>
           )}
         </div>
@@ -165,7 +169,7 @@ const Minesweeper: React.FC = () => {
               {row.map((cell, colIndex) => (
                 <div
                   key={colIndex}
-                  className={`cell flex h-12 w-12 items-center justify-center rounded border border-slate-400 p-1 font-sans font-bold shadow-sm ${
+                  className={`cell flex h-7 w-7 items-center justify-center rounded-sm border border-slate-400 p-1 font-sans text-xs font-medium shadow-sm md:text-base lg:rounded lg:font-bold xl:h-12 xl:w-12 ${
                     cell.isRevealed ? "bg-white" : ""
                   } ${cell.isFlagged ? "bg-[#ffe3e7]" : ""} ${
                     cell.isRevealed && cell.isMine
@@ -205,12 +209,12 @@ const Minesweeper: React.FC = () => {
           {gameOver && (
             <>
               {/* {setGamePlaying(false)} */}
-              <div className="my-4 text-center text-2xl font-bold text-red-500">
+              <div className="my-4 text-center text-lg font-bold text-red-500 lg:text-2xl">
                 Try again!
               </div>
               <Button
                 size="sm"
-                className=" mx-auto w-fit p-4 !py-5 text-sm font-bold tracking-wider"
+                className=" mx-auto w-fit p-4 !py-5 text-xs font-bold tracking-wider md:text-sm"
                 variant="shadow"
                 onClick={resetGame}
               >
@@ -221,11 +225,11 @@ const Minesweeper: React.FC = () => {
           {win && (
             <>
               {/* {setGamePlaying(false)} */}
-              <div className="my-4 text-center text-2xl font-bold text-green-500">
+              <div className="my-4 text-center text-lg font-bold text-green-500 lg:text-2xl">
                 You Win! 🏆
               </div>
               <Button
-                className=" mx-auto w-fit text-sm font-bold tracking-wider"
+                className=" mx-auto w-fit text-xs font-bold tracking-wider md:text-sm"
                 variant="shadow"
                 onClick={resetGame}
               >
