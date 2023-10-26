@@ -1,14 +1,21 @@
 import Link from "next/link";
+import { Image } from "@nextui-org/react";
 import { Instagram, Github, Twitter } from "lucide-react";
 
 const Footer: React.FC = () => {
   return (
     <footer className="bg-white">
       <div className="mx-auto max-w-7xl overflow-hidden px-4 py-12 sm:px-6 lg:px-8">
-        <div className="mx-auto items-center text-center text-2xl font-bold">
-          IK
+        <div className="mx-auto flex items-center justify-center text-center text-2xl font-bold">
+          <Link href="/" className="flex h-fit w-fit justify-center">
+            <Image
+              src="/images/ik-logo.jpg"
+              className="h-10 w-10 rounded-full"
+              alt="IK logo"
+            ></Image>
+          </Link>
         </div>
-        <div className="mt-8 flex justify-center space-x-6">
+        <div className="mt-4 flex justify-center space-x-6">
           <span className="m-auto inline-flex w-full justify-center gap-3 md:w-auto md:justify-start">
             <Link
               href="#"
@@ -33,7 +40,7 @@ const Footer: React.FC = () => {
             </Link>
           </span>
         </div>
-        <p className="mt-8 text-center">
+        <p className="mt-3 text-center">
           <span className="mx-auto mt-2 text-sm text-gray-500">
             Copyright © 2020 - 2021
             <Link
