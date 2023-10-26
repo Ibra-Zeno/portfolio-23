@@ -9,63 +9,124 @@ import {
   NavbarItem,
   Link,
   Button,
+  Image,
+  DropdownTrigger,
+  DropdownMenu,
+  DropdownItem,
+  Dropdown,
 } from "@nextui-org/react";
+
 import { OrbitIcon } from "lucide-react";
 
 const Nav: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
 
-  const menuItems = [
-    "Profile",
-    "Dashboard",
-    "Activity",
-    "Analytics",
-    "System",
-    "Deployments",
-    "My Settings",
-    "Team Settings",
-    "Help & Feedback",
-    "Log Out",
-  ];
+  const menuItems = ["Profile", "Dashboard"];
 
   return (
-    <Navbar isBordered isMenuOpen={isMenuOpen} onMenuOpenChange={setIsMenuOpen}>
+    <Navbar isBordered isMenuOpen={isMenuOpen} onMenuOpenChange={setIsMenuOpen} className="custom-font">
       <NavbarContent className="sm:hidden" justify="start">
         <NavbarMenuToggle
           aria-label={isMenuOpen ? "Close menu" : "Open menu"}
         />
       </NavbarContent>
 
-      <NavbarContent className="pr-3 sm:hidden" justify="center">
+      <NavbarContent className="relative pr-3 sm:hidden" justify="start">
         <NavbarBrand>
-          <OrbitIcon />
-          <p className="font-bold text-inherit">ACME</p>
+          <Image
+            src="/images/ik-logo.jpg"
+            className="max-w-10 absolute top-0 flex max-h-10 justify-center rounded-full"
+            alt="IK logo"
+          ></Image>
         </NavbarBrand>
       </NavbarContent>
 
-      <NavbarContent className="hidden gap-4 sm:flex" justify="center">
+      <NavbarContent className="mx-auto hidden gap-4 sm:flex" justify="start">
         <NavbarBrand>
-          <OrbitIcon />
-          <p className="font-bold text-inherit">ACME</p>
+          <Link href="/">
+            <Image
+              src="/images/ik-logo.jpg"
+              className="max-w-10 max-h-10 rounded-full"
+              alt="IK logo"
+            ></Image>
+          </Link>
         </NavbarBrand>
-        <NavbarItem>
-          <Link color="foreground" href="#">
-            Features
-          </Link>
-        </NavbarItem>
-        <NavbarItem isActive>
-          <Link href="#" aria-current="page">
-            Customers
-          </Link>
-        </NavbarItem>
-        <NavbarItem>
-          <Link color="foreground" href="#">
-            Integrations
-          </Link>
-        </NavbarItem>
       </NavbarContent>
 
-      <NavbarContent justify="end">
+      <NavbarContent
+        className="mx-auto hidden justify-center gap-4 font-sans sm:flex"
+        justify="end"
+      >
+        {/* <NavbarBrand>
+          <Image
+            src="/images/ik-logo.jpg"
+            className="max-w-10 max-h-10 rounded-full"
+            alt="IK logo"
+          ></Image>
+        </NavbarBrand> */}
+        <Dropdown className="font-sans">
+          <NavbarItem>
+            <DropdownTrigger>
+              <Button
+                disableRipple
+                className="bg-transparent p-0 font-sans data-[hover=true]:bg-transparent"
+                radius="sm"
+                variant="light"
+              >
+                Projects
+              </Button>
+            </DropdownTrigger>
+          </NavbarItem>
+          <DropdownMenu
+            aria-label="ACME features"
+            className="w-[340px] font-sans"
+            itemClasses={{
+              base: "gap-4",
+              title: "font-sans",
+              description: "font-sans",
+            }}
+          >
+            <DropdownItem
+              key="autoscaling"
+              className="font-sans"
+              startContent={<OrbitIcon />}
+              description="ACME scales apps to meet user demand, automagically, based on load."
+            >
+              Autoscaling
+            </DropdownItem>
+            <DropdownItem
+              key="usage_metrics"
+              startContent={<OrbitIcon />}
+              description="Real-time metrics to debug issues. Slow query added? We’ll show you exactly where."
+            >
+              Usage Metrics
+            </DropdownItem>
+            <DropdownItem
+              key="production_ready"
+              startContent={<OrbitIcon />}
+              description="ACME runs on ACME, join us and others serving requests at web scale."
+            >
+              Production Ready
+            </DropdownItem>
+            <DropdownItem
+              key="99_uptime"
+              startContent={<OrbitIcon />}
+              description="Applications stay on the grid with high availability and high uptime guarantees."
+            >
+              +99% Uptime
+            </DropdownItem>
+            <DropdownItem
+              key="supreme_support"
+              startContent={<OrbitIcon />}
+              description="Overcome any challenge with a supporting team ready to respond."
+            >
+              +Supreme Support
+            </DropdownItem>
+          </DropdownMenu>
+        </Dropdown>
+      </NavbarContent>
+
+      {/*       <NavbarContent justify="end">
         <NavbarItem className="hidden lg:flex">
           <Link href="#">Login</Link>
         </NavbarItem>
@@ -74,7 +135,7 @@ const Nav: React.FC = () => {
             Sign Up
           </Button>
         </NavbarItem>
-      </NavbarContent>
+      </NavbarContent> */}
 
       <NavbarMenu>
         {menuItems.map((item, index) => (
