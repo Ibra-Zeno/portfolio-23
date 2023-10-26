@@ -15,8 +15,14 @@ import {
   DropdownItem,
   Dropdown,
 } from "@nextui-org/react";
-
 import { OrbitIcon } from "lucide-react";
+
+import { Nunito } from "next/font/google";
+const nunito = Nunito({
+  preload: true,
+  subsets: ["latin-ext"],
+  variable: "--font-nunito",
+});
 
 const Nav: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
@@ -68,7 +74,12 @@ const Nav: React.FC = () => {
             alt="IK logo"
           ></Image>
         </NavbarBrand> */}
-        <Dropdown className="font-sans">
+        <Dropdown
+          className="font-sans"
+          classNames={{
+            base: `font-sans ${nunito.variable}`,
+          }}
+        >
           <NavbarItem>
             <DropdownTrigger>
               <Button
