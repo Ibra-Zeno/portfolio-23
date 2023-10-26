@@ -18,7 +18,6 @@ const Minesweeper: React.FC = () => {
   let gamesPlayed = 0;
 
   const resetGame = () => {
-    // Reset the game by reinitializing the board and other game state
     gamesPlayed++;
     setBoard([]);
     setGameOver(false);
@@ -31,8 +30,6 @@ const Minesweeper: React.FC = () => {
       })),
     );
     setBoard(initialBoard);
-
-    // Place mines randomly on the board
     for (let i = 0; i < numMines; i++) {
       let row, col;
       do {
@@ -41,30 +38,10 @@ const Minesweeper: React.FC = () => {
       } while (initialBoard[row][col].isMine);
       initialBoard[row][col].isMine = true;
     }
-    // Initialize the board and mines again (you can reuse the code from the useEffect)
-    // ...
   };
 
   useEffect(() => {
-    // Initialize the board with cells
-    const initialBoard: Cell[][] = Array.from({ length: numRows }, () =>
-      Array.from({ length: numCols }, () => ({
-        isMine: false,
-        isRevealed: false,
-        isFlagged: false,
-      })),
-    );
-    setBoard(initialBoard);
-
-    // Place mines randomly on the board
-    for (let i = 0; i < numMines; i++) {
-      let row, col;
-      do {
-        row = Math.floor(Math.random() * numRows);
-        col = Math.floor(Math.random() * numCols);
-      } while (initialBoard[row][col].isMine);
-      initialBoard[row][col].isMine = true;
-    }
+    resetGame(); // Call resetGame instead of duplicating the initialization logic
   }, []);
 
   const handleCellClick = (row: number, col: number) => {
@@ -76,10 +53,17 @@ const Minesweeper: React.FC = () => {
     ) {
       return;
     }
-
     if (board[row][col].isMine) {
-      // Game over, reveal all mines
       setGameOver(true);
+      const newBoard = board.map((rowArr, rIndex) =>
+        rowArr.map((cell, cIndex) => {
+          if (cell.isMine) {
+            return { ...cell, isRevealed: true }; // Reveal the bomb
+          }
+          return cell;
+        }),
+      );
+      setBoard(newBoard);
       return;
     }
 
@@ -95,7 +79,7 @@ const Minesweeper: React.FC = () => {
         return;
       newBoard[r][c].isRevealed = true;
       if (countAdjacentMines(r, c) === 0) {
-        // If no adjacent mines, recursively reveal neighboring cells
+        // reveal neighboring cells
         revealCell(r - 1, c);
         revealCell(r + 1, c);
         revealCell(r, c - 1);
@@ -106,11 +90,8 @@ const Minesweeper: React.FC = () => {
         revealCell(r + 1, c + 1);
       }
     };
-
     revealCell(row, col);
     setBoard(newBoard);
-
-    // Check for a win
     const isWin = newBoard
       .flat()
       .filter((cell) => !cell.isMine)
@@ -163,9 +144,7 @@ const Minesweeper: React.FC = () => {
               key={colIndex}
               className={`cell h-8 w-8 border border-gray-300 p-2 ${
                 cell.isRevealed ? "bg-white" : ""
-              } ${cell.isFlagged ? "bg-blue-200" : ""} ${
-                cell.isMine ? "bg-red-500" : ""
-              }`}
+              } ${cell.isFlagged ? "bg-blue-200" : ""}`}
               onClick={() => handleCellClick(rowIndex, colIndex)}
               onContextMenu={(e) => handleCellRightClick(e, rowIndex, colIndex)}
             >
