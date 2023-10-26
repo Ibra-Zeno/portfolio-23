@@ -5,7 +5,7 @@ import { Spinner, Image, Chip, Button, ButtonGroup } from "@nextui-org/react";
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import Footer from "@/components/Footer";
-import Navbar from "@/components/NavBar";
+import Navbar from "@/components/Nav";
 
 const Project: React.FC = () => {
   const router = useRouter();
