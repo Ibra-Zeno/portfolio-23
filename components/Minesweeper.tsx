@@ -2,8 +2,7 @@ import { Button, Tooltip } from "@nextui-org/react";
 import { Bomb, Flag } from "lucide-react";
 import React, { useState, useEffect } from "react";
 import MineModal from "./MineModal";
-// import "./Minesweeper.css"; // You'll need to create the CSS for styling
-
+// If cell is revealed, no flag, no mine, show number of adjacent mines
 interface Cell {
   isMine: boolean;
   isRevealed: boolean;
@@ -50,6 +49,9 @@ const Minesweeper: React.FC = () => {
   const handleCellClick = (row: number, col: number) => {
     if (flaggingMode) {
       const newBoard = [...board];
+      if (newBoard[row][col].isRevealed) {
+        return;
+      }
       newBoard[row][col].isFlagged = !newBoard[row][col].isFlagged;
       setBoard(newBoard);
       return;
