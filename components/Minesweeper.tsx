@@ -160,7 +160,7 @@ const Minesweeper: React.FC = () => {
   return (
     <>
       <section className="mx-auto flex w-fit flex-col justify-center rounded-xl ">
-        <div className="flex justify-between">
+        <div className="flex justify-between pl-3 pr-5">
           <div className="mb-2 flex items-center">
             <p className=" bg-gradient-to-r from-[#C33764] to-[#1D2671] bg-clip-text text-base font-semibold leading-7 text-transparent">
               Play Minesweeper
