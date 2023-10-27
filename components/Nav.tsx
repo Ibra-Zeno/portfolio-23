@@ -56,7 +56,7 @@ const Nav: React.FC = () => {
           <Link href="/">
             <Image
               src="/images/ik-logo.jpg"
-              className="max-w-10 max-h-10 rounded-full"
+              className="h-12 w-12 rounded-full"
               alt="IK logo"
             ></Image>
           </Link>
