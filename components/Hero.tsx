@@ -1,6 +1,25 @@
 import { Button } from "@nextui-org/react";
 import Link from "next/link";
 import { Image } from "@nextui-org/react";
+import { Github } from "lucide-react";
+
+const socialsArray = [
+  {
+    name: "Github",
+    link: "",
+    icon: <Github />,
+  },
+  {
+    name: "Github",
+    link: "",
+    icon: <Github />,
+  },
+  {
+    name: "Github",
+    link: "",
+    icon: <Github />,
+  },
+];
 
 const Hero: React.FC = () => {
   return (
@@ -8,10 +27,6 @@ const Hero: React.FC = () => {
       <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6 md:px-12 lg:px-24 lg:py-12">
         <div className="mx-auto flex max-w-7xl flex-wrap items-center">
           <div className="mb-8 flex flex-col items-start text-left md:mb-0 lg:mb-16 lg:w-1/2 lg:flex-grow lg:pr-6 xl:mt-0 xl:pr-24">
-            <span className="mb-8 text-xs font-bold uppercase tracking-widest text-blue-600">
-              {" "}
-              Your tagline{" "}
-            </span>
             <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">
               Hey, I&apos;m Ibrahim
             </h1>
@@ -21,6 +36,18 @@ const Hero: React.FC = () => {
               creating projects and of design theory. Beyond the code, I enjoy
               cycling and Brazilian Jiu-Jitsu.
             </p>
+            <div>
+              {socialsArray.map((social, i) => (
+                <Link
+                  href={social.link}
+                  key={i}
+                  className="mt-8 inline-flex items-center justify-center rounded-md border border-transparent bg-gradient-to-r from-[#C33764] to-[#1D2671] px-5 py-3 text-base font-medium text-white shadow-sm hover:from-[#FF416C] hover:to-[#FF4B2B]"
+                >
+                  {social.icon}
+                  <span className="ml-3">{social.name}</span>
+                </Link>
+              ))}
+            </div>
           </div>
           <div className="w-full rounded-xl lg:w-1/2 lg:max-w-lg">
             <div>
