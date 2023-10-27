@@ -62,8 +62,8 @@ export const portfolioData = {
           in the form of a security issue. If users can be more expressive,
           there was also the <strong>possibility of malicious code</strong>{" "}
           being injected into the database. This was solved by using the
-          sanitize-html package. This package allowed me to{" "}
-          <strong>sanitize the HTML</strong> before it was sent to the database,
+          sanitise-html package. This package allowed me to{" "}
+          <strong>sanitise the HTML</strong> before it was sent to the database,
           removing any malicious code.
           <br />
           <br />
@@ -189,7 +189,6 @@ export const portfolioData = {
       </p>
     ),
     quote: null,
-    img2: "",
     featuresIntro: () => (
       <p className="mb-6 text-base leading-8 text-gray-700">
         My custom-designed website for Optima, created to specifically meet the
@@ -298,7 +297,6 @@ export const portfolioData = {
       </>
     ),
 
-    img2: "",
     featuresIntro: () => (
       <p className="mb-6 text-base leading-8 text-gray-700">
         Built for speed, efficiency, and an optimal user experience, this robust
@@ -316,7 +314,6 @@ export const portfolioData = {
       "Server-side Rendering",
       "Static Site Generation",
     ],
-    improve: "",
     tech: [
       "React",
       "JavaScript",
@@ -333,102 +330,144 @@ export const portfolioData = {
   arch: {
     id: 1,
     name: "Architectural Portfolio",
-    title: "",
-    tagline: "",
-    overview: "",
-    img1: "",
-    mainTitle: "Making a Blog",
+    title: "Architectural Portfolio",
+    tagline: "Built from Blueprints",
+    overview:
+      "A portfolio website for an architect built to showcase their accomplishments while conveying a keen sense of design on the architect's behalf, made with NextJs.",
+    img1: "/images/projectIndex/arch/arch_home.png",
+    mainTitle: "Building Blocks",
     main: () => (
-      <p>
-        The aim was to allow people to share their insights from around the
-        world, while also putting my full-stack skills to the test. I wanted to
-        use a PostgreSQL database to store information on users as well as their
-        posts, likes, and comments so the user can have a more personalized
-        experience. The application&apos;s login uses NextAuth.js, giving the
-        flexibility of using multiple providers. In this case, users can log in
-        using Github, while people who want to see the features and capabilities
-        of the website can use the Demo account.
+      <p className="mb-12 text-base leading-7 text-gray-700">
+        This project was a fun and exciting challenge. It was asked of me by a
+        knowledgable designer and artistic person. Thus I was set the task of
+        creating a website to match their skills and capabilities. While having
+        the creative freedom to create a website that was both functional and
+        beautiful, I was also tasked with creating a reflection of the
+        designer&apos;s skills and personality.
+        <br />
+        <br />
+        The design process was a joint effort by the architect and I, shaped by
+        the work in their portfolio and the requirements of the website. The
+        architect wanted a website that was simple, elegant and modern. And so I
+        started with a basic layout, focusing on the positioning of elements and
+        the story a user would read through on their user journey. Hence I made
+        navigation a smooth flow from section to section while also allowing the
+        user to jump to a section of their choice.
+        <br />
+        <br />
+        The difficult part lie in how to present the work of the architect.
+        Given the nature of the portfolio and its extensive array of images, it
+        would seem apt to create a Gallery. The Gallery had to be intuitive,
+        seamless and have the ability to load images in as they were swiped to
+        avoid user wait times being endless. At the time, the available Gallery
+        packages for React were either too costly or not hiting the right mark,
+        so I decided to build it myself. This was achieved by using Framer
+        Motion and popmotion that allowed for a smooth Carousel with pagination
+        that was also responsive to swipe (or click and drags) for all devices.
+        While being challenging at the time, it is now my pride and joy.
+        <br />
+        <br />
+        And finally, the website colours were chosen by the architect to create
+        a subtle neon theme throughout, greatly emphasised by the dark mode (a
+        personal favourite). The design was a joy with TailwindCSS and NextJs,
+        allowing for a fast and responsive website that looks great on all
+        devices.
       </p>
     ),
 
     quote: null,
-    img2: "",
     featuresIntro: () => (
       <p className="mb-6 text-base leading-8 text-gray-700">
-        With an intuitive interface, powerful editor tools, and robust community
-        engagement options, this platform provides everything you need to share
-        your ideas with the world:
+        Optimised to showcase stunning projects and visuals, this reactive site
+        was thoughtfully crafted to represent a distinct identity online:
       </p>
     ),
     features: [
-      "User Authentication",
-      "Create, Edit, Publish and Delete Posts",
-      "Display Most Liked Posts",
-      "Separate Posts into Categories",
-      "Upload and Edit User Biographies",
-      "Likes",
-      "Comments",
-      "Categories",
-      "Search",
-      "Sanitise HTML",
-      "Quill Text Editor",
+      "Modern and Subtle Design",
+      "Functional Gallery",
       "Responsive Design",
+      "Theme Toggle",
+      "Logo Carousel",
+      "Server-side Rendering",
+      "Static Site Generation",
     ],
-    improve: "",
-    tech: ["NextJS", "React", "TailwindCSS", "popmotion", "FramerMotion"],
-    github: "https://Ibra-Zeno.github.io/odyssey",
-    website: "https://was-here.vercel.app/",
-    img: "/images/projectPage/odysseyShot.png",
+    tech: [
+      "NextJS",
+      "React",
+      "TypeScript",
+      "TailwindCSS",
+      "lucide",
+      "NextUI",
+      "popmotion",
+      "FramerMotion",
+    ],
+    github: "https://github.com/Ibra-Zeno/h-portfolio1.0",
+    website: "https://architect-portfolio-mu.vercel.app/",
   },
   summariser: {
     id: 1,
     name: "AI Summariser",
-    title: "",
-    tagline: "",
-    overview: "",
-    img1: "",
-    mainTitle: "Making a Blog",
+    title: "AI Summariser",
+    tagline: "Generate Concise Summaries",
+    overview:
+      "AI Summariser is a fast web-application that leverages OpenAI's API to provide quick and concise summaries of any URL entered into the search bar.",
+    img1: "/images/projectIndex/AI/AI_home.png",
+    mainTitle: "Generating Paragraphs with Transformers (GPT)",
     main: () => (
       <p>
-        The aim was to allow people to share their insights from around the
-        world, while also putting my full-stack skills to the test. I wanted to
-        use a PostgreSQL database to store information on users as well as their
-        posts, likes, and comments so the user can have a more personalized
-        experience. The application&apos;s login uses NextAuth.js, giving the
-        flexibility of using multiple providers. In this case, users can log in
-        using Github, while people who want to see the features and capabilities
-        of the website can use the Demo account.
+        Of my projects, this is one of the simpler tasks I have had to overcome.
+        The initial idea was to utilise AI to create a service to help
+        streamline the lives of others. An idea which I am sure has become more
+        common than adverts on YouTube. But I wanted to create something that
+        was simple, easy to use and fast.
+        <br />
+        <br />
+        With a chance to improve my handling of APIs, I scoured RapidAPI to find
+        an AI tool to integrating into a web application. I came across
+        OpenAI&apos;s API and was immediately drawn to the simplicity of the
+        API. It was easy to use and had a clear documentation. The API also had
+        a free tier which allowed for 100 requests per month. This was perfect
+        for my needs albeit I almost ran out of request during development.
+        <br />
+        <br />
+        After retrieving information for the API, I used Redux to persist the
+        data and display it on the frontend. This allowed me to have a local
+        state of the information being relayed to the application. I also used
+        Redux to create a loading state for the application, which would be
+        displayed while the API was being called. This was done to improve the
+        user experience and to avoid any confusion as to whether the application
+        was working or not.
+        <br />
+        <br />
+        In addition to using Redux as a state management tool, I also used
+        localStorage to save previous articles searched for by the user and
+        display them on the homepage. Finally, the styling for the app was
+        aiming for a simple and minimalist approach where users came do to one
+        thing and one thing only. This was achieved by using TailwindCSS and
+        Vite, which allowed for a fast and responsive web app.
       </p>
     ),
 
     quote: null,
-    img2: "",
     featuresIntro: () => (
       <p className="mb-6 text-base leading-8 text-gray-700">
-        With an intuitive interface, powerful editor tools, and robust community
-        engagement options, this platform provides everything you need to share
-        your ideas with the world:
+        Built leveraging state-of-the-art natural language processing models,
+        this application enables users to quickly summarise webpages with just
+        the click of a button:
       </p>
     ),
     features: [
-      "User Authentication",
-      "Create, Edit, Publish and Delete Posts",
-      "Display Most Liked Posts",
-      "Separate Posts into Categories",
-      "Upload and Edit User Biographies",
-      "Likes",
-      "Comments",
-      "Categories",
-      "Search",
-      "Sanitise HTML",
-      "Quill Text Editor",
       "Responsive Design",
+      "Copy Previous Articles",
+      "Save Articles",
+      "Minimalist Design",
+      "Loading State",
+      "OpenAI API",
+      "Easy to Use",
     ],
-    improve: "",
-    tech: ["React", "Redux", "JavaScript", "TailwindCSS"],
-    github: "https://Ibra-Zeno.github.io/odyssey",
-    website: "https://was-here.vercel.app/",
-    img: "/images/projectPage/odysseyShot.png",
+    tech: ["React", "Redux", "JavaScript", "Vite", "TailwindCSS"],
+    github: "https://github.com/Ibra-Zeno/Ai-Summariser",
+    website: "https://precious-moxie-325a15.netlify.app/",
   },
 };
 
@@ -439,13 +478,3 @@ export const projectOrder = [
   "arch",
   "summariser",
 ];
-/* 
-Title
-tagline
-Overview
-img1
-Vision/Foundation
-img2
-Features
-Future Improvements
-*/
