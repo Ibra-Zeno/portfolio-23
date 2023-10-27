@@ -36,7 +36,7 @@ const Hero: React.FC = () => {
               creating projects and of design theory. Beyond the code, I enjoy
               cycling and Brazilian Jiu-Jitsu.
             </p>
-            <div>
+            {/* <div>
               {socialsArray.map((social, i) => (
                 <Link
                   href={social.link}
@@ -47,7 +47,7 @@ const Hero: React.FC = () => {
                   <span className="ml-3">{social.name}</span>
                 </Link>
               ))}
-            </div>
+            </div> */}
           </div>
           <div className="w-full rounded-xl lg:w-1/2 lg:max-w-lg">
             <div>
