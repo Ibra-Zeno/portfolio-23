@@ -67,8 +67,8 @@ const Project: React.FC = () => {
                 {projectData.overview}
               </p>
               {projectData.quote !== null && (
-                <blockquote className="mb-6 rounded-lg border-x-4 border-x-green-300 bg-gray-100 p-4 text-left text-base font-bold tracking-wide text-gray-700 sm:px-7 md:leading-normal xl:leading-8">
-                  {projectData.quote}
+                <blockquote className="mb-12 rounded-lg border-x-4 border-x-sky-700 bg-gray-50 px-4 py-2 text-center text-base font-bold tracking-wide text-gray-700 shadow-lg sm:px-7 md:leading-normal xl:leading-8">
+                  {projectData.quote()}
                 </blockquote>
               )}
             </div>
@@ -111,7 +111,7 @@ const Project: React.FC = () => {
                     className="flex h-fit w-fit max-w-[30ch] gap-x-3"
                   >
                     <Sparkle
-                      className="mt-1 h-5 w-5 flex-none text-indigo-600"
+                      className="mt-1 h-5 w-5 flex-none text-sky-700"
                       aria-hidden="true"
                     />
                     <span>{feature}</span>
