@@ -1,6 +1,6 @@
 import { portfolioData, projectOrder } from "@/lib/portfolioData";
 import { useRouter } from "next/router";
-import { UploadCloud, ArrowLeftIcon, Radio, Code2 } from "lucide-react";
+import { Sparkle, Radio, Code2 } from "lucide-react";
 import { Spinner, Image, Chip, Button, ButtonGroup } from "@nextui-org/react";
 import { useEffect, useState } from "react";
 import Link from "next/link";
@@ -44,61 +44,45 @@ const Project: React.FC = () => {
   const navigateToProject = (projectId: string) => {
     router.push(`/${projectId}`);
   };
+  const handleOpenLink = (url: string) => {
+    // Open the link in a new tab or window
+    window.open(url, "_blank");
+  };
 
   return (
     <>
       <Navbar />
-      {/* Go Back Button */}
-      <Link href="/" className="hidden md:block">
-        <Button
-          radius="full"
-          size="lg"
-          isIconOnly
-          className="fixed top-24 p-1 md:left-[10%]"
-        >
-          <ArrowLeftIcon radius={999} />
-        </Button>
-      </Link>
-      <Link href="/" className="md:hidden">
-        <Button
-          radius="full"
-          size="md"
-          isIconOnly
-          className="fixed left-4 top-6 z-20 p-1"
-        >
-          <ArrowLeftIcon radius={999} />
-        </Button>
-      </Link>
-      {/* Main content */}
       <main className="mx-auto flex max-w-3xl px-4 py-16 pb-12 sm:px-6 lg:px-8 lg:py-4">
         <div className="max-w-2xl">
-          <div className="space-y-5 md:space-y-8">
-            <div className="space-y-3">
+          <div className="">
+            <div className="gap-y-1">
               <h2 className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-                Lorem ipsum dolor sit amet consectetur
+                {projectData.title}
               </h2>
-
-              <p className="mb-6 mt-6 text-xl leading-8 text-gray-700">
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ut
-                molestiae ipsam iste enim distinctio veritatis eaque facilis
-                maiores assumenda, ipsum laborum ad aliquam ex ullam omnis
-                dolorem impedit tempora excepturi.
+              <p className="mt-1 bg-gradient-to-r from-[#C33764] to-[#1D2671] bg-clip-text text-base font-semibold leading-7 text-transparent">
+                {projectData.tagline}
               </p>
+
+              <p className="mb-8 mt-3 flex text-xl leading-8 text-gray-700">
+                {projectData.overview}
+              </p>
+              {projectData.quote !== null && (
+                <blockquote className="mb-6 rounded-lg border-x-4 border-x-green-300 bg-gray-100 p-4 text-left text-base font-bold tracking-wide text-gray-700 sm:px-7 md:leading-normal xl:leading-8">
+                  {projectData.quote}
+                </blockquote>
+              )}
             </div>
 
-            <p className="text-base leading-7 text-gray-700">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi
-              nostrum iste assumenda laboriosam non
-            </p>
-
             <figure>
-              <Image
-                className="w-full rounded-xl object-cover"
-                src="https://images.unsplash.com/photo-1670272505340-d906d8d77d03?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80"
-                alt="Image Description"
-              />
+              <Link href={projectData.website}>
+                <Image
+                  className="w-full rounded-xl object-cover"
+                  src={projectData.img1}
+                  alt="Image Description"
+                />
+              </Link>
               <figcaption className="mt-3 text-center text-sm text-gray-500">
-                <div className="flex flex-row flex-wrap justify-center gap-x-2 rounded-full">
+                <div className="flex flex-row flex-wrap justify-center gap-x-2 gap-y-2 rounded-full">
                   {projectData.tech.map((tech, idx) => (
                     <div key={idx} className=" rounded-full bg-gray-100">
                       <Chip
@@ -114,111 +98,43 @@ const Project: React.FC = () => {
                 </div>
               </figcaption>
             </figure>
+            <section className="mb-16 flex flex-col">
+              <h3 className="mb-2 mt-6 text-2xl font-semibold">Features</h3>
+              {projectData.featuresIntro()}
+              <ul
+                role="list"
+                className=" flex flex-col gap-y-8 border-l-2  border-l-green-600/40  pl-4 text-sm leading-7 text-gray-600 sm:grid sm:grid-cols-2 sm:text-base"
+              >
+                {projectData.features.map((feature, idx) => (
+                  <li
+                    key={idx}
+                    className="flex h-fit w-fit max-w-[30ch] gap-x-3"
+                  >
+                    <Sparkle
+                      className="mt-1 h-5 w-5 flex-none text-indigo-600"
+                      aria-hidden="true"
+                    />
+                    <span>{feature}</span>
+                  </li>
+                ))}
+              </ul>
+            </section>
 
-            <p className="text-base leading-7 text-gray-700">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam,
-              veritatis repellendus. Tempora perspiciatis quisquam laboriosam
-              veritatis nisi velit provident debitis nobis, expedita cumque
-              veniam, aut, possimus eaque quia tenetur! Fugiat.
-            </p>
+            <h3 className="mb-3 text-2xl font-semibold">
+              {projectData.mainTitle}
+            </h3>
 
-            <p className="text-base leading-7 text-gray-700">
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Amet
-              repellendus labore a veritatis quae vero aspernatur et alias quos
-              rerum earum quam ut explicabo doloribus, consequuntur laboriosam
-              ratione recusandae voluptas!
-            </p>
-
-            <blockquote className="border-l-4 border-l-green-300 p-4 text-left sm:px-7">
-              <p className=" text-base text-gray-700 md:leading-normal xl:leading-8">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Distinctio nostrum, cupiditate vitae placeat quam amet itaque
-                aliquid deserunt!
-              </p>
-              <p className="mt-5 text-gray-800 dark:text-gray-200">
-                Nicole Grazioso
-              </p>
-            </blockquote>
-
-            <figure>
-              <Image
-                className="w-full rounded-xl object-cover"
-                src="https://images.unsplash.com/photo-1670272498380-eb330b61f3cd?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80"
-                alt="Image Description"
-              />
-              <figcaption className="mt-3 text-center text-sm text-gray-500">
-                A man and a woman looking at a cell phone.
-              </figcaption>
-            </figure>
-
-            <div className="space-y-3">
-              <h3 className="text-2xl font-semibold dark:text-white">
-                Bringing the culture of sharing to everyone
-              </h3>
-
-              <p className="text-base leading-7 text-gray-700">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Repellendus temporibus voluptatem omnis, possimus quibusdam, a
-                recusandae facere sequi perspiciatis eum magnam nesciunt libero
-                harum nobis quidem, corrupti cupiditate excepturi nemo.
-              </p>
+            <div className="text-base leading-7 text-gray-700">
+              {projectData.main()}
             </div>
 
-            <ul role="list" className="mt-8 space-y-8 text-gray-600">
-              <li className="flex gap-x-3">
-                <UploadCloud
-                  className="mt-1 h-5 w-5 flex-none text-indigo-600"
-                  aria-hidden="true"
-                />
-                <span>
-                  <strong className="font-semibold text-gray-900">
-                    Push to deploy.
-                  </strong>{" "}
-                  Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                  Maiores impedit perferendis suscipit eaque, iste dolor
-                  cupiditate blanditiis ratione.
-                </span>
-              </li>
-              <li className="flex gap-x-3">
-                <UploadCloud
-                  className="mt-1 h-5 w-5 flex-none text-indigo-600"
-                  aria-hidden="true"
-                />
-                <span>
-                  <strong className="font-semibold text-gray-900">
-                    SSL certificates.
-                  </strong>{" "}
-                  Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure
-                  qui lorem cupidatat commodo.
-                </span>
-              </li>
-              <li className="flex gap-x-3">
-                <UploadCloud
-                  className="mt-1 h-5 w-5 flex-none text-indigo-600"
-                  aria-hidden="true"
-                />
-                <span>
-                  <strong className="font-semibold text-gray-900">
-                    Database backups.
-                  </strong>{" "}
-                  Ac tincidunt sapien vehicula erat auctor pellentesque rhoncus.
-                  Et magna sit morbi lobortis.
-                </span>
-              </li>
-            </ul>
-
-            <p className="text-base leading-7 text-gray-700">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa nam
-              reiciendis omnis eum maiores earum. Ratione sequi laudantium ab,
-              quaerat dolores excepturi aspernatur consequuntur deleniti saepe
-              labore doloribus culpa voluptatum!
-            </p>
             {/* Navigation Buttons */}
             <div className="sticky inset-x-0 bottom-6 z-30 text-center lg:bottom-12">
               <ButtonGroup className="md:hidden">
                 <Button
                   size="sm"
                   className="bg-gradient-to-r from-[#0F2027] via-[#203A43] to-[#2C5364] font-bold text-stone-50 hover:text-stone-300"
+                  onClick={() => handleOpenLink(projectData.website)}
                   color="primary"
                   variant="shadow"
                 >
@@ -229,6 +145,7 @@ const Project: React.FC = () => {
                   size="sm"
                   className="font-sans tracking-wide"
                   startContent={<Code2 strokeWidth={1.7} />}
+                  onClick={() => handleOpenLink(projectData.github)}
                 >
                   Source
                 </Button>
@@ -239,6 +156,7 @@ const Project: React.FC = () => {
                   color="primary"
                   className="bg-gradient-to-r from-[#0F2027] via-[#203A43] to-[#2C5364] font-bold text-stone-50 hover:text-stone-300"
                   variant="shadow"
+                  onClick={() => handleOpenLink(projectData.website)}
                   startContent={<Radio />}
                 >
                   Live
@@ -246,6 +164,7 @@ const Project: React.FC = () => {
                 <Button
                   size="md"
                   className="bg-gray-200/40 font-bold text-gray-700 backdrop-blur-3xl hover:text-gray-900"
+                  onClick={() => handleOpenLink(projectData.github)}
                   variant="faded"
                   startContent={<Code2 />}
                 >
