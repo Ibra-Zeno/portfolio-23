@@ -1,4 +1,5 @@
 import React from "react";
+import { projArr } from "./Projects";
 import {
   Navbar,
   NavbarBrand,
@@ -26,8 +27,6 @@ const nunito = Nunito({
 
 const Nav: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
-
-  const menuItems = ["Profile", "Dashboard"];
 
   return (
     <Navbar
@@ -67,13 +66,6 @@ const Nav: React.FC = () => {
         className="mx-auto hidden justify-center gap-4 font-sans sm:flex"
         justify="end"
       >
-        {/* <NavbarBrand>
-          <Image
-            src="/images/ik-logo.jpg"
-            className="max-w-10 max-h-10 rounded-full"
-            alt="IK logo"
-          ></Image>
-        </NavbarBrand> */}
         <Dropdown
           className="font-sans"
           classNames={{
@@ -93,7 +85,7 @@ const Nav: React.FC = () => {
             </DropdownTrigger>
           </NavbarItem>
           <DropdownMenu
-            aria-label="ACME features"
+            aria-label="Ibrahim's Projects"
             className="w-[340px] font-sans"
             itemClasses={{
               base: "gap-4",
@@ -101,42 +93,15 @@ const Nav: React.FC = () => {
               description: "font-sans",
             }}
           >
-            <DropdownItem
-              key="autoscaling"
-              className="font-sans"
-              startContent={<OrbitIcon />}
-              description="ACME scales apps to meet user demand, automagically, based on load."
-            >
-              Autoscaling
-            </DropdownItem>
-            <DropdownItem
-              key="usage_metrics"
-              startContent={<OrbitIcon />}
-              description="Real-time metrics to debug issues. Slow query added? We’ll show you exactly where."
-            >
-              Usage Metrics
-            </DropdownItem>
-            <DropdownItem
-              key="production_ready"
-              startContent={<OrbitIcon />}
-              description="ACME runs on ACME, join us and others serving requests at web scale."
-            >
-              Production Ready
-            </DropdownItem>
-            <DropdownItem
-              key="99_uptime"
-              startContent={<OrbitIcon />}
-              description="Applications stay on the grid with high availability and high uptime guarantees."
-            >
-              +99% Uptime
-            </DropdownItem>
-            <DropdownItem
-              key="supreme_support"
-              startContent={<OrbitIcon />}
-              description="Overcome any challenge with a supporting team ready to respond."
-            >
-              +Supreme Support
-            </DropdownItem>
+            {projArr.map((proj, i) => (
+              <DropdownItem
+                key={i}
+                startContent={proj.icon}
+                description={proj.desc}
+              >
+                {proj.name}
+              </DropdownItem>
+            ))}
           </DropdownMenu>
         </Dropdown>
       </NavbarContent>
