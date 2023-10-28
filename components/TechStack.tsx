@@ -110,7 +110,7 @@ const TechStack: React.FC = () => {
                       width={100}
                     />
                   </div>
-                  <p className="mt-3.5 text-sm font-bold leading-6 text-stone-800">
+                  <p className="mt-3.5 text-xs font-bold leading-6 text-stone-800 md:text-sm">
                     {icon.name}
                   </p>
                 </div>
@@ -136,71 +136,15 @@ const TechStack: React.FC = () => {
                         width={40}
                       ></Image>
                     </div>
-                    <p className="text-lg font-bold leading-6 text-black">
+                    <p className="text-base font-bold leading-6 text-black md:text-lg">
                       {skill.name}
                     </p>
                   </div>
-                  <div className="mt-4 pl-1 pr-5 text-base text-gray-500">
+                  <div className="mt-4 pl-1 pr-5 text-sm text-gray-500 md:text-base">
                     {skill.description}
                   </div>
                 </li>
               ))}
-              {/* You can also map over an array if these items are repetitive */}
-              {/* This is just a single item as an example */}
-              {/* <li>
-                <div className="flex flex-row items-center gap-x-6 align-middle">
-                  <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-gray-100 text-black">
-                    <DatabaseZap />
-                  </div>
-                  <p className="text-lg font-bold leading-6 text-black">
-                    Tools for every stack
-                  </p>
-                </div>
-                <div className="mt-4 pl-1 pr-5 text-base text-gray-500">
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                  Dolorem dolore illo, quasi corrupti debitis ipsam. Perferendis
-                  harum officia non blanditiis, aspernatur magni praesentium
-                  inventore illo fuga rem tenetur voluptatem excepturi?
-                </div>
-              </li>
-              <li>
-                <div className="flex flex-row items-center gap-x-6 align-middle">
-                  <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-gray-100 text-black">
-                    <Image
-                      src="/images/Icons/React.svg"
-                      alt="React icon"
-                      height={30}
-                      className="p-1.5"
-                      width={40}
-                    ></Image>
-                  </div>
-                  <p className="text-lg font-bold leading-6 text-black">
-                    Tools for every stack
-                  </p>
-                </div>
-                <div className="mt-4 pl-1 pr-5 text-base text-gray-500">
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                  Dolorem dolore illo, quasi corrupti debitis ipsam. Perferendis
-                  harum officia non blanditiis, aspernatur magni praesentium
-                  inventore illo fuga rem tenetur voluptatem excepturi?
-                </div>
-              </li>
-              <li>
-                <div className="flex flex-row items-center gap-x-6 align-middle">
-                  <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-gray-100 text-black">
-                    <Brush />
-                  </div>
-                  <p className="text-lg font-bold leading-6 text-black">
-                    Tools for every stack
-                  </p>
-                </div>
-                <div className="mt-4 pl-1 pr-5 text-base text-gray-500">
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                  Dolorem dolore illo, quasi corrupti debitis ipsam. Perferendis
-                  harum officia non blanditiis, aspernatur magni praesentium
-                  inventore illo fuga rem tenetur voluptatem excepturi?
-                </div>
-              </li> */}
             </ul>
           </div>
         </div>
