@@ -2,7 +2,7 @@ import { Globe2, Mail, Github, Linkedin, FileText } from "lucide-react";
 import Minesweeper from "./Minesweeper";
 import { Link } from "@nextui-org/react";
 
-const contactIcons = [
+export const contactIcons = [
   {
     name: "GitHub",
     href: "https://github.com/Ibra-Zeno",
@@ -23,7 +23,7 @@ const contactIcons = [
 const features = [
   {
     name: "Location:",
-    description: () => <p>London, UK,</p>,
+    description: () => <p className="text-sm md:text-base">London, UK,</p>,
     icon: (
       <Globe2
         className="absolute left-1 top-1 h-5 w-5 text-indigo-600"
@@ -34,7 +34,9 @@ const features = [
   {
     name: "Email",
     description: () => (
-      <Link href="mailto:sanity@duck.com">sanity@duck.com</Link>
+      <Link href="mailto:sanity@duck.com" className="text-sm md:text-base">
+        sanity@duck.com
+      </Link>
     ),
     icon: (
       <Mail
@@ -52,17 +54,17 @@ const About: React.FC = () => {
         <div className="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 sm:gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-2">
           <div className="px-6 sm:px-0 lg:pr-8 lg:pt-4">
             <div className="lg:max-w-lg">
-              <p className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+              <p className="mt-2 text-center text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl lg:text-left">
                 Connect{" "}
                 <span className="ml-2 text-base font-semibold tracking-wide text-slate-700">
                   (Only If You Win)
                 </span>
               </p>
-              <p className="text-lg leading-8 text-gray-600">
+              <p className="mx-auto mt-4 max-w-[50ch] text-center text-base leading-8 text-gray-600 md:text-lg lg:text-left">
                 I&apos;d love to hear from you! The best way to reach me is by
                 <Link
                   href="mailto:sanity@duck.com"
-                  className="ml-1 mt-6 text-lg leading-8 text-sky-600 underline underline-offset-4 hover:text-sky-500"
+                  className="ml-1 leading-8 text-inherit text-sky-600 underline underline-offset-4 hover:text-sky-500"
                 >
                   email
                 </Link>
@@ -71,13 +73,13 @@ const About: React.FC = () => {
                 questions or just want to connect, feel free to get in touch. I
                 look forward to hearing from you!
               </p>
-              <dl className="mt-10 max-w-xl space-y-8 text-base leading-7 text-gray-600 lg:max-w-none">
+              <dl className="mx-auto mt-12 flex max-w-xl flex-col gap-y-5 text-base leading-7 text-gray-600 lg:max-w-none">
                 {features.map((feature) => (
                   <div
                     key={feature.name}
                     className="relative flex justify-between px-9"
                   >
-                    <dt className="inline font-semibold text-gray-900">
+                    <dt className="inline-flex items-center text-sm font-semibold text-gray-900 md:text-base">
                       {feature.icon}
                       {feature.name}
                     </dt>{" "}
