@@ -1,5 +1,7 @@
 import Head from "next/head";
+import Navbar from "./Nav";
 import Footer from "./Footer";
+import { ThemeSwitcher } from "./ThemeSwitcher";
 
 type LayoutProps = {
   children: React.ReactNode;
@@ -12,8 +14,9 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
         <title>Ibrahim K</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-
-      <main className="flex-grow">{children}</main>
+      <Navbar />
+      <main className=" flex-grow">{children}</main>
+      <ThemeSwitcher />
       <Footer />
     </div>
   );
