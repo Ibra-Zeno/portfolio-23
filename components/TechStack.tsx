@@ -71,19 +71,19 @@ const skillsArr = [
     icon: "/images/Icons/React.svg",
     name: "Front-End",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem dolore illo, quasi corrupti debitis ipsam. Perferendis harum officia non blanditiis, aspernatur magni praesentium inventore illo fuga rem tenetur voluptatem excepturi?",
+      "With years of experience building responsive client-side experiences, I create accessible web interfaces that are optimized for all devices. I bring visual designs to life on the frontend using modern technologies and best practices for performance and SEO.",
   },
   {
     icon: "/images/Icons/database-zap.svg",
     name: "Back-End",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem dolore illo, quasi corrupti debitis ipsam. Perferendis harum officia non blanditiis, aspernatur magni praesentium inventore illo fuga rem tenetur voluptatem excepturi?",
+      " I build efficient server-side logic to power applications, integrating seamlessly with databases and third-party services. With expertise in APIs and microservices, I develop robust and scalable backends to handle complex data and traffic demands.",
   },
   {
     icon: "/images/Icons/design.svg",
     name: "UI/UX",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem dolore illo, quasi corrupti debitis ipsam. Perferendis harum officia non blanditiis, aspernatur magni praesentium inventore illo fuga rem tenetur voluptatem excepturi?",
+      "Using design theory and user-centered methodologies, I conceptualise and design interfaces focused on aesthetics, simplicity and ease of use. My designs enhance user experiences through intuitive flows and interactions that balance business goals, technical capabilities and human needs.",
   },
 ];
 
@@ -105,7 +105,7 @@ const TechStack: React.FC = () => {
                       alt={icon.name}
                       isBlurred
                       draggable={false}
-                      className="xs:w-16 w-12 p-2"
+                      className="w-12 p-2 xs:w-16"
                       height={100}
                       width={100}
                     />
