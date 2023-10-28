@@ -1,4 +1,4 @@
-import { Button, Tooltip } from "@nextui-org/react";
+import { Button, Link, Tooltip } from "@nextui-org/react";
 import { Bomb, Flag } from "lucide-react";
 import React, { useState, useEffect } from "react";
 import MineModal from "./MineModal";
@@ -254,9 +254,18 @@ const Minesweeper: React.FC = () => {
           {win && (
             <>
               {/* {setGamePlaying(false)} */}
-              <div className="my-4 text-center text-lg font-bold text-green-500 lg:text-2xl">
+              <div className="mb-2 mt-4 text-center text-lg font-bold text-green-500 lg:text-2xl">
                 You Win! 🏆
               </div>
+              <p className="mx-auto mb-4 w-fit rounded-full bg-sky-100 px-2 text-center text-base leading-7 text-gray-700">
+                My first{" "}
+                <Link
+                  href="https://ibra-zeno.github.io/Khabib/"
+                  target="_blank"
+                >
+                  website
+                </Link>
+              </p>
               <Button
                 className=" mx-auto w-fit text-xs font-bold tracking-wider md:text-sm"
                 variant="shadow"
