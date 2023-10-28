@@ -89,7 +89,7 @@ const skillsArr = [
 
 const TechStack: React.FC = () => {
   return (
-    <section className="bg-white">
+    <section className="">
       <div className="mx-auto max-w-7xl px-8 py-16 md:px-12 lg:flex lg:px-16">
         <div className="lg:w-1/2 ">
           <div className="top-0 pb-16 pt-8">
@@ -97,7 +97,7 @@ const TechStack: React.FC = () => {
               {TechIcons.map((icon, idx) => (
                 <div
                   key={idx}
-                  className="flex  flex-col items-center rounded-full text-black"
+                  className="flex  flex-col items-center rounded-full "
                 >
                   <div className="rounded-full bg-gray-100 p-2.5 shadow-sm">
                     <Image
@@ -110,7 +110,7 @@ const TechStack: React.FC = () => {
                       width={100}
                     />
                   </div>
-                  <p className="mt-3.5 text-xs font-bold leading-6 text-stone-800 md:text-sm">
+                  <p className="mt-3.5 text-xs font-bold leading-6 md:text-sm">
                     {icon.name}
                   </p>
                 </div>
@@ -127,20 +127,20 @@ const TechStack: React.FC = () => {
               {skillsArr.map((skill, idx) => (
                 <li key={idx}>
                   <div className="flex flex-row items-center gap-x-6 align-middle">
-                    <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-gray-100 text-black">
+                    <div className="bg-main flex h-12 w-12 items-center justify-center rounded-xl ">
                       <Image
                         src={skill.icon}
                         alt="React icon"
                         height={30}
-                        className="p-1.5"
+                        className="p-1.5 invert"
                         width={40}
                       ></Image>
                     </div>
-                    <p className="text-base font-bold leading-6 text-black md:text-lg">
+                    <p className="text-base font-bold leading-6  md:text-lg">
                       {skill.name}
                     </p>
                   </div>
-                  <div className="mt-4 pl-1 pr-5 text-sm text-gray-500 md:text-base">
+                  <div className="mt-4 pl-1 pr-5 text-sm  md:text-base">
                     {skill.description}
                   </div>
                 </li>
