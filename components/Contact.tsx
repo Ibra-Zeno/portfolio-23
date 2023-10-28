@@ -56,7 +56,7 @@ const About: React.FC = () => {
             <div className="lg:max-w-lg">
               <p className="mt-2 text-center text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl lg:text-left">
                 Connect{" "}
-                <span className="ml-2 text-base font-semibold tracking-wide text-slate-700">
+                <span className="ml-2 block text-base font-semibold tracking-wide text-slate-700 md:inline-block">
                   (Only If You Win)
                 </span>
               </p>
