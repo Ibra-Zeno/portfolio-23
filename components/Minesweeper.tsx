@@ -2,6 +2,7 @@ import { Button, Link, Tooltip } from "@nextui-org/react";
 import { Bomb, Flag } from "lucide-react";
 import React, { useState, useEffect } from "react";
 import MineModal from "./MineModal";
+import { runFireworks } from "@/lib/fireworks";
 // If cell is revealed, no flag, no mine, show number of adjacent mines
 interface Cell {
   isMine: boolean;
@@ -119,6 +120,7 @@ const Minesweeper: React.FC = () => {
       .every((cell) => cell.isRevealed);
     if (isWin) {
       setWin(true);
+      runFireworks();
     }
   };
 
