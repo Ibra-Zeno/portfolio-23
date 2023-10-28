@@ -1,4 +1,5 @@
 import { Image, Link } from "@nextui-org/react";
+import { JSX } from "react";
 
 export const portfolioData = {
   odyssey: {
@@ -39,8 +40,8 @@ export const portfolioData = {
           <br />
           As amazing as the tutorial was, it only got me so far. There was no
           inclusion of Authentication, deleting posts, categories, editing posts
-          and so much more of the functionality I would like to include. This is
-          where I had to get creative. I had to think of the best way to
+          and so much more of the functionality I would have like to include.
+          This is where I had to get creative. I had to think of the best way to
           implement the features I wanted while also keeping the code clean and
           readable. I decided to use{" "}
           <strong>NextAuth.js for authentication</strong>, as it allowed
@@ -53,7 +54,7 @@ export const portfolioData = {
           <br />
           <br />
           With the authentication in place, there was some functionality to
-          attend to. The most annoying this about the project so far was the
+          attend to. The most annoying thing about the project so far was the
           textarea when users were creating their stories. We want a user to
           express themselves with more tools than just language. This is where
           QuillJs came it. It is a <strong>WYSIWYG text editor</strong> vastly
@@ -77,18 +78,18 @@ export const portfolioData = {
             />
           </Link>
           <figcaption className="mt-3 text-center text-sm text-gray-500">
-            Run-through of Odyssey&apos;s functionality.
+            Example of Odyssey&apos;s functionality.
           </figcaption>
         </figure>
         <p className="mb-12 text-base leading-7 text-gray-700">
           Then, for the functionality, we only needed a few simple things. Users
           needed the ability to <strong>edit their posts</strong>, even if
-          published, and delete them in the occasion arised. In addition, we
-          would like to see popular posts and what others think so I implemented
-          a <strong>likes and comment</strong> section for every post. All this
-          required modifications to the database and APIs for getting, editing
-          and removing all the posts, likes and comments. A process which is was
-          as fun as it was laborious.
+          published, and delete them if the occasion arised. In addition, we
+          would like to see popular posts and what others think about stories so
+          I implemented a <strong>likes and comment</strong> section for every
+          post. All this required modifications to the database and APIs for
+          getting, editing and removing all the posts, likes and comments. A
+          process which is was as fun as it was laborious.
           <br />
           <br />
           Functionality&apos;s final touches came in the form of{" "}
@@ -160,27 +161,29 @@ export const portfolioData = {
     mainTitle: "Planning for a Planner",
     main: () => (
       <p className="mb-12 text-base leading-7 text-gray-700">
-        The aim of this project was to test my design skills and create a custom
-        website for a client. Essentially, the client wanted to create an online
-        presence in which they can showcase their services while being able to
-        introduce themselves to potential clients. Given the busy lifestyle of
-        the client, we wanted to create a website that was easy to maintain and
-        update while conveying wants and in needs in as few meetings as
-        possible.
+        The aim of this project was to <strong>test my design skills</strong>{" "}
+        and create a custom website for a client. Essentially, the client wanted
+        to create an online presence in which they can showcase their services
+        while being able to introduce themselves to potential clients. Given the
+        busy lifestyle of the client, we wanted to create a website that was
+        easy to maintain and update while conveying wants and in needs in as few
+        meetings as possible.
         <br />
         <br />
         Given the client did not want any functionality such as a payment system
         or an online booking process, I decided we can work with the fundamental
-        toolset of JavaScript, HTML and (a little extra fancy) TailwindCSS. That
-        being the case, there is an extra emphasis frontend, namely design
-        theory, user experience and SEO.
+        toolset of <strong>JavaScript</strong>, <strong>HTML</strong> and (a
+        little fancier) <strong>TailwindCSS</strong>. That being the case, there
+        is an extra
+        <strong>emphasis on frontend</strong>, namely design theory, user
+        experience and SEO.
         <br />
         <br />
         The design process was guided by meetings with the client to view
         current works and make improvement for future iterations, while also
         taking into account the client&apos;s new ideas. The client wanted a
-        professional, simple and colourful, with a focus on the services they
-        provide and the courses they offer.
+        <strong>professional, simple and colourful</strong>, with a focus on the
+        services they provide and the courses they offer.
         <br />
         <br />
         Ultimately, the client was happy with the final product and is now using
@@ -218,16 +221,18 @@ export const portfolioData = {
     tagline: "A Store with Protection",
     quote: () => (
       <div>
-        <h4>Test Card Details</h4>
-        <p className="font-semibold">Card Number: 4242 4242 4242 4242</p>
-        <div className="flex justify-center gap-x-4 font-semibold">
+        <h4 className="text-base font-bold">Test Card Details</h4>
+        <p className="mt-2 text-sm font-semibold">
+          Card Number: 4242 4242 4242 4242
+        </p>
+        <div className="my-2 flex justify-center gap-x-4 text-sm font-semibold">
           <p>Expiry: 04/24</p>
           <p>CVC: 424</p>
         </div>
       </div>
     ),
     overview:
-      "An E-commerce store with a live payment process. The project focuses on security and functionality while also being easy to use and intuitive. The website is built using React, TypeScript, NextJs, Sanity, TailwindCSS and Stripe.",
+      "An E-commerce store with a live payment process. The project focuses on security and functionality while also being easy to use and alter. The website is built using React, TypeScript, NextJs, Sanity, TailwindCSS and Stripe.",
     img1: "/images/projectIndex/ecommerce/ecommerce_home.png",
     mainTitle: "Paying for It",
     main: () => (
@@ -236,26 +241,27 @@ export const portfolioData = {
           This project began as a method to test my skills and elevate my
           opportunities in what I can create and develop. I wanted to create a
           project that was both fun and challenging, while also being able to
-          showcase my skills. I decided to create an e-commerce store with a
+          showcase my skills. I decided to create an E-commerce store with a
           live payment process. This would allow me to test my skills in
-          creating a full-stack application while also learning new technologies
-          such as Stripe and Sanity.
+          creating a <strong>full-stack application</strong> while also learning
+          new technologies such as Stripe and Sanity.
           <br />
           <br />
-          To begin with I was lost in finding a way to keep the data for the
+          To begin with I was lost in finding a way to persist the data for the
           store and the products. I wanted to use a database to store the
-          information on the products, but I also wanted to use a CMS to allow
-          the client to easily update the products. This is where I came across
-          Sanity. Sanity is a flexible, developer-friendly content management
-          system (CMS) that makes it easy to build customised content models and
-          input interfaces. Sanity is completely customisable and can be used to
-          build simple to complex applications. This allowed me to separate
-          concerns, where I have the frontend to deal with in one department
-          while the data is decoupled and easily malleable. Using a CMS also
-          allowed me to create a custom input for the client to upload images
-          for the products. This was perfect as it allowed the client to upload
-          images of the products without having to worry about the size or the
-          format of the image.
+          information on the products, but I also wanted to use a{" "}
+          <strong>CMS</strong> to allow the client to easily update the
+          products. This is where I came across <strong>Sanity</strong>. Sanity
+          is a flexible, developer-friendly Content Management System (CMS) that
+          makes it easy to build customised content models and input interfaces.
+          Sanity is completely customisable and can be used to build simple to
+          complex applications. This allowed me to separate concerns, where I
+          have the frontend to deal with in one department while the{" "}
+          <strong>data is decoupled</strong> and easily malleable. Using a CMS
+          also allowed me to create a custom input for the client to upload
+          images for the products. This was perfect as it allowed the{" "}
+          <strong>client to upload images</strong> of the products without
+          having to worry about the size or the format of the image.
           <br />
           <br />
         </p>
@@ -275,31 +281,33 @@ export const portfolioData = {
           With the CMS in place, I wanted not only to create a store with
           customisable content, but a store from which you can buy products.
           This led to implementing a shopping cart, buy buttons with varying
-          quantities and ultimately a live payment process. This how Stripe
-          entered the project. Stripe is a payment processing platform that
-          allows for a secure and easy payment process. It allows for a simple
-          integration into any project and is developer friendly. It also allows
-          for a test mode, which allows for a test payment process without the
-          need for real card details. Given you are not buying real assets nor
-          do you want to give away card information on a website made by the
-          likes of me, this was perfect.
+          quantities and ultimately a <strong>live payment process</strong>.
+          This how Stripe entered the project. <strong>Stripe</strong> is a
+          payment processing platform that allows for a secure and easy payment
+          process. It allows for a simple integration into any project and is
+          developer friendly. It also allows for a test mode, which allows for a
+          test payment process without the need for real card details. Given you
+          are not buying real assets nor do you want to give away card
+          information on a website made by the likes of me, this was perfect.
           <br />
           <br />
           Now everything was in place, I needed a way to display the products on
-          the frontend. I used NextJs and React for its server-side rendering.
-          This would allow me to create a fast and responsive website that would
-          be able to handle a large amount of traffic. NextJs also allows for a
-          static site generation, which would allow me to create a static
-          website that can be hosted on a CDN. Thus a fast website that can be
-          hosted anywhere in the world. The website is also fully responsive and
-          looks great on all devices.
+          the frontend. I used NextJs and React for its{" "}
+          <strong>server-side rendering</strong>. This would allow me to create
+          a fast and responsive website that would be able to handle a large
+          amount of traffic. NextJs also allows for a static site generation,
+          which would allow me to create a <strong>static website</strong> that
+          can be hosted on a <strong>CDN</strong>. Thus a fast website that can
+          be hosted anywhere in the world. The website is also fully{" "}
+          <strong>responsive</strong>
+          and looks great for all screens.
         </p>
       </>
     ),
 
     featuresIntro: () => (
       <p className="mb-6 text-base leading-8 text-gray-700">
-        Built for speed, efficiency, and an optimal user experience, this robust
+        Built for speed, efficiency, and an optimal user experience, this
         application leverages the capabilities of React, Stripe, and other
         modern web technologies:
       </p>
@@ -340,38 +348,42 @@ export const portfolioData = {
       <p className="mb-12 text-base leading-7 text-gray-700">
         This project was a fun and exciting challenge. It was asked of me by a
         knowledgable designer and artistic person. Thus I was set the task of
-        creating a website to match their skills and capabilities. While having
-        the creative freedom to create a website that was both functional and
-        beautiful, I was also tasked with creating a reflection of the
-        designer&apos;s skills and personality.
+        creating a website to{" "}
+        <strong>match their skills and capabilities</strong>. While having the
+        creative freedom to create a website that was both{" "}
+        <strong>functional</strong> and beautiful, I was also tasked with
+        creating a reflection of the designer&apos;s skills and personality.
         <br />
         <br />
         The design process was a joint effort by the architect and I, shaped by
         the work in their portfolio and the requirements of the website. The
-        architect wanted a website that was simple, elegant and modern. And so I
-        started with a basic layout, focusing on the positioning of elements and
-        the story a user would read through on their user journey. Hence I made
-        navigation a smooth flow from section to section while also allowing the
-        user to jump to a section of their choice.
+        architect wanted a website that was{" "}
+        <strong>simple, elegant and modern</strong>. And so I started with a
+        basic layout, focusing on the positioning of elements and the story a
+        user would read through on their <strong>user journey</strong>. Hence I
+        made navigation a smooth flow from section to section while also
+        allowing the user to jump to a section of their choice.
         <br />
         <br />
         The difficult part lie in how to present the work of the architect.
         Given the nature of the portfolio and its extensive array of images, it
-        would seem apt to create a Gallery. The Gallery had to be intuitive,
-        seamless and have the ability to load images in as they were swiped to
-        avoid user wait times being endless. At the time, the available Gallery
-        packages for React were either too costly or not hiting the right mark,
-        so I decided to build it myself. This was achieved by using Framer
-        Motion and popmotion that allowed for a smooth Carousel with pagination
-        that was also responsive to swipe (or click and drags) for all devices.
-        While being challenging at the time, it is now my pride and joy.
+        would seem apt to create a <strong>Gallery</strong>. The Gallery had to
+        be intuitive, seamless and have the ability to load images in as they
+        were swiped to avoid user wait times being endless. At the time, the
+        available Gallery packages for React were either too costly or not
+        hitting the right mark, so I decided to <strong>build it myself</strong>
+        . This was achieved by using Framer Motion and popmotion that allowed
+        for a smooth Carousel with pagination that was also{" "}
+        <strong>responsive to swipe</strong> (or click and drags) for all
+        devices. While being challenging at the time, it is now my pride and
+        joy.
         <br />
         <br />
         And finally, the website colours were chosen by the architect to create
         a subtle neon theme throughout, greatly emphasised by the dark mode (a
         personal favourite). The design was a joy with TailwindCSS and NextJs,
-        allowing for a fast and responsive website that looks great on all
-        devices.
+        allowing for a <strong>fast</strong> and responsive website that works
+        regardless of the device.
       </p>
     ),
 
@@ -414,37 +426,39 @@ export const portfolioData = {
     img1: "/images/projectIndex/AI/AI_home.png",
     mainTitle: "Generating Paragraphs with Transformers (GPT)",
     main: () => (
-      <p>
+      <p className="mb-12 text-base leading-7 text-gray-700">
         Of my projects, this is one of the simpler tasks I have had to overcome.
-        The initial idea was to utilise AI to create a service to help
-        streamline the lives of others. An idea which I am sure has become more
-        common than adverts on YouTube. But I wanted to create something that
-        was simple, easy to use and fast.
+        The initial idea was to utilise <strong>AI</strong> to create a service
+        to help streamline the lives of others. An idea which I am sure has
+        become more common than strawberry vapes. But I wanted to create
+        something that was simple, easy to use and fast.
         <br />
         <br />
-        With a chance to improve my handling of APIs, I scoured RapidAPI to find
-        an AI tool to integrating into a web application. I came across
-        OpenAI&apos;s API and was immediately drawn to the simplicity of the
-        API. It was easy to use and had a clear documentation. The API also had
-        a free tier which allowed for 100 requests per month. This was perfect
-        for my needs albeit I almost ran out of request during development.
+        With a chance to improve my handling of <strong>APIs</strong>, I scoured
+        RapidAPI to find an AI tool to integrating into a web application. I
+        came across <strong>OpenAI&apos;s API</strong> and was immediately drawn
+        to the simplicity of the API. It was easy to use and had a clear
+        documentation. The API also had a free tier which allowed for 100
+        requests per month. This was perfect for my needs albeit I almost ran
+        out of request during development.
         <br />
         <br />
-        After retrieving information for the API, I used Redux to persist the
-        data and display it on the frontend. This allowed me to have a local
-        state of the information being relayed to the application. I also used
-        Redux to create a loading state for the application, which would be
-        displayed while the API was being called. This was done to improve the
-        user experience and to avoid any confusion as to whether the application
-        was working or not.
+        After retrieving the data from the API, I used <strong>Redux</strong> to
+        store the information and display it on the frontend. This allowed me to
+        have a local state of the information being relayed to the application.
+        I also used Redux to create a <strong>loading state</strong> for the
+        application, which would be displayed while the API was being called.
+        This was done to improve the <strong>user experience</strong> and to
+        avoid any confusion as to whether the application was working or not.
         <br />
         <br />
         In addition to using Redux as a state management tool, I also used
         localStorage to save previous articles searched for by the user and
         display them on the homepage. Finally, the styling for the app was
         aiming for a simple and minimalist approach where users came do to one
-        thing and one thing only. This was achieved by using TailwindCSS and
-        Vite, which allowed for a fast and responsive web app.
+        thing and one thing only. This was achieved by using TailwindCSS and{" "}
+        <strong>Vite</strong>, which allowed for a{" "}
+        <strong>fast and responsive</strong> web app.
       </p>
     ),
 
