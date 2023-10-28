@@ -56,7 +56,7 @@ const projArr = [
 
 const Projects: React.FC = () => {
   return (
-    <section className="xs:p-8 mx-auto min-h-screen w-full p-4">
+    <section className="mx-auto min-h-screen w-full p-4 xs:p-8">
       <div className="">
         {/*         <Card
           className="mx-auto flex w-full max-w-7xl flex-col flex-wrap justify-center gap-x-6  p-12 px-24"
@@ -71,30 +71,29 @@ const Projects: React.FC = () => {
               key={idx}
               className="relative mx-auto flex w-fit flex-col justify-center justify-items-center gap-x-12 lg:flex-row"
             >
-              <Card
-                className="group mx-auto flex w-fit max-w-[20rem] items-start justify-start"
+              {/* <Card
+                className="group  flex w-fit max-w-[20rem] items-start justify-start"
                 isPressable
                 isHoverable
                 shadow="lg"
-              >
-                <Image
-                  removeWrapper
-                  alt="Card background"
-                  loading="lazy"
-                  className="z-0 aspect-square h-full w-full object-cover"
-                  src={proj.img}
-                />
-                {/* Icon in center of image */}
-                <div className="absolute inset-0 flex items-center justify-items-center">
-                  {/* <Image
+              > */}
+              <Image
+                removeWrapper
+                alt="Card background"
+                loading="lazy"
+                className="z-0 mx-auto aspect-square h-full w-full max-w-[20rem] object-cover"
+                src={proj.img}
+              />
+              {/* Icon in center of image */}
+              <div className="absolute inset-0 flex items-center justify-items-center">
+                {/* <Image
                     removeWrapper
                     src={proj.icon}
                     alt="icon"
                     isBlurred
                     className="mx-auto h-14 w-14 object-cover"
                   /> */}
-                </div>
-              </Card>
+              </div>
               <div className="relative flex flex-col justify-start gap-y-12">
                 <div className="w-fit">
                   <h3 className="my-6 mb-4 text-center text-3xl font-extrabold text-gray-700 lg:text-left">
