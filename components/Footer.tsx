@@ -1,12 +1,14 @@
 import Link from "next/link";
-import { Image } from "@nextui-org/react";
+import { Image, Chip } from "@nextui-org/react";
 import { Instagram, Github, Twitter } from "lucide-react";
+
+const websiteTech = ["React", "TypeScript", "NextJs", "TailwindCSS", "NextUI"];
 
 const Footer: React.FC = () => {
   return (
     <footer className="bg-white">
       <div className="mx-auto overflow-hidden border-t border-gray-300 px-4 py-7 sm:px-6 lg:px-8">
-        <div className="mx-auto flex items-center justify-center text-center text-2xl font-bold">
+        <div className="mx-auto mb-4 flex items-center justify-center text-center text-2xl font-bold">
           <Link href="/" className="flex h-fit w-fit justify-center">
             <Image
               src="/images/ik-logo.jpg"
@@ -16,7 +18,7 @@ const Footer: React.FC = () => {
             ></Image>
           </Link>
         </div>
-        <div className="mt-5 flex justify-center space-x-6">
+        {/* <div className="mt-5 flex justify-center space-x-6">
           <span className="m-auto inline-flex w-full justify-center gap-3 md:w-auto md:justify-start">
             <Link
               href="#"
@@ -40,6 +42,20 @@ const Footer: React.FC = () => {
               <Instagram />
             </Link>
           </span>
+        </div> */}
+
+        <div className="my-2 flex flex-row justify-center gap-x-2">
+          {websiteTech.map((tech, idx) => (
+            <div key={idx} className=" flex flex-row">
+              <Chip
+                variant="shadow"
+                size="sm"
+                className="bg-stone-400/40 text-xs  font-bold tracking-wide text-slate-700"
+              >
+                {tech}
+              </Chip>
+            </div>
+          ))}
         </div>
         <p className="mt-3 text-center">
           <span className="mx-auto mt-2 text-sm text-gray-500">
