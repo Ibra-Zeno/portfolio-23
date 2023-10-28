@@ -1,5 +1,6 @@
 import { CloudIcon } from "lucide-react";
 import Minesweeper from "./Minesweeper";
+import { Link } from "@nextui-org/react";
 
 const features = [
   {
@@ -27,12 +28,23 @@ const About: React.FC = () => {
           <div className="px-6 sm:px-0 lg:pr-8 lg:pt-4">
             <div className="lg:max-w-lg">
               <p className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-                A better workflow
+                Connect{" "}
+                <span className="ml-2 text-base font-semibold tracking-wide text-slate-700">
+                  (Only If You Win)
+                </span>
               </p>
-              <p className="mt-6 text-lg leading-8 text-gray-600">
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                Maiores impedit perferendis suscipit eaque, iste dolor
-                cupiditate blanditiis ratione.
+              <p className="text-lg leading-8 text-gray-600">
+                I&apos;d love to hear from you! The best way to reach me is by
+                <Link
+                  href="mailto:ikalam869@gmail.com"
+                  className="ml-1 mt-6 text-lg leading-8 text-sky-600 underline underline-offset-4 hover:text-sky-500"
+                >
+                  email
+                </Link>
+                . I&apos;m always open to discussing new projects, creative
+                ideas or opportunities to work together. If you have any
+                questions or just want to connect, feel free to get in touch. I
+                look forward to hearing from you!
               </p>
               <dl className="mt-10 max-w-xl space-y-8 text-base leading-7 text-gray-600 lg:max-w-none">
                 {features.map((feature) => (
