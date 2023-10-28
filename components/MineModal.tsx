@@ -53,7 +53,7 @@ const MineModal: React.FC = () => {
       >
         <HelpCircle
           size={18}
-          className="text-gray-400 transition-colors duration-200 ease-in-out hover:text-gray-600 focus:text-gray-600"
+          className="hover: focus: text-gray-400 transition-colors duration-200 ease-in-out"
         />
       </Button>
       <Modal
@@ -76,12 +76,12 @@ const MineModal: React.FC = () => {
                 How to Play Minesweeper
               </ModalHeader>
               <ModalBody className="font-sans">
-                <dl className="xs:space-y-6 xs:text-sm max-w-xl space-y-2 text-xs leading-7 text-gray-600 md:text-base lg:max-w-none">
+                <dl className="max-w-xl space-y-2 text-xs leading-7 xs:space-y-6 xs:text-sm  md:text-base lg:max-w-none">
                   {features.map((feature) => (
                     <div key={feature.name} className="relative pl-9">
-                      <dt className="inline font-semibold text-gray-900">
+                      <dt className="inline font-semibold ">
                         <BombIcon
-                          className="absolute left-1 top-1 h-4 w-4 fill-slate-800 text-gray-500"
+                          className="absolute left-1 top-1 h-4 w-4 fill-slate-800 "
                           aria-hidden="true"
                         />
                         {feature.name}

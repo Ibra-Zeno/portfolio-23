@@ -33,10 +33,10 @@ const Nav: React.FC = () => {
       isBordered
       isMenuOpen={isMenuOpen}
       onMenuOpenChange={setIsMenuOpen}
-      className="custom-font"
+      className="custom-font "
     >
       <NavbarContent
-        className="relative mx-auto pr-3 sm:hidden"
+        className=" relative mx-auto pr-3 sm:hidden"
         justify="center"
       >
         <NavbarBrand>
@@ -50,7 +50,7 @@ const Nav: React.FC = () => {
         </NavbarBrand>
       </NavbarContent>
 
-      <NavbarContent className="mx-auto hidden gap-4 sm:flex" justify="start">
+      <NavbarContent className=" mx-auto hidden gap-4 sm:flex" justify="start">
         <NavbarBrand>
           <Link href="/">
             <Image
@@ -63,11 +63,11 @@ const Nav: React.FC = () => {
       </NavbarContent>
 
       <NavbarContent
-        className="mx-auto hidden justify-center gap-4 font-sans sm:flex"
+        className=" mx-auto hidden justify-center gap-4 font-sans sm:flex"
         justify="end"
       >
         <Dropdown
-          className="font-sans"
+          className=" font-sans"
           classNames={{
             base: `font-sans ${nunito.variable}`,
           }}
@@ -76,7 +76,7 @@ const Nav: React.FC = () => {
             <DropdownTrigger>
               <Button
                 disableRipple
-                className="bg-transparent p-0 font-sans data-[hover=true]:bg-transparent"
+                className=" bg-transparent p-0 font-sans font-bold data-[hover=true]:bg-transparent"
                 radius="sm"
                 variant="light"
               >
@@ -86,9 +86,9 @@ const Nav: React.FC = () => {
           </NavbarItem>
           <DropdownMenu
             aria-label="Ibrahim's Projects"
-            className="w-[340px] font-sans"
+            className=" w-[340px] font-sans"
             itemClasses={{
-              base: "gap-4",
+              base: "gap-4 ",
               title: "font-sans",
               description: "font-sans",
             }}

@@ -164,13 +164,14 @@ const Minesweeper: React.FC = () => {
       <section className="mx-auto flex w-fit flex-col justify-center rounded-xl ">
         <div className="flex justify-between pl-3 pr-5">
           <div className="mb-2 flex items-center">
-            <p className=" bg-gradient-to-r from-[#C33764] to-[#1D2671] bg-clip-text text-base font-semibold leading-7 text-transparent">
+            <p className=" bg-gradient-to-r  bg-clip-text text-base font-semibold leading-7">
+              {/* from-[#C33764] to-[#1D2671] */}
               Play Minesweeper
             </p>
             <MineModal />
           </div>
           {!firstMove && (
-            <span className="animate-bounce bg-gradient-to-r from-[#C33764] to-[#1D2671] bg-clip-text font-sans text-xs font-semibold leading-7 text-transparent">
+            <span className="animate-bounce font-sans text-xs font-semibold leading-7">
               Click to reveal
             </span>
           )}
@@ -181,7 +182,7 @@ const Minesweeper: React.FC = () => {
               {row.map((cell, colIndex) => (
                 <div
                   key={colIndex}
-                  className={`cell flex h-[28px] w-[28px] cursor-pointer items-center justify-center rounded-sm border border-slate-400 p-1 font-sans text-base font-bold shadow-sm xs:h-8 xs:w-8 sm:h-[45px] sm:w-[45px] md:text-base lg:rounded lg:font-bold ${
+                  className={`cell flex h-[28px] w-[28px] cursor-pointer items-center justify-center rounded-sm border border-slate-400 p-1 font-sans text-base font-bold text-slate-900 shadow-sm dark:text-primary-100 xs:h-8 xs:w-8 sm:h-[45px] sm:w-[45px] md:text-base lg:rounded lg:font-bold ${
                     cell.isRevealed ? "bg-white" : ""
                   } ${cell.isFlagged ? "bg-[#ffe3e7]" : ""} ${
                     cell.isRevealed && cell.isMine
@@ -233,7 +234,7 @@ const Minesweeper: React.FC = () => {
         </section>
         <div className="flex flex-col">
           {/* {!gamePlaying && (
-            <div className="my-4 text-center text-lg font-bold text-gray-500">
+            <div className="my-4 text-center text-lg font-bold ">
               Right click to flag a cell
             </div>
           )} */}
@@ -259,7 +260,7 @@ const Minesweeper: React.FC = () => {
               <div className="mb-2 mt-4 text-center text-lg font-bold text-green-500 lg:text-2xl">
                 You Win! 🏆
               </div>
-              <p className="mx-auto mb-4 w-fit rounded-full bg-sky-100 px-2 text-center text-base leading-7 text-gray-700">
+              <p className="mx-auto mb-4 w-fit rounded-full bg-sky-100 px-2 text-center text-base leading-7 ">
                 My first{" "}
                 <Link
                   href="https://ibra-zeno.github.io/Khabib/"

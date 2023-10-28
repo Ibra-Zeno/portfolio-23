@@ -19,7 +19,7 @@ export const portfolioData = {
     mainTitle: "Making a Blog",
     main: () => (
       <>
-        <p className="text-sm leading-7 text-gray-700 md:text-base">
+        <p className="text-sm leading-7  md:text-base">
           The project began with organising the structure and layout of the
           project where all I had ready in my toolbox was{" "}
           <strong>TypeScript</strong>. To begin with we needed a database to
@@ -81,11 +81,11 @@ export const portfolioData = {
               alt="Image Description"
             />
           </Link>
-          <figcaption className="mt-3 text-center text-sm text-gray-500">
+          <figcaption className="mt-3 text-center text-sm ">
             Example of Odyssey&apos;s functionality.
           </figcaption>
         </figure>
-        <p className="mb-12 text-sm leading-7 text-gray-700 md:text-base">
+        <p className="mb-12 text-sm leading-7  md:text-base">
           Then, for the functionality, we only needed a few simple things. Users
           needed the ability to <strong>edit their posts</strong>, even if
           published, and delete them if the occasion arised. In addition, we
@@ -117,7 +117,7 @@ export const portfolioData = {
       </>
     ),
     featuresIntro: () => (
-      <p className="mb-6 text-sm leading-6 text-gray-700 md:text-base md:leading-8">
+      <p className="mb-6 text-sm leading-6  md:text-base md:leading-8">
         With an intuitive interface, powerful editor tools, and robust community
         engagement options, this platform provides everything you need to share
         your ideas with the world:
@@ -164,7 +164,7 @@ export const portfolioData = {
     img1: "/images/projectIndex/optima/optima_home.png",
     mainTitle: "Planning for a Planner",
     main: () => (
-      <p className="mb-12 text-sm leading-7 text-gray-700 md:text-base">
+      <p className="mb-12 text-sm leading-7  md:text-base">
         The aim of this project was to <strong>test my design skills</strong>{" "}
         and create a custom website for a client. Essentially, the client wanted
         to create an online presence in which they can showcase their services
@@ -196,7 +196,7 @@ export const portfolioData = {
     ),
     quote: null,
     featuresIntro: () => (
-      <p className="mb-6 text-sm leading-6 text-gray-700 md:text-base md:leading-8">
+      <p className="mb-6 text-sm leading-6  md:text-base md:leading-8">
         My custom-designed website for Optima, created to specifically meet the
         needs of this planning firm:
       </p>
@@ -240,7 +240,7 @@ export const portfolioData = {
     mainTitle: "Paying for It",
     main: () => (
       <>
-        <p className="text-sm leading-7 text-gray-700 md:text-base">
+        <p className="text-sm leading-7  md:text-base">
           This project began as a method to test my skills and elevate my
           opportunities in what I can create and develop. I wanted to create a
           project that was both fun and challenging, while also being able to
@@ -276,11 +276,11 @@ export const portfolioData = {
               alt="Image Description"
             />
           </Link>
-          <figcaption className="mt-3 text-center text-sm text-gray-500">
+          <figcaption className="mt-3 text-center text-sm ">
             Purchase and Payment Process.
           </figcaption>
         </figure>
-        <p className="mb-12 text-sm leading-7 text-gray-700 md:text-base">
+        <p className="mb-12 text-sm leading-7  md:text-base">
           With the CMS in place, I wanted not only to create a store with
           customisable content, but a store from which you can buy products.
           This led to implementing a shopping cart, buy buttons with varying
@@ -309,7 +309,7 @@ export const portfolioData = {
     ),
 
     featuresIntro: () => (
-      <p className="mb-6 text-sm leading-6 text-gray-700 md:text-base md:leading-8">
+      <p className="mb-6 text-sm leading-6  md:text-base md:leading-8">
         Built for speed, efficiency, and an optimal user experience, this
         application leverages the capabilities of React, Stripe, and other
         modern web technologies:
@@ -349,7 +349,7 @@ export const portfolioData = {
     img1: "/images/projectIndex/arch/arch_home.png",
     mainTitle: "Building Blocks",
     main: () => (
-      <p className="mb-12 text-sm leading-7 text-gray-700 md:text-base">
+      <p className="mb-12 text-sm leading-7  md:text-base">
         This project was a fun and exciting challenge. It was asked of me by a
         knowledgable designer and artistic person. Thus I was set the task of
         creating a website to{" "}
@@ -393,7 +393,7 @@ export const portfolioData = {
 
     quote: null,
     featuresIntro: () => (
-      <p className="mb-6 text-sm leading-6 text-gray-700 md:text-base md:leading-8">
+      <p className="mb-6 text-sm leading-6  md:text-base md:leading-8">
         Optimised to showcase stunning projects and visuals, this reactive site
         was thoughtfully crafted to represent a distinct identity online:
       </p>
@@ -430,7 +430,7 @@ export const portfolioData = {
     img1: "/images/projectIndex/AI/AI_home.png",
     mainTitle: "Generating Paragraphs with Transformers (GPT)",
     main: () => (
-      <p className="mb-12 text-sm leading-7 text-gray-700 md:text-base">
+      <p className="mb-12 text-sm leading-7  md:text-base">
         Of my projects, this is one of the simpler tasks I have had to overcome.
         The initial idea was to utilise <strong>AI</strong> to create a service
         to help streamline the lives of others. An idea which I am sure has
@@ -468,7 +468,7 @@ export const portfolioData = {
 
     quote: null,
     featuresIntro: () => (
-      <p className="mb-6 text-sm leading-6 text-gray-700 md:text-base md:leading-8">
+      <p className="mb-6 text-sm leading-6  md:text-base md:leading-8">
         Built leveraging state-of-the-art natural language processing models,
         this application enables users to quickly summarise webpages with just
         the click of a button:

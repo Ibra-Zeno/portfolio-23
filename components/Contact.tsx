@@ -49,22 +49,22 @@ const features = [
 
 const About: React.FC = () => {
   return (
-    <div className="overflow-hidden bg-white py-24 sm:py-32">
+    <div className="overflow-hidden py-24 sm:py-32">
       <div className="mx-auto max-w-7xl px-3 sm:px-6 lg:px-8">
         <div className="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 sm:gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-2">
           <div className="px-6 sm:px-0 lg:pr-8 lg:pt-4">
             <div className="lg:max-w-lg">
-              <p className="mt-2 text-center text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl lg:text-left">
+              <p className="mt-2 text-center text-3xl font-bold tracking-tight  sm:text-4xl lg:text-left">
                 Connect{" "}
-                <span className="ml-2 block text-base font-semibold tracking-wide text-slate-700 md:inline-block">
+                <span className="ml-2 block text-base font-semibold tracking-wide md:inline-block">
                   (Only If You Win)
                 </span>
               </p>
-              <p className="mx-auto mt-4 max-w-[50ch] text-center text-base leading-8 text-gray-600 md:text-lg lg:text-left">
+              <p className="mx-auto mt-4 max-w-[50ch] text-center text-base leading-8  md:text-lg lg:text-left">
                 I&apos;d love to hear from you! The best way to reach me is by
                 <Link
                   href="mailto:sanity@duck.com"
-                  className="ml-1 leading-8 text-inherit text-sky-600 underline underline-offset-4 hover:text-sky-500"
+                  className="ml-1 leading-8 text-inherit underline underline-offset-4"
                 >
                   email
                 </Link>
@@ -73,13 +73,13 @@ const About: React.FC = () => {
                 questions or just want to connect, feel free to get in touch. I
                 look forward to hearing from you!
               </p>
-              <dl className="mx-auto mt-12 flex max-w-xl flex-col gap-y-5 text-base leading-7 text-gray-600 lg:max-w-none">
+              <dl className="mx-auto mt-12 flex max-w-xl flex-col gap-y-5 text-base leading-7  lg:max-w-none">
                 {features.map((feature) => (
                   <div
                     key={feature.name}
                     className="relative flex justify-between px-9"
                   >
-                    <dt className="inline-flex items-center text-sm font-semibold text-gray-900 md:text-base">
+                    <dt className="inline-flex items-center text-sm font-semibold  md:text-base">
                       {feature.icon}
                       {feature.name}
                     </dt>{" "}
@@ -93,7 +93,7 @@ const About: React.FC = () => {
                     key={i}
                     href={icon.href}
                     aria-label={icon.name}
-                    className="text-gray-700 transition-all duration-200 ease-in-out hover:text-gray-500"
+                    className=" hover: transition-all duration-200 ease-in-out"
                   >
                     {icon.icons}
                   </Link>

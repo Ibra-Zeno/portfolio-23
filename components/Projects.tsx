@@ -94,9 +94,7 @@ const Projects: React.FC = () => {
   return (
     <section className="mx-auto min-h-screen w-full p-4 xs:p-8">
       <div className="">
-        <h1 className="mb-20 text-center text-3xl font-bold text-slate-900">
-          Projects
-        </h1>
+        <h1 className="mb-20 text-center text-3xl font-bold ">Projects</h1>
         <div className="mx-auto flex w-full max-w-7xl flex-col gap-y-16">
           {projArr.map((proj, idx) => (
             <div
@@ -112,7 +110,7 @@ const Projects: React.FC = () => {
               />
               <div className="relative flex flex-col justify-start gap-y-12">
                 <div className="w-fit">
-                  <h3 className="my-6 mb-4 text-center text-3xl font-extrabold text-gray-700 lg:text-left">
+                  <h3 className="my-6 mb-4 text-center text-3xl font-extrabold  lg:text-left">
                     {proj.name}
                   </h3>
                   <div className="mb-4 flex max-w-lg flex-row flex-wrap justify-center gap-x-2 gap-y-2 lg:justify-start">
@@ -129,13 +127,13 @@ const Projects: React.FC = () => {
                     ))}
                   </div>
                   <Divider orientation="horizontal" className="mb-8" />
-                  <p className="mx-auto max-w-md pb-16 text-center text-sm text-gray-600 md:text-base  lg:max-w-xl lg:text-left lg:text-lg">
+                  <p className="mx-auto max-w-md pb-16 text-center text-sm  md:text-base  lg:max-w-xl lg:text-left lg:text-lg">
                     {proj.desc}
                   </p>
                 </div>
                 <Link href={proj.link} className="w-full">
                   <Button
-                    className="absolute inset-x-0 bottom-10 mx-auto w-fit border-2 border-slate-800/30 bg-transparent text-sm font-bold text-slate-800 lg:left-0 lg:mx-0"
+                    className="absolute inset-x-0 bottom-10 mx-auto w-fit border-2 border-slate-800/30 bg-transparent text-sm font-bold  lg:left-0 lg:mx-0"
                     size="md"
                   >
                     Showcase &rarr;

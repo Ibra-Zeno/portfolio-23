@@ -6,8 +6,8 @@ const websiteTech = ["React", "TypeScript", "NextJs", "TailwindCSS", "NextUI"];
 
 const Footer: React.FC = () => {
   return (
-    <footer className="bg-white">
-      <div className="mx-auto overflow-hidden border-t border-gray-300 px-4 py-7 sm:px-6 lg:px-8">
+    <footer className="">
+      <div className="mx-auto overflow-hidden border-t px-4 py-7 sm:px-6 lg:px-8">
         <div className="mx-auto mb-4 flex items-center justify-center text-center text-2xl font-bold">
           <Link href="/" className="flex h-fit w-fit justify-center">
             <Image
@@ -58,11 +58,11 @@ const Footer: React.FC = () => {
           ))}
         </div>
         <p className="mt-3 text-center">
-          <span className="mx-auto mt-2 text-sm text-gray-500">
+          <span className="mx-auto mt-2 text-sm ">
             Made by yours truly,
             <Link
               href="#"
-              className="mx-1 text-blue-500 hover:text-gray-500"
+              className="hover: mx-1 text-blue-500"
               rel="noopener noreferrer"
             >
               Ibrahim Kalam
