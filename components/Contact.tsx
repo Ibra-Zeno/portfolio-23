@@ -34,7 +34,7 @@ const features = [
   {
     name: "Email",
     description: () => (
-      <Link href="mailto:ikalam869@gmail.com">ikalam869@gmail.com</Link>
+      <Link href="mailto:sanity@duck.com">sanity@duck.com</Link>
     ),
     icon: (
       <Mail
@@ -61,7 +61,7 @@ const About: React.FC = () => {
               <p className="text-lg leading-8 text-gray-600">
                 I&apos;d love to hear from you! The best way to reach me is by
                 <Link
-                  href="mailto:ikalam869@gmail.com"
+                  href="mailto:sanity@duck.com"
                   className="ml-1 mt-6 text-lg leading-8 text-sky-600 underline underline-offset-4 hover:text-sky-500"
                 >
                   email
