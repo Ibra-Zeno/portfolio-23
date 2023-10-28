@@ -7,7 +7,11 @@ export const portfolioData = {
     name: "Odyssey",
     title: "Odyssey",
     tagline: "Orcales of the Odyssey",
-    quote: () => <p>Please use the Demo account to see all features!</p>,
+    quote: () => (
+      <p className="py-1.5 text-sm font-bold md:py-3 md:text-base">
+        Please use the Demo account to see all features!
+      </p>
+    ),
     overview:
       "Odyssey is a blog web application that allows users to create and share their own stories. Users can create, edit, publish and delete their stories, while viewing published stories from people around the world. Stories can be separated in categories while also allowing users the capability of liking and commenting on posts.",
     img1: "/images/projectIndex/odyssey/odyssey_home.png",
@@ -15,7 +19,7 @@ export const portfolioData = {
     mainTitle: "Making a Blog",
     main: () => (
       <>
-        <p className="text-base leading-7 text-gray-700">
+        <p className="text-sm leading-7 text-gray-700 md:text-base">
           The project began with organising the structure and layout of the
           project where all I had ready in my toolbox was{" "}
           <strong>TypeScript</strong>. To begin with we needed a database to
@@ -81,7 +85,7 @@ export const portfolioData = {
             Example of Odyssey&apos;s functionality.
           </figcaption>
         </figure>
-        <p className="mb-12 text-base leading-7 text-gray-700">
+        <p className="mb-12 text-sm leading-7 text-gray-700 md:text-base">
           Then, for the functionality, we only needed a few simple things. Users
           needed the ability to <strong>edit their posts</strong>, even if
           published, and delete them if the occasion arised. In addition, we
@@ -113,7 +117,7 @@ export const portfolioData = {
       </>
     ),
     featuresIntro: () => (
-      <p className="mb-6 text-base leading-8 text-gray-700">
+      <p className="mb-6 text-sm leading-6 text-gray-700 md:text-base md:leading-8">
         With an intuitive interface, powerful editor tools, and robust community
         engagement options, this platform provides everything you need to share
         your ideas with the world:
@@ -160,7 +164,7 @@ export const portfolioData = {
     img1: "/images/projectIndex/optima/optima_home.png",
     mainTitle: "Planning for a Planner",
     main: () => (
-      <p className="mb-12 text-base leading-7 text-gray-700">
+      <p className="mb-12 text-sm leading-7 text-gray-700 md:text-base">
         The aim of this project was to <strong>test my design skills</strong>{" "}
         and create a custom website for a client. Essentially, the client wanted
         to create an online presence in which they can showcase their services
@@ -174,14 +178,13 @@ export const portfolioData = {
         or an online booking process, I decided we can work with the fundamental
         toolset of <strong>JavaScript</strong>, <strong>HTML</strong> and (a
         little fancier) <strong>TailwindCSS</strong>. That being the case, there
-        is an extra
-        <strong>emphasis on frontend</strong>, namely design theory, user
-        experience and SEO.
+        is an extra <strong>emphasis on frontend</strong>, namely design theory,
+        user experience and SEO.
         <br />
         <br />
         The design process was guided by meetings with the client to view
         current works and make improvement for future iterations, while also
-        taking into account the client&apos;s new ideas. The client wanted a
+        taking into account the client&apos;s new ideas. The client wanted a{" "}
         <strong>professional, simple and colourful</strong>, with a focus on the
         services they provide and the courses they offer.
         <br />
@@ -193,7 +196,7 @@ export const portfolioData = {
     ),
     quote: null,
     featuresIntro: () => (
-      <p className="mb-6 text-base leading-8 text-gray-700">
+      <p className="mb-6 text-sm leading-6 text-gray-700 md:text-base md:leading-8">
         My custom-designed website for Optima, created to specifically meet the
         needs of this planning firm:
       </p>
@@ -221,11 +224,11 @@ export const portfolioData = {
     tagline: "A Store with Protection",
     quote: () => (
       <div>
-        <h4 className="text-base font-bold">Test Card Details</h4>
-        <p className="mt-2 text-sm font-semibold">
+        <h4 className="text-sm font-bold md:text-base">Test Card Details</h4>
+        <p className="mt-2 text-xs font-semibold md:text-sm">
           Card Number: 4242 4242 4242 4242
         </p>
-        <div className="my-2 flex justify-center gap-x-4 text-sm font-semibold">
+        <div className="my-2 flex justify-center gap-x-4 text-xs font-semibold md:text-sm">
           <p>Expiry: 04/24</p>
           <p>CVC: 424</p>
         </div>
@@ -237,7 +240,7 @@ export const portfolioData = {
     mainTitle: "Paying for It",
     main: () => (
       <>
-        <p className="text-base leading-7 text-gray-700">
+        <p className="text-sm leading-7 text-gray-700 md:text-base">
           This project began as a method to test my skills and elevate my
           opportunities in what I can create and develop. I wanted to create a
           project that was both fun and challenging, while also being able to
@@ -277,7 +280,7 @@ export const portfolioData = {
             Purchase and Payment Process.
           </figcaption>
         </figure>
-        <p className="mb-12 text-base leading-7 text-gray-700">
+        <p className="mb-12 text-sm leading-7 text-gray-700 md:text-base">
           With the CMS in place, I wanted not only to create a store with
           customisable content, but a store from which you can buy products.
           This led to implementing a shopping cart, buy buttons with varying
@@ -306,7 +309,7 @@ export const portfolioData = {
     ),
 
     featuresIntro: () => (
-      <p className="mb-6 text-base leading-8 text-gray-700">
+      <p className="mb-6 text-sm leading-6 text-gray-700 md:text-base md:leading-8">
         Built for speed, efficiency, and an optimal user experience, this
         application leverages the capabilities of React, Stripe, and other
         modern web technologies:
@@ -346,7 +349,7 @@ export const portfolioData = {
     img1: "/images/projectIndex/arch/arch_home.png",
     mainTitle: "Building Blocks",
     main: () => (
-      <p className="mb-12 text-base leading-7 text-gray-700">
+      <p className="mb-12 text-sm leading-7 text-gray-700 md:text-base">
         This project was a fun and exciting challenge. It was asked of me by a
         knowledgable designer and artistic person. Thus I was set the task of
         creating a website to{" "}
@@ -390,7 +393,7 @@ export const portfolioData = {
 
     quote: null,
     featuresIntro: () => (
-      <p className="mb-6 text-base leading-8 text-gray-700">
+      <p className="mb-6 text-sm leading-6 text-gray-700 md:text-base md:leading-8">
         Optimised to showcase stunning projects and visuals, this reactive site
         was thoughtfully crafted to represent a distinct identity online:
       </p>
@@ -427,7 +430,7 @@ export const portfolioData = {
     img1: "/images/projectIndex/AI/AI_home.png",
     mainTitle: "Generating Paragraphs with Transformers (GPT)",
     main: () => (
-      <p className="mb-12 text-base leading-7 text-gray-700">
+      <p className="mb-12 text-sm leading-7 text-gray-700 md:text-base">
         Of my projects, this is one of the simpler tasks I have had to overcome.
         The initial idea was to utilise <strong>AI</strong> to create a service
         to help streamline the lives of others. An idea which I am sure has
@@ -465,7 +468,7 @@ export const portfolioData = {
 
     quote: null,
     featuresIntro: () => (
-      <p className="mb-6 text-base leading-8 text-gray-700">
+      <p className="mb-6 text-sm leading-6 text-gray-700 md:text-base md:leading-8">
         Built leveraging state-of-the-art natural language processing models,
         this application enables users to quickly summarise webpages with just
         the click of a button:
