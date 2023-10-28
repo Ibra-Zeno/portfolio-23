@@ -6,7 +6,7 @@ import { contactIcons } from "./Contact";
 
 const Hero: React.FC = () => {
   return (
-    <section>
+    <section className="">
       <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6 md:px-12 lg:px-24 lg:py-12">
         <div className="mx-auto flex max-w-7xl flex-wrap items-center">
           <div className="mx-auto mb-8 flex flex-col items-start text-left md:mb-0 lg:mb-16 lg:w-1/2 lg:flex-grow lg:pr-6 xl:mt-0 xl:pr-24">
@@ -37,7 +37,7 @@ const Hero: React.FC = () => {
               <div className="relative mx-auto w-full max-w-md">
                 <div className="relative">
                   <Image
-                    className="mx-auto rounded-lg object-cover object-center"
+                    className="mx-auto rounded-lg object-cover object-center mix-blend-multiply"
                     alt="hero"
                     draggable={false}
                     src="/images/Bg/Beary.jpg"
