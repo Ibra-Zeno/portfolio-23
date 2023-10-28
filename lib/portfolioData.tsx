@@ -331,6 +331,7 @@ export const portfolioData = {
       "TailwindCSS",
       "NextJs",
       "Vercel",
+      "Canvas-Confetti",
     ],
     github: "https://github.com/Ibra-Zeno/Ecommerce_guards",
     website: "https://ecommerce-bodyguards-1ww5072n7-ibra-zeno.vercel.app/",
