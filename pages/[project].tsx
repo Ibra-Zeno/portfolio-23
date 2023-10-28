@@ -5,6 +5,7 @@ import { Spinner, Image, Chip, Button, ButtonGroup } from "@nextui-org/react";
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import Footer from "@/components/Footer";
+import Head from "next/head";
 import Navbar from "@/components/Nav";
 
 const Project: React.FC = () => {
@@ -51,19 +52,23 @@ const Project: React.FC = () => {
 
   return (
     <>
+      <Head>
+        <title>{projectData.title}</title>
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
       <Navbar />
-      <main className="mx-auto flex max-w-3xl px-4 py-16 pb-12 sm:px-6 lg:px-8 lg:py-4">
+      <main className="mx-auto flex max-w-3xl px-4 py-5 pb-12 sm:px-6 lg:px-8 ">
         <div className="max-w-2xl">
           <div className="">
             <div className="gap-y-1">
-              <h2 className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+              <h2 className="mt-2 text-2xl font-bold tracking-tight text-gray-900 sm:text-4xl">
                 {projectData.title}
               </h2>
-              <p className="mt-1 bg-gradient-to-r from-[#C33764] to-[#1D2671] bg-clip-text text-base font-semibold leading-7 text-transparent">
+              <p className="mt-1 bg-gradient-to-r from-[#C33764] to-[#1D2671] bg-clip-text text-sm font-semibold leading-7 text-transparent md:text-base">
                 {projectData.tagline}
               </p>
 
-              <p className="mb-8 mt-3 flex text-xl leading-8 text-gray-700">
+              <p className="mb-8 mt-3 flex text-sm font-semibold leading-6 tracking-wide text-gray-700 md:text-base lg:leading-8">
                 {projectData.overview}
               </p>
               {projectData.quote !== null && (
@@ -87,7 +92,7 @@ const Project: React.FC = () => {
                     <div key={idx} className=" rounded-full bg-gray-100">
                       <Chip
                         size="sm"
-                        className="m-1 bg-gradient-to-tr from-[#833ab4] via-[#fd1d1d] to-[#fcb045] bg-clip-text !font-bold text-transparent hover:bg-gray-200"
+                        className="m-1 bg-gradient-to-tr from-[#833ab4] via-[#fd1d1d] to-[#fcb045] bg-clip-text text-xs !font-bold text-transparent hover:bg-gray-200 md:text-sm"
                         color="primary"
                         variant="light"
                       >
@@ -99,19 +104,21 @@ const Project: React.FC = () => {
               </figcaption>
             </figure>
             <section className="mb-16 flex flex-col">
-              <h3 className="mb-2 mt-6 text-2xl font-semibold">Features</h3>
+              <h3 className="mb-2 mt-6 text-lg font-bold md:text-2xl">
+                Features
+              </h3>
               {projectData.featuresIntro()}
               <ul
                 role="list"
-                className=" flex flex-col gap-y-8 border-l-2  border-l-green-600/40  pl-4 text-sm leading-7 text-gray-600 sm:grid sm:grid-cols-2 sm:text-base"
+                className=" flex flex-col gap-y-6 border-l-2  border-l-green-600/40 pl-4 text-xs font-bold leading-7 tracking-wide text-gray-600 xs:gap-y-8 xs:text-sm sm:grid sm:grid-cols-2"
               >
                 {projectData.features.map((feature, idx) => (
                   <li
                     key={idx}
-                    className="flex h-fit w-fit max-w-[30ch] gap-x-3"
+                    className="flex h-fit w-fit max-w-[30ch] items-center gap-x-3 md:items-start"
                   >
                     <Sparkle
-                      className="mt-1 h-5 w-5 flex-none text-sky-700"
+                      className="h-5 w-5 flex-none text-sky-700"
                       aria-hidden="true"
                     />
                     <span>{feature}</span>
@@ -143,7 +150,7 @@ const Project: React.FC = () => {
                 </Button>
                 <Button
                   size="sm"
-                  className="font-sans tracking-wide"
+                  className="font-sans font-bold tracking-wide"
                   startContent={<Code2 strokeWidth={1.7} />}
                   onClick={() => handleOpenLink(projectData.github)}
                 >
@@ -180,22 +187,48 @@ const Project: React.FC = () => {
               }`}
             >
               {projectId > 0 && (
-                <Button
-                  size={"lg"}
-                  className="bg-gray-200 px-6 pb-2 pt-2 text-sm font-bold text-slate-800 hover:text-slate-950 md:text-lg"
-                  onClick={() => navigateToProject(previousProject)}
-                >
-                  Previous Project
-                </Button>
+                <>
+                  <div className="sm:hidden">
+                    <Button
+                      size={"sm"}
+                      className="bg-gray-200 px-4 py-5 text-sm font-bold text-slate-800 hover:text-slate-950"
+                      onClick={() => navigateToProject(previousProject)}
+                    >
+                      Previous Project
+                    </Button>
+                  </div>
+                  <div className="hidden sm:block">
+                    <Button
+                      size={"lg"}
+                      className="bg-gray-200  px-6 pb-2 pt-2 text-sm font-bold text-slate-800 hover:text-slate-950 lg:text-base"
+                      onClick={() => navigateToProject(previousProject)}
+                    >
+                      Previous Project
+                    </Button>
+                  </div>
+                </>
               )}
               {projectId < projectOrder.length - 1 && (
-                <Button
-                  size="lg"
-                  className="bg-gray-200 font-sans font-bold text-slate-800 hover:text-slate-950 md:text-lg"
-                  onClick={() => navigateToProject(nextProject)}
-                >
-                  Next Project
-                </Button>
+                <>
+                  <div className="sm:hidden">
+                    <Button
+                      size="sm"
+                      className="bg-gray-200 px-4 py-5 text-sm font-bold text-slate-800 hover:text-slate-950"
+                      onClick={() => navigateToProject(nextProject)}
+                    >
+                      Next Project
+                    </Button>
+                  </div>
+                  <div className="hidden sm:block">
+                    <Button
+                      size="lg"
+                      className="bg-gray-200 font-sans text-sm font-bold text-slate-800 hover:text-slate-950 lg:text-base"
+                      onClick={() => navigateToProject(nextProject)}
+                    >
+                      Next Project
+                    </Button>
+                  </div>
+                </>
               )}
             </div>
           </div>
@@ -208,164 +241,3 @@ const Project: React.FC = () => {
 };
 
 export default Project;
-
-/* Small title
-<h2 className="mt-16 text-2xl font-bold tracking-tight text-gray-900">
-                  No server? No problem.
-                </h2> 
-/top square bg
-<div className="absolute inset-0 -z-10 overflow-hidden">
-    <svg
-    className="absolute left-[max(50%,25rem)] top-0 h-[64rem] w-[128rem] -translate-x-1/2 stroke-gray-200 [mask-image:radial-gradient(64rem_64rem_at_top,white,transparent)]"
-    aria-hidden="true"
-    >
-    <defs>
-        <pattern
-        id="e813992c-7d03-4cc4-a2bd-151760b470a0"
-        width={200}
-        height={200}
-        x="50%"
-        y={-1}
-        patternUnits="userSpaceOnUse"
-        >
-        <path d="M100 200V.5M.5 .5H200" fill="none" />
-        </pattern>
-    </defs>
-    <svg x="50%" y={-1} className="overflow-visible fill-gray-50">
-        <path
-        d="M-100.5 0h201v201h-201Z M699.5 0h201v201h-201Z M499.5 400h201v201h-201Z M-300.5 600h201v201h-201Z"
-        strokeWidth={0}
-        />
-    </svg>
-    <rect
-        width="100%"
-        height="100%"
-        strokeWidth={0}
-        fill="url(#e813992c-7d03-4cc4-a2bd-151760b470a0)"
-    />
-    </svg>
-</div>
-
- List                 
-<ul role="list" className="mt-8 space-y-8 text-gray-600">
-    <li className="flex gap-x-3">
-    <UploadCloud
-        className="mt-1 h-5 w-5 flex-none text-indigo-600"
-        aria-hidden="true"
-    />
-    <span>
-        <strong className="font-semibold text-gray-900">
-        Push to deploy.
-        </strong>{" "}
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-        Maiores impedit perferendis suscipit eaque, iste dolor
-        cupiditate blanditiis ratione.
-    </span>
-    </li>
-    <li className="flex gap-x-3">
-    <UploadCloud
-        className="mt-1 h-5 w-5 flex-none text-indigo-600"
-        aria-hidden="true"
-    />
-    <span>
-        <strong className="font-semibold text-gray-900">
-        SSL certificates.
-        </strong>{" "}
-        Anim aute id magna aliqua ad ad non deserunt sunt. Qui
-        irure qui lorem cupidatat commodo.
-    </span>
-    </li>
-    <li className="flex gap-x-3">
-    <UploadCloud
-        className="mt-1 h-5 w-5 flex-none text-indigo-600"
-        aria-hidden="true"
-    />
-    <span>
-        <strong className="font-semibold text-gray-900">
-        Database backups.
-        </strong>{" "}
-        Ac tincidunt sapien vehicula erat auctor pellentesque
-        rhoncus. Et magna sit morbi lobortis.
-    </span>
-    </li>
-</ul>*/
-
-{
-  /* <div className="mx-auto max-w-screen-sm px-4 md:px-8">
-        <p className="mb-6 text-gray-500 sm:text-lg md:mb-8">
-          This is a section of some simple filler text, also known as
-          placeholder text. It shares some characteristics of a real written
-          text but is random or otherwise generated. It may be used to display a
-          sample of fonts or generate text for testing. Filler text is dummy
-          text which has no meaning however looks very similar to real text. The
-          important factor when using filler text is that the text looks
-          realistic otherwise it will not look very good.
-          <br />
-          <br />
-          This is a section of some simple filler text, also known as
-          placeholder text. It shares some characteristics of a real written
-          text but is{" "}
-          <Link
-            href="#"
-            className="text-indigo-500 underline transition duration-100 hover:text-indigo-600 active:text-indigo-700"
-          >
-            random
-          </Link>{" "}
-          or otherwise generated. It may be used to display a sample of fonts or
-          generate text for testing. Filler text is dummy text which has no
-          meaning however looks very similar to real text.
-        </p>
-
-        <h2 className="mb-2 text-xl font-semibold text-gray-800 sm:text-2xl md:mb-4">
-          About us
-        </h2>
-
-        <p className="mb-6 text-gray-500 sm:text-lg md:mb-8">
-          This is a section of some simple filler text, also known as
-          placeholder text. It shares some characteristics of a real written
-          text but is random or otherwise generated. It may be used to display a
-          sample of fonts or generate text for testing. Filler text is dummy
-          text which has no meaning however looks very similar to real text.
-        </p>
-
-        <ul className="mb-6 list-inside list-disc text-gray-500 sm:text-lg md:mb-8">
-          <li>This is a section of some simple filler text</li>
-          <li>Also known as placeholder text</li>
-          <li>It shares some characteristics of a real written text</li>
-        </ul>
-
-        <blockquote className="mb-6 border-l-4 pl-4 italic text-gray-500 sm:text-lg md:mb-8 md:pl-6">
-          “This is a section of some simple filler text, also known as
-          placeholder text. It shares some characteristics of a real written
-          text but is random or otherwise generated.”
-        </blockquote>
-
-        <div className="relative mb-6 w-full overflow-hidden rounded-xl bg-gray-100 shadow-lg md:mb-8">
-          <Image
-            src={projectData.img}
-            loading="lazy"
-            alt="Photo by Minh Pham"
-            isBlurred
-            className="h-full w-full object-fill object-center"
-          />
-        </div>
-
-        <h2 className="mb-2 text-xl font-semibold text-gray-800 sm:text-2xl md:mb-4">
-          Features
-        </h2>
-
-        <p className="text-gray-500 sm:text-lg">
-          This is a section of some simple filler text, also known as
-          placeholder text. It shares some characteristics of a real written
-          text but is random or otherwise generated. It may be used to display a
-          sample of fonts or generate text for testing. Filler text is dummy
-          text which has no meaning however looks very similar to real text.
-        </p>
-        <div className="mx-auto my-6 flex w-full justify-center gap-x-12">
-          <Button className="">Live</Button>
-          <Button className="" variant="ghost">
-            Source Code
-          </Button>
-        </div>
-      </div> */
-}
