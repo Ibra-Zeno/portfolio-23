@@ -13,7 +13,7 @@ const nunito = Nunito({
 export default function App({ Component, pageProps }: AppProps) {
   return (
     <NextUIProvider className={`${nunito.variable} font-sans`}>
-      <NextThemesProvider attribute="class" defaultTheme="dark">
+      <NextThemesProvider attribute="class" defaultTheme="light">
         <Component {...pageProps} />
       </NextThemesProvider>
     </NextUIProvider>
