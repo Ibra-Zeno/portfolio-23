@@ -71,7 +71,7 @@ const skillsArr = [
     icon: "/images/Icons/React.svg",
     name: "Front-End",
     description:
-      "With years of experience building responsive client-side experiences, I create accessible web interfaces that are optimized for all devices. I bring visual designs to life on the frontend using modern technologies and best practices for performance and SEO.",
+      "With years of experience building responsive client-side experiences, I create accessible web interfaces that are optimised for all devices. I bring visual designs to life on the frontend using modern technologies and best practices for performance and SEO.",
   },
   {
     icon: "/images/Icons/database-zap.svg",
@@ -123,26 +123,29 @@ const TechStack: React.FC = () => {
         <div className="lg:w-1/2">
           <div className=" h-full pb-16 pt-8 ">
             <ul
-              className="top-24 mt-6 grid list-none grid-cols-1 gap-12 py-3 lg:mt-0 lg:gap-24"
+              className="top-24 mt-6 grid list-none grid-cols-1 gap-12 py-3 lg:mt-0 lg:gap-20"
               role="list"
             >
               {skillsArr.map((skill, idx) => (
-                <li key={idx} className="rounded-lg bg-sec px-5 py-4">
+                <li
+                  key={idx}
+                  className="rounded-lg border border-main/80 bg-sec/95 px-5 py-4 text-gray-200 shadow-lg dark:bg-main "
+                >
                   <div className="flex flex-row items-center gap-x-6 align-middle">
-                    <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-main ">
+                    <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-acc ">
                       <Image
                         src={skill.icon}
                         alt="React icon"
                         height={30}
-                        className="p-1.5 invert"
+                        className="p-1.5 "
                         width={40}
                       ></Image>
                     </div>
-                    <p className="w-full border-b border-b-slate-500/60 pb-1 text-base font-bold leading-6  md:text-lg">
+                    <p className="w-full border-b border-b-acc/60 pb-1 text-base font-bold leading-6  md:text-lg">
                       {skill.name}
                     </p>
                   </div>
-                  <div className="mt-4 pl-1 pr-5 text-sm  md:text-base">
+                  <div className="mt-4 pl-1 pr-5 text-sm !leading-7 tracking-wide md:text-base">
                     {skill.description}
                   </div>
                 </li>
