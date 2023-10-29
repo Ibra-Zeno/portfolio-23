@@ -164,27 +164,27 @@ const Minesweeper: React.FC = () => {
       <section className="mx-auto flex w-fit flex-col justify-center rounded-xl ">
         <div className="flex justify-between pl-3 pr-5">
           <div className="mb-2 flex items-center">
-            <p className=" bg-gradient-to-r  bg-clip-text text-base font-semibold leading-7">
+            <p className=" from-pop1 to-pop2 bg-gradient-to-r bg-clip-text text-base font-semibold leading-7 text-transparent">
               {/* from-[#C33764] to-[#1D2671] */}
               Play Minesweeper
             </p>
             <MineModal />
           </div>
           {!firstMove && (
-            <span className="animate-bounce font-sans text-xs font-semibold leading-7">
+            <span className="from-pop1 to-pop2 animate-bounce bg-gradient-to-r bg-clip-text font-sans text-xs font-semibold leading-7 text-transparent">
               Click to reveal
             </span>
           )}
         </div>
-        <section className="mx-auto flex w-fit flex-col justify-center rounded-xl bg-slate-300 p-2 shadow-xl xs:p-4">
+        <section className="bg-mine2 mx-auto flex w-fit flex-col justify-center rounded-xl p-2 shadow-xl xs:p-4">
           {board.map((row, rowIndex) => (
             <div key={rowIndex} className="flex w-fit rounded-xl">
               {row.map((cell, colIndex) => (
                 <div
                   key={colIndex}
-                  className={`cell flex h-[28px] w-[28px] cursor-pointer items-center justify-center rounded-sm border border-slate-400 p-1 font-sans text-base font-bold text-slate-900 shadow-sm dark:text-primary-100 xs:h-8 xs:w-8 sm:h-[45px] sm:w-[45px] md:text-base lg:rounded lg:font-bold ${
-                    cell.isRevealed ? "bg-white" : ""
-                  } ${cell.isFlagged ? "bg-[#ffe3e7]" : ""} ${
+                  className={`cell border-mine1 relative flex h-[28px] w-[28px] cursor-pointer items-center justify-center rounded-sm border p-1 font-sans text-base font-bold text-foreground shadow-sm xs:h-8 xs:w-8 sm:h-[45px] sm:w-[45px] md:text-base lg:rounded lg:font-bold ${
+                    cell.isRevealed ? "bg-background" : ""
+                  } ${cell.isFlagged ? "bg-[#ffbfbb] dark:bg-[#ebfcff]" : ""} ${
                     cell.isRevealed && cell.isMine
                       ? "bg-gradient-to-r from-[#FF416C]/80 to-[#FF4B2B]/80"
                       : ""
@@ -194,18 +194,23 @@ const Minesweeper: React.FC = () => {
                     handleCellRightClick(e, rowIndex, colIndex)
                   }
                 >
+                  {!cell.isRevealed && !cell.isFlagged && flaggingMode && (
+                    <div className="relative flex h-full w-full items-center justify-center justify-items-center align-middle">
+                      <div className="absolute inset-0 z-20 mx-auto my-auto h-1 w-1 rounded-full bg-white"></div>
+                    </div>
+                  )}
                   {cell.isRevealed &&
                   !cell.isMine &&
                   countAdjacentMines(rowIndex, colIndex) > 0
                     ? countAdjacentMines(rowIndex, colIndex)
                     : null}
                   {cell.isRevealed && cell.isMine ? (
-                    <Bomb className="fill-slate-700" />
+                    <Bomb className="fill-slate-700 text-slate-900" />
                   ) : cell.isFlagged ? (
                     <Flag
-                      size={18}
-                      className="fill-[#FF416C] text-slate-700"
-                      strokeWidth={1.2}
+                      size={16}
+                      className="fill-[#FF416C] text-slate-900"
+                      strokeWidth={2}
                     />
                   ) : null}
                 </div>
@@ -221,23 +226,18 @@ const Minesweeper: React.FC = () => {
             >
               <Button
                 className={`mx-auto mt-2 w-fit text-xs font-bold tracking-wider md:text-sm ${
-                  flaggingMode ? "bg-rose-200 text-white" : "bg-slate-200"
+                  flaggingMode ? "bg-mine3 " : "bg-mine4"
                 }`}
                 isIconOnly
                 variant="shadow"
                 onClick={() => setFlaggingMode(!flaggingMode)}
               >
-                <Flag size={22} className="fill-[#FF416C] text-slate-700" />
+                <Flag size={22} className="fill-[#FF416C] text-gray-700" />
               </Button>
             </Tooltip>
           )}
         </section>
         <div className="flex flex-col">
-          {/* {!gamePlaying && (
-            <div className="my-4 text-center text-lg font-bold ">
-              Right click to flag a cell
-            </div>
-          )} */}
           {gameOver && (
             <>
               {/* {setGamePlaying(false)} */}
@@ -260,7 +260,7 @@ const Minesweeper: React.FC = () => {
               <div className="mb-2 mt-4 text-center text-lg font-bold text-green-500 lg:text-2xl">
                 You Win! 🏆
               </div>
-              <p className="mx-auto mb-4 w-fit rounded-full bg-sky-100 px-2 text-center text-base leading-7 ">
+              <p className="mx-auto mb-4 w-fit rounded-lg border border-acc bg-sec/20 px-2 py-1 text-center text-sm leading-7 shadow-lg dark:border-main dark:bg-main/30 ">
                 My first{" "}
                 <Link
                   href="https://ibra-zeno.github.io/Khabib/"
@@ -268,6 +268,7 @@ const Minesweeper: React.FC = () => {
                 >
                   website
                 </Link>
+                👾
               </p>
               <Button
                 className=" mx-auto w-fit text-xs font-bold tracking-wider md:text-sm"
