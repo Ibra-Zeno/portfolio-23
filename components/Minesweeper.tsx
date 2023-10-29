@@ -246,8 +246,8 @@ const Minesweeper: React.FC = () => {
               </div>
               <Button
                 size="sm"
-                className=" mx-auto w-fit p-4 !py-5 text-xs font-bold tracking-wider md:text-sm"
-                variant="shadow"
+                className="mx-auto w-fit p-4 !py-5 text-xs font-bold tracking-wider text-background md:text-sm"
+                color="primary"
                 onClick={resetGame}
               >
                 Reset Game
@@ -260,21 +260,20 @@ const Minesweeper: React.FC = () => {
               <div className="mb-2 mt-4 text-center text-lg font-bold text-green-500 lg:text-2xl">
                 You Win! 🏆
               </div>
-              <p className="mx-auto mb-4 w-fit rounded-lg border border-acc bg-sec/20 px-2 py-1 text-center text-sm leading-7 shadow-lg dark:border-main dark:bg-main/30 ">
+              <p className="mx-auto mb-4 w-fit rounded-lg border border-sec bg-[#654E30]/75 px-2 py-1 text-center text-sm leading-7 text-gray-100 shadow-lg dark:border-main dark:bg-main/30">
                 My first{" "}
                 <Link
                   href="https://ibra-zeno.github.io/Khabib/"
                   target="_blank"
                   className="from-pop1 to-pop2 bg-gradient-to-r bg-clip-text text-sm text-transparent underline"
-                  color="primary"
                 >
                   website
                 </Link>
                 👾
               </p>
               <Button
-                className=" mx-auto w-fit text-xs font-bold tracking-wider md:text-sm"
-                variant="shadow"
+                className="mx-auto w-fit p-4 !py-5 text-xs font-bold tracking-wider text-background md:text-sm"
+                color="primary"
                 onClick={resetGame}
               >
                 Reset Game
