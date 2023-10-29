@@ -50,7 +50,7 @@ const Footer: React.FC = () => {
               <Chip
                 variant="shadow"
                 size="sm"
-                className="tracking-wid text-xs font-bold"
+                className="bg-[#707a6b] text-xs font-bold tracking-wide text-gray-100 dark:bg-[#707a6b]/30"
               >
                 {tech}
               </Chip>
