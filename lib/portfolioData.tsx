@@ -111,7 +111,7 @@ export const portfolioData = {
           utility-first approach allows for quick and easy styling while also
           being able to create beautiful designs. The design process is
           second-nature at this point (albeit fiddly), but I chose a simple
-          design with a few colours to make the website pop. The website is
+          design with a few colours to make the website pop. The website is{" "}
           <strong>fully responsive</strong> and looks great on all devices.
         </p>
       </>
@@ -302,7 +302,7 @@ export const portfolioData = {
           which would allow me to create a <strong>static website</strong> that
           can be hosted on a <strong>CDN</strong>. Thus a fast website that can
           be hosted anywhere in the world. The website is also fully{" "}
-          <strong>responsive</strong>
+          <strong>responsive </strong>
           and looks great for all screens.
         </p>
       </>
@@ -341,11 +341,11 @@ export const portfolioData = {
   },
   arch: {
     id: 1,
-    name: "Architectural Portfolio",
-    title: "Architectural Portfolio",
+    name: "Designer Portfolio",
+    title: "Designer Portfolio",
     tagline: "Built from Blueprints",
     overview:
-      "A portfolio website for an architect built to showcase their accomplishments while conveying a keen sense of design on the architect's behalf, made with NextJs.",
+      "A portfolio website for an designer built to showcase their accomplishments while conveying a keen sense of design on the designer's behalf, made with NextJs.",
     img1: "/images/projectIndex/arch/arch_home.png",
     mainTitle: "Building Blocks",
     main: () => (
@@ -359,9 +359,9 @@ export const portfolioData = {
         creating a reflection of the designer&apos;s skills and personality.
         <br />
         <br />
-        The design process was a joint effort by the architect and I, shaped by
+        The design process was a joint effort by the designer and I, shaped by
         the work in their portfolio and the requirements of the website. The
-        architect wanted a website that was{" "}
+        designer wanted a website that was{" "}
         <strong>simple, elegant and modern</strong>. And so I started with a
         basic layout, focusing on the positioning of elements and the story a
         user would read through on their <strong>user journey</strong>. Hence I
@@ -369,11 +369,11 @@ export const portfolioData = {
         allowing the user to jump to a section of their choice.
         <br />
         <br />
-        The difficult part lie in how to present the work of the architect.
-        Given the nature of the portfolio and its extensive array of images, it
-        would seem apt to create a <strong>Gallery</strong>. The Gallery had to
-        be intuitive, seamless and have the ability to load images in as they
-        were swiped to avoid user wait times being endless. At the time, the
+        The difficult part lie in how to present the work of the designer. Given
+        the nature of the portfolio and its extensive array of images, it would
+        seem apt to create a <strong>Gallery</strong>. The Gallery had to be
+        intuitive, seamless and have the ability to load images in as they were
+        swiped to avoid user wait times being endless. At the time, the
         available Gallery packages for React were either too costly or not
         hitting the right mark, so I decided to <strong>build it myself</strong>
         . This was achieved by using Framer Motion and popmotion that allowed
@@ -383,8 +383,8 @@ export const portfolioData = {
         joy.
         <br />
         <br />
-        And finally, the website colours were chosen by the architect to create
-        a subtle neon theme throughout, greatly emphasised by the dark mode (a
+        And finally, the website colours were chosen by the designer to create a
+        subtle neon theme throughout, greatly emphasised by the dark mode (a
         personal favourite). The design was a joy with TailwindCSS and NextJs,
         allowing for a <strong>fast</strong> and responsive website that works
         regardless of the device.
