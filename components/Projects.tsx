@@ -115,16 +115,19 @@ const Projects: React.FC = () => {
               />
               <div className="relative flex flex-col justify-start gap-y-12">
                 <div className="w-fit">
-                  <h3 className="mb-3 py-2 text-center text-3xl font-extrabold text-acc  lg:text-left">
+                  <h3 className="mb-3 py-2 text-center text-3xl font-extrabold text-sec dark:text-acc  lg:text-left">
                     {proj.name}
                   </h3>
                   <div className="mb-4 flex max-w-lg flex-row flex-wrap justify-center gap-x-2 gap-y-2 lg:justify-start">
                     {proj.tech.map((tech, idx) => (
-                      <div key={idx} className="rounded-full bg-main/90">
+                      <div
+                        key={idx}
+                        className="rounded-full bg-[#707a6b] dark:bg-[#707a6b]/30"
+                      >
                         <Chip
                           size="sm"
                           variant="solid"
-                          className="from-pop1 to-pop2 bg-gradient-to-r bg-clip-text text-xs font-extrabold tracking-wider text-transparent shadow-lg"
+                          className=" bg-[#707a6b] text-xs !font-extrabold tracking-wider text-foreground shadow-lg dark:bg-[#707a6b]/30"
                         >
                           {tech}
                         </Chip>
@@ -141,7 +144,7 @@ const Projects: React.FC = () => {
                 </div>
                 <Link href={proj.link} className="w-full">
                   <Button
-                    className="absolute inset-x-0 bottom-10 mx-auto w-fit bg-main/90 text-sm font-bold text-white lg:left-0 lg:mx-0"
+                    className=" bg-show1 absolute inset-x-0 bottom-10 mx-auto w-fit text-sm font-bold text-white lg:left-0 lg:mx-0"
                     size="md"
                   >
                     Showcase &rarr;
