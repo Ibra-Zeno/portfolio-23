@@ -183,7 +183,7 @@ const Minesweeper: React.FC = () => {
                 <div
                   key={colIndex}
                   className={`cell border-mine1 relative flex h-[28px] w-[28px] cursor-pointer items-center justify-center rounded-sm border p-1 font-sans text-base font-bold text-foreground shadow-sm xs:h-8 xs:w-8 sm:h-[45px] sm:w-[45px] md:text-base lg:rounded lg:font-bold ${
-                    cell.isRevealed ? "bg-background" : ""
+                    cell.isRevealed ? "bg-background dark:bg-[#050607]/75" : ""
                   } ${cell.isFlagged ? "bg-[#ffbfbb] dark:bg-[#ebfcff]" : ""} ${
                     cell.isRevealed && cell.isMine
                       ? "bg-gradient-to-r from-[#FF416C]/80 to-[#FF4B2B]/80"
@@ -196,7 +196,7 @@ const Minesweeper: React.FC = () => {
                 >
                   {!cell.isRevealed && !cell.isFlagged && flaggingMode && (
                     <div className="relative flex h-full w-full items-center justify-center justify-items-center align-middle">
-                      <div className="absolute inset-0 z-20 mx-auto my-auto h-1 w-1 rounded-full bg-white"></div>
+                      <div className="absolute inset-0 z-20 mx-auto my-auto h-1 w-1 rounded-full bg-gray-200"></div>
                     </div>
                   )}
                   {cell.isRevealed &&
@@ -265,6 +265,8 @@ const Minesweeper: React.FC = () => {
                 <Link
                   href="https://ibra-zeno.github.io/Khabib/"
                   target="_blank"
+                  className="from-pop1 to-pop2 bg-gradient-to-r bg-clip-text text-sm text-transparent underline"
+                  color="primary"
                 >
                   website
                 </Link>
