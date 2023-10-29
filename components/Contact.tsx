@@ -26,7 +26,7 @@ const features = [
     description: () => <p className="text-sm md:text-base">London, UK,</p>,
     icon: (
       <Globe2
-        className="absolute left-1 top-1 h-5 w-5 text-indigo-600"
+        className="absolute left-1 top-1 h-5 w-5 text-main"
         aria-hidden="true"
       />
     ),
@@ -40,7 +40,7 @@ const features = [
     ),
     icon: (
       <Mail
-        className="absolute left-1 top-1 h-5 w-5 text-indigo-600"
+        className="absolute left-1 top-1 h-5 w-5 text-main"
         aria-hidden="true"
       />
     ),
