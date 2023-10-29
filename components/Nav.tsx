@@ -17,7 +17,7 @@ import {
   DropdownItem,
   Dropdown,
 } from "@nextui-org/react";
-import { OrbitIcon } from "lucide-react";
+import { ThemeSwitcher } from "./ThemeSwitcher";
 
 import { Nunito } from "next/font/google";
 const nunito = Nunito({
@@ -36,10 +36,8 @@ const Nav: React.FC = () => {
       onMenuOpenChange={setIsMenuOpen}
       className="custom-font "
     >
-      <NavbarContent
-        className=" relative mx-auto pr-3 sm:hidden"
-        justify="center"
-      >
+      {/* Small nav */}
+      <NavbarContent className=" relative mx-auto sm:hidden" justify="start">
         <NavbarBrand>
           <Link href="/">
             <Image
@@ -49,6 +47,9 @@ const Nav: React.FC = () => {
             ></Image>
           </Link>
         </NavbarBrand>
+      </NavbarContent>
+      <NavbarContent className=" relative mx-auto sm:hidden" justify="end">
+        <ThemeSwitcher />
       </NavbarContent>
 
       <NavbarContent className=" mx-auto hidden gap-4 sm:flex" justify="start">
@@ -62,13 +63,13 @@ const Nav: React.FC = () => {
           </Link>
         </NavbarBrand>
       </NavbarContent>
-
+      {/* Big Nav */}
       <NavbarContent
         className=" mx-auto hidden justify-center gap-4 font-sans sm:flex"
         justify="end"
       >
         <Dropdown
-          className=" font-sans"
+          className=" bg-background font-sans"
           classNames={{
             base: `font-sans ${nunito.variable}`,
           }}
@@ -106,6 +107,7 @@ const Nav: React.FC = () => {
             ))}
           </DropdownMenu>
         </Dropdown>
+        <ThemeSwitcher />
       </NavbarContent>
     </Navbar>
   );
