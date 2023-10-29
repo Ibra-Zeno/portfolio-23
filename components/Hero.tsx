@@ -11,7 +11,7 @@ const Hero: React.FC = () => {
         <div className="mx-auto flex max-w-7xl flex-wrap items-center">
           <div className="mx-auto mb-8 flex flex-col items-start text-left md:mb-0 lg:mb-16 lg:w-1/2 lg:flex-grow lg:pr-6 xl:mt-0 xl:pr-24">
             <h4 className="mx-auto mb-6 rounded-lg border border-sec bg-[#654E30]/75 px-2 py-1 text-sm text-gray-100 shadow-lg dark:border-main dark:bg-main/30 lg:mx-0 ">
-              Welcome to my digital landscape 🍃
+              Welcome to my digital grove 🍃
             </h4>
             <div className="flex flex-col py-6 pt-2">
               <h2 className="w-full text-center text-3xl font-bold tracking-tight  md:text-4xl lg:text-left lg:text-5xl xl:text-6xl">
