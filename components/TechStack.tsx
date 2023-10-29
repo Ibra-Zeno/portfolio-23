@@ -129,7 +129,7 @@ const TechStack: React.FC = () => {
               {skillsArr.map((skill, idx) => (
                 <li
                   key={idx}
-                  className="rounded-lg border border-main/80 bg-sec/95 px-5 py-4 text-gray-200 shadow-lg dark:bg-main "
+                  className="rounded-lg border border-sec bg-[#a4a78c] px-5 py-4 text-gray-900 shadow-lg backdrop-blur-md dark:border-main/80 dark:bg-main dark:text-gray-200 "
                 >
                   <div className="flex flex-row items-center gap-x-6 align-middle">
                     <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-acc ">
