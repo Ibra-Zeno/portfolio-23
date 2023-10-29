@@ -24,7 +24,6 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
         </div>
         {children}
       </main>
-      <ThemeSwitcher />
       <Footer />
     </div>
   );
