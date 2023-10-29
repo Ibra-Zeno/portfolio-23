@@ -343,11 +343,11 @@ export const portfolioData = {
     id: 1,
     name: "Designer Portfolio",
     title: "Designer Portfolio",
-    tagline: "Built from Blueprints",
+    tagline: "Theory Into Practice",
     overview:
       "A portfolio website for an designer built to showcase their accomplishments while conveying a keen sense of design on the designer's behalf, made with NextJs.",
     img1: "/images/projectIndex/arch/arch_home.png",
-    mainTitle: "Building Blocks",
+    mainTitle: "Drawing Board",
     main: () => (
       <p className="mb-12 text-sm leading-7  md:text-base">
         This project was a fun and exciting challenge. It was asked of me by a
