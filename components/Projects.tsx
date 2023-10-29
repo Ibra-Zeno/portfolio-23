@@ -68,7 +68,7 @@ export const projArr = [
   },
   {
     id: 4,
-    name: "Architectural Portfolio",
+    name: "Designer Portfolio",
     img: "/images/projectPage/arch.png",
     icon: <Blocks />,
     desc: "Architectural portfolio website for a client, showcasing their previous works and skills.",
@@ -98,13 +98,13 @@ export const projArr = [
 const Projects: React.FC = () => {
   return (
     <section className="mx-auto w-full max-w-7xl rounded-lg ">
-      <div className="rounded-lg p-4  dark:bg-[#374955] xs:p-8">
+      <div className="rounded-lg p-4 xs:p-8">
         <h1 className="mb-20 text-center text-3xl font-bold ">Projects</h1>
         <div className="mx-auto flex w-full max-w-7xl flex-col gap-y-16">
           {projArr.map((proj, idx) => (
             <div
               key={idx}
-              className="relative mx-auto flex w-fit flex-col justify-center justify-items-center gap-x-12 lg:flex-row"
+              className="from-card1 to-card2 relative mx-auto flex w-fit flex-col justify-center justify-items-center gap-x-12 rounded-lg bg-gradient-to-br p-4 lg:flex-row"
             >
               <Image
                 removeWrapper
@@ -115,31 +115,33 @@ const Projects: React.FC = () => {
               />
               <div className="relative flex flex-col justify-start gap-y-12">
                 <div className="w-fit">
-                  <h3 className="my-6 mb-4 text-center text-3xl font-extrabold text-acc  lg:text-left">
-                    <span className="mr-5 font-extrabold">{proj.id}</span>
+                  <h3 className="mb-3 py-2 text-center text-3xl font-extrabold text-acc  lg:text-left">
                     {proj.name}
                   </h3>
                   <div className="mb-4 flex max-w-lg flex-row flex-wrap justify-center gap-x-2 gap-y-2 lg:justify-start">
                     {proj.tech.map((tech, idx) => (
-                      <div key={idx} className=" flex flex-row ">
+                      <div key={idx} className="rounded-full bg-main/90">
                         <Chip
-                          variant="shadow"
                           size="sm"
-                          className="text-xs font-extrabold tracking-wide text-slate-900 dark:bg-acc/75"
+                          variant="solid"
+                          className="from-pop1 to-pop2 bg-gradient-to-r bg-clip-text text-xs font-extrabold tracking-wider text-transparent shadow-lg"
                         >
                           {tech}
                         </Chip>
                       </div>
                     ))}
                   </div>
-                  <Divider orientation="horizontal" className="mb-8" />
+                  <Divider
+                    orientation="horizontal"
+                    className="mb-8 bg-acc/50"
+                  />
                   <p className="mx-auto max-w-md pb-16 text-center text-sm  md:text-base  lg:max-w-xl lg:text-left lg:text-lg">
                     {proj.desc}
                   </p>
                 </div>
                 <Link href={proj.link} className="w-full">
                   <Button
-                    className="absolute inset-x-0 bottom-10 mx-auto w-fit border-2 border-slate-800/30 bg-transparent text-sm font-bold  lg:left-0 lg:mx-0"
+                    className="absolute inset-x-0 bottom-10 mx-auto w-fit bg-main/90 text-sm font-bold text-white lg:left-0 lg:mx-0"
                     size="md"
                   >
                     Showcase &rarr;
