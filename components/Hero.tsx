@@ -10,10 +10,10 @@ const Hero: React.FC = () => {
       <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6 md:px-12 lg:px-24 lg:py-10">
         <div className="mx-auto flex max-w-7xl flex-wrap items-center">
           <div className="mx-auto mb-8 flex flex-col items-start text-left md:mb-0 lg:mb-16 lg:w-1/2 lg:flex-grow lg:pr-6 xl:mt-0 xl:pr-24">
-            <h4 className="mb-6 rounded-lg border border-acc bg-sec/20 px-2 py-1 text-sm shadow-lg dark:border-main dark:bg-main/30 ">
+            <h4 className="mx-auto mb-6 rounded-lg border border-sec bg-[#654E30]/75 px-2 py-1 text-sm text-gray-100 shadow-lg dark:border-main dark:bg-main/30 lg:mx-0 ">
               Welcome to my digital landscape 🍃
             </h4>
-            <div className="flex flex-col py-6 pt-3">
+            <div className="flex flex-col py-6 pt-2">
               <h2 className="w-full text-center text-3xl font-bold tracking-tight  md:text-4xl lg:text-left lg:text-5xl xl:text-6xl">
                 Hey, I&apos;m{" "}
                 <span className="dark:from-pop1 dark:to-pop2 from-pop1 to-pop2 bg-gradient-to-r bg-clip-text text-transparent">
@@ -28,14 +28,14 @@ const Hero: React.FC = () => {
                 code, I enjoy cycling and Brazilian Jiu-Jitsu.
               </p>
             </div>
-            <div className="mx-auto mb-8 mt-12 flex w-full justify-center gap-x-6 lg:justify-start">
+            <div className="mx-auto mb-8 mt-6 flex w-full justify-center gap-x-6 lg:justify-start">
               {contactIcons.map((icon, i) => (
                 <Link
                   key={i}
                   href={icon.href || ""}
                   target="_blank"
                   aria-label={icon.name}
-                  className="rounded-xl border border-[#adb13a]/80 bg-sec/90 p-2 text-background shadow-xl transition-all duration-200 ease-in-out dark:border-sec dark:bg-main/10 dark:text-foreground"
+                  className="rounded-xl border border-[#adb13a]/80 bg-[#697b70] p-2 text-background shadow-xl backdrop-blur-sm transition-all duration-200 ease-in-out dark:border-sec dark:bg-main/10 dark:text-foreground"
                 >
                   {icon.icons}
                 </Link>
