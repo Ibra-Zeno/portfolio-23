@@ -77,7 +77,7 @@ const About: React.FC = () => {
                 {features.map((feature) => (
                   <div
                     key={feature.name}
-                    className="relative flex justify-between px-9"
+                    className="relative flex justify-between pl-9 pr-4"
                   >
                     <dt className="inline-flex items-center text-sm font-semibold  md:text-base">
                       {feature.icon}
@@ -94,7 +94,7 @@ const About: React.FC = () => {
                     href={icon.href || ""}
                     target="_blank"
                     aria-label={icon.name}
-                    className="rounded-xl border border-[#adb13a]/80 bg-sec/90 p-2 text-background shadow-xl transition-all duration-200 ease-in-out dark:border-sec dark:bg-main/10 dark:text-foreground"
+                    className="rounded-xl border border-[#adb13a]/80 bg-[#697b70] p-2 text-background shadow-xl transition-all duration-200 ease-in-out dark:border-sec dark:bg-main/10 dark:text-foreground"
                   >
                     {icon.icons}
                   </Link>
