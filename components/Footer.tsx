@@ -44,7 +44,7 @@ const Footer: React.FC = () => {
           </span>
         </div> */}
 
-        <div className="my-2 flex flex-row justify-center gap-x-2">
+        <div className="my-3.5 flex flex-row justify-center gap-x-2">
           {websiteTech.map((tech, idx) => (
             <div key={idx} className=" flex flex-row">
               <Chip
@@ -59,14 +59,7 @@ const Footer: React.FC = () => {
         </div>
         <p className="mt-3 text-center">
           <span className="mx-auto mt-2 text-sm ">
-            Made by yours truly,
-            <Link
-              href="#"
-              className="hover: mx-1 text-blue-500"
-              rel="noopener noreferrer"
-            >
-              Ibrahim Kalam
-            </Link>
+            Made by yours truly, Ibrahim Kalam
           </span>
         </p>
       </div>
