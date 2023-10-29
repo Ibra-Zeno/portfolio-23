@@ -61,6 +61,7 @@ module.exports = {
           colors: {
             background: "#03131C",
             foreground: "#f3f9fc",
+            primary: "#19a6a1",
             main: "#1c485f",
             sec: "#002e4a",
             acc: "#d2eae5",
@@ -72,8 +73,8 @@ module.exports = {
             show3: "",
             card1: "#273141",
             card2: "#303d47",
-            mine1: "#072c42",
-            mine2: "#003e4b",
+            mine1: "#03131C",
+            mine2: "#072c42",
             mine3: "#3d707e",
             mine4: "#627b83",
             flagBg: "",
@@ -85,6 +86,7 @@ module.exports = {
           colors: {
             background: "#E4D4C8",
             foreground: "#000000",
+            primary: "#523A28",
             main: "#1A3315",
             sec: "#523A28",
             acc: "#ffeeca",
