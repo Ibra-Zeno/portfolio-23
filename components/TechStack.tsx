@@ -90,44 +90,46 @@ const skillsArr = [
 const TechStack: React.FC = () => {
   return (
     <section className="">
-      <div className="mx-auto max-w-7xl px-8 py-16 md:px-12 lg:flex lg:px-16">
+      <div className="mx-auto max-w-7xl px-8 py-8 md:px-12 lg:flex lg:px-16">
         <div className="lg:w-1/2 ">
-          <div className="top-0 pb-16 pt-8">
-            <div className="mx-auto grid w-full grid-cols-3 justify-items-center gap-y-12  md:pr-12 lg:pr-24 ">
-              {TechIcons.map((icon, idx) => (
-                <div
-                  key={idx}
-                  className="flex  flex-col items-center rounded-full "
-                >
-                  <div className="rounded-full bg-gray-100 p-2.5 shadow-sm">
-                    <Image
-                      src={icon.icon}
-                      alt={icon.name}
-                      isBlurred
-                      draggable={false}
-                      className="w-12 p-2 xs:w-16"
-                      height={100}
-                      width={100}
-                    />
+          <div className="top-0  pb-16 pt-8">
+            <div className="mx-auto md:pr-12 lg:pr-24 ">
+              <div className="grid w-full grid-cols-3 justify-items-center gap-y-12 rounded-lg py-3">
+                {TechIcons.map((icon, idx) => (
+                  <div
+                    key={idx}
+                    className="flex  flex-col items-center rounded-full "
+                  >
+                    <div className="rounded-full bg-gray-100 p-2.5 shadow-2xl">
+                      <Image
+                        src={icon.icon}
+                        alt={icon.name}
+                        isBlurred
+                        draggable={false}
+                        className="w-12 p-2 xs:w-16"
+                        height={100}
+                        width={100}
+                      />
+                    </div>
+                    <p className="mt-3.5 text-xs font-bold leading-6 md:text-sm">
+                      {icon.name}
+                    </p>
                   </div>
-                  <p className="mt-3.5 text-xs font-bold leading-6 md:text-sm">
-                    {icon.name}
-                  </p>
-                </div>
-              ))}
+                ))}
+              </div>
             </div>
           </div>
         </div>
         <div className="lg:w-1/2">
           <div className=" h-full pb-16 pt-8 ">
             <ul
-              className="top-24 mt-6 grid list-none grid-cols-1 gap-12 lg:mt-0 lg:gap-24"
+              className="top-24 mt-6 grid list-none grid-cols-1 gap-12 py-3 lg:mt-0 lg:gap-24"
               role="list"
             >
               {skillsArr.map((skill, idx) => (
-                <li key={idx}>
+                <li key={idx} className="rounded-lg bg-sec px-5 py-4">
                   <div className="flex flex-row items-center gap-x-6 align-middle">
-                    <div className="bg-main flex h-12 w-12 items-center justify-center rounded-xl ">
+                    <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-main ">
                       <Image
                         src={skill.icon}
                         alt="React icon"
@@ -136,7 +138,7 @@ const TechStack: React.FC = () => {
                         width={40}
                       ></Image>
                     </div>
-                    <p className="text-base font-bold leading-6  md:text-lg">
+                    <p className="w-full border-b border-b-slate-500/60 pb-1 text-base font-bold leading-6  md:text-lg">
                       {skill.name}
                     </p>
                   </div>
