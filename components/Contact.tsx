@@ -87,14 +87,14 @@ const About: React.FC = () => {
                   </div>
                 ))}
               </dl>
-              <div className="mx-auto mt-12 flex w-full justify-center gap-x-6">
+              <div className="mx-auto mb-8 mt-12 flex w-full justify-center gap-x-6">
                 {contactIcons.map((icon, i) => (
                   <Link
                     key={i}
                     href={icon.href || ""}
                     target="_blank"
                     aria-label={icon.name}
-                    className=" hover: transition-all duration-200 ease-in-out"
+                    className="rounded-xl border border-[#adb13a]/80 bg-sec/90 p-2 text-background shadow-xl transition-all duration-200 ease-in-out dark:border-sec dark:bg-main/10 dark:text-foreground"
                   >
                     {icon.icons}
                   </Link>
