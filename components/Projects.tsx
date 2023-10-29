@@ -146,6 +146,7 @@ const Projects: React.FC = () => {
                   <Button
                     className=" bg-show1 absolute inset-x-0 bottom-10 mx-auto w-fit text-sm font-bold text-white lg:left-0 lg:mx-0"
                     size="md"
+                    color="primary"
                   >
                     Showcase &rarr;
                   </Button>
