@@ -11,16 +11,12 @@ type LayoutProps = {
 const Layout: React.FC<LayoutProps> = ({ children }) => {
   return (
     <div className="flex min-h-screen flex-col">
-      <Head>
-        <title>Ibrahim K</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
       <Navbar />
       <main className="relative w-full">
         <div className="fixed inset-0 -z-10 mx-auto h-screen w-screen translate-y-8">
           <Image
-            src="/images/Bg/flat-mountains.svg"
-            className=" h-full w-full object-cover object-top opacity-75"
+            src="/images/Bg/projectBg.svg"
+            className=" h-full w-full object-cover object-center opacity-75"
             alt="background landscape"
             width={1400}
             height={1000}
