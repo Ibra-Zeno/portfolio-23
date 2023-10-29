@@ -2,6 +2,7 @@
 
 import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
+import { SunMoon } from "lucide-react";
 
 export function ThemeSwitcher() {
   const [mounted, setMounted] = useState(false);
@@ -14,10 +15,10 @@ export function ThemeSwitcher() {
   if (!mounted) return null;
 
   return (
-    <div className="fixed bottom-4 right-4">
-      The current theme is: {theme}
-      <button onClick={() => setTheme("light")}>Light Mode</button>
-      <button onClick={() => setTheme("dark")}>Dark Mode</button>
-    </div>
+    <SunMoon
+      onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+      className="cursor-pointer rounded-full bg-transparent p-1 text-foreground transition-all hover:bg-foreground hover:text-background"
+      size={38}
+    />
   );
 }
