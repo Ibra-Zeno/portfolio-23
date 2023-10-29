@@ -132,12 +132,12 @@ const TechStack: React.FC = () => {
                   className="rounded-lg border border-sec bg-[#c6bcad] px-5 py-4 text-gray-900 shadow-lg backdrop-blur-md dark:border-main/80 dark:bg-main dark:text-gray-200 "
                 >
                   <div className="flex flex-row items-center gap-x-6 align-middle">
-                    <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-acc ">
+                    <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-[#2b5a41] dark:bg-acc ">
                       <Image
                         src={skill.icon}
                         alt="React icon"
                         height={30}
-                        className="p-1.5 "
+                        className="p-1.5 invert dark:invert-0"
                         width={40}
                       ></Image>
                     </div>
