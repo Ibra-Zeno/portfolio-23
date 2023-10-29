@@ -17,10 +17,10 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
       </Head>
       <Navbar />
       <main className="relative w-full">
-        <div className="fixed inset-0 -z-10 mx-auto h-screen w-screen">
+        <div className="fixed inset-0 -z-10 mx-auto h-screen w-screen translate-y-8">
           <Image
             src="/images/Bg/flat-mountains.svg"
-            className="h-full w-full object-cover object-top opacity-75"
+            className=" h-full w-full object-cover object-top opacity-75"
             alt="background landscape"
             width={1400}
             height={1000}
