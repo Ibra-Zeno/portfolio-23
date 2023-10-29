@@ -7,15 +7,15 @@ import { contactIcons } from "./Contact";
 const Hero: React.FC = () => {
   return (
     <section className="">
-      <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6 md:px-12 lg:px-24 lg:py-12">
+      <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6 md:px-12 lg:px-24 lg:py-10">
         <div className="mx-auto flex max-w-7xl flex-wrap items-center">
           <div className="mx-auto mb-8 flex flex-col items-start text-left md:mb-0 lg:mb-16 lg:w-1/2 lg:flex-grow lg:pr-6 xl:mt-0 xl:pr-24">
-            <h4 className="dark:border-main dark:bg-main/30 mb-4 rounded-lg py-1 text-sm dark:border-1 dark:px-2 ">
+            <h4 className="mb-4 rounded-lg py-1 text-sm dark:border-1 dark:border-main dark:bg-main/30 dark:px-2 ">
               Welcome to my digital landscape 🍃
             </h4>
             <h2 className="w-full text-center text-3xl font-bold tracking-tight  md:text-4xl lg:text-left lg:text-5xl xl:text-6xl">
               Hey, I&apos;m{" "}
-              <span className="from-main to-acc dark:from-acc dark:to-sec bg-gradient-to-r bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-main to-acc bg-clip-text text-transparent dark:from-acc dark:to-sec">
                 Ibrahim
               </span>
             </h2>
@@ -31,7 +31,7 @@ const Hero: React.FC = () => {
                   key={i}
                   href={icon.href}
                   aria-label={icon.name}
-                  className="dark:bg-sec bg-sec dark:text-acc rounded-xl p-2 transition-all duration-200 ease-in-out"
+                  className="rounded-xl bg-sec p-2 transition-all duration-200 ease-in-out dark:bg-sec dark:text-acc"
                 >
                   {icon.icons}
                 </Link>
@@ -41,9 +41,9 @@ const Hero: React.FC = () => {
           <div className="w-full rounded-xl lg:w-1/2 lg:max-w-lg">
             <div>
               <div className="relative mx-auto w-full max-w-md">
-                <div className="relative">
+                <div className="relative rounded-3xl bg-background">
                   <Image
-                    className="mx-auto hidden rounded-lg object-cover object-center mix-blend-exclusion dark:block "
+                    className="mx-auto hidden  object-cover object-center mix-blend-exclusion dark:block "
                     alt="hero"
                     draggable={false}
                     src="/images/Bg/HeroDark.jpg"
