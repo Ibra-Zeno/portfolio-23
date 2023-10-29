@@ -32,7 +32,8 @@ const Hero: React.FC = () => {
               {contactIcons.map((icon, i) => (
                 <Link
                   key={i}
-                  href={icon.href}
+                  href={icon.href || ""}
+                  target="_blank"
                   aria-label={icon.name}
                   className="rounded-xl border border-[#adb13a]/80 bg-sec/90 p-2 text-background shadow-xl transition-all duration-200 ease-in-out dark:border-sec dark:bg-main/10 dark:text-foreground"
                 >
@@ -44,7 +45,7 @@ const Hero: React.FC = () => {
           <div className="w-full rounded-xl lg:w-1/2 lg:max-w-lg">
             <div>
               <div className="relative mx-auto w-full max-w-md">
-                <div className="relative rounded-3xl bg-background">
+                <div className="relative rounded-3xl">
                   <Image
                     className="mx-auto hidden  object-cover object-center mix-blend-exclusion dark:block "
                     alt="hero"

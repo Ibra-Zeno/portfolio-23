@@ -10,7 +10,7 @@ export const contactIcons = [
   },
   {
     name: "CV",
-    href: "https://github.com/Ibra-Zeno",
+    href: "/images/Ibrahim_KALAM.pdf",
     icons: <FileText size={28} strokeWidth={1.7} />,
   },
   {
@@ -91,7 +91,8 @@ const About: React.FC = () => {
                 {contactIcons.map((icon, i) => (
                   <Link
                     key={i}
-                    href={icon.href}
+                    href={icon.href || ""}
+                    target="_blank"
                     aria-label={icon.name}
                     className=" hover: transition-all duration-200 ease-in-out"
                   >
