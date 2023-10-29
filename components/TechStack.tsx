@@ -141,11 +141,11 @@ const TechStack: React.FC = () => {
                         width={40}
                       ></Image>
                     </div>
-                    <p className="w-full border-b border-b-[#ffeeca]/60 pb-1 text-base font-bold leading-6 dark:border-b-acc/60  md:text-lg">
+                    <p className="w-full border-b border-b-acc/60 pb-1 text-base font-bold leading-6 dark:border-b-acc/60  md:text-lg">
                       {skill.name}
                     </p>
                   </div>
-                  <div className="mt-4 pl-1 pr-5 text-sm !leading-7 tracking-wide md:text-base">
+                  <div className="mt-4 pl-1 pr-2 text-sm !leading-7 tracking-wide md:pr-4 md:text-base">
                     {skill.description}
                   </div>
                 </li>
