@@ -6,8 +6,8 @@ const websiteTech = ["React", "TypeScript", "NextJs", "TailwindCSS", "NextUI"];
 
 const Footer: React.FC = () => {
   return (
-    <footer className="">
-      <div className="mx-auto overflow-hidden border-t px-4 py-7 sm:px-6 lg:px-8">
+    <footer className=" backdrop-blur-sm">
+      <div className="mx-auto overflow-hidden border-t px-4 pb-7 pt-4 sm:px-6 lg:px-8">
         <div className="mx-auto mb-4 flex items-center justify-center text-center text-2xl font-bold">
           <Link href="/" className="flex h-fit w-fit justify-center">
             <Image
