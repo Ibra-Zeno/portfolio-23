@@ -20,6 +20,7 @@ import {
 
 export const projArr = [
   {
+    id: 1,
     name: "Odyssey",
     img: "/images/projectPage/odyssey.png",
     icon: <OrbitIcon />,
@@ -38,6 +39,7 @@ export const projArr = [
     link: "/odyssey",
   },
   {
+    id: 2,
     name: "Optima",
     img: "/images/projectPage/optima.png",
     icon: <TrafficCone />,
@@ -46,6 +48,7 @@ export const projArr = [
     link: "/optima",
   },
   {
+    id: 3,
     name: "E-commerce Store",
     img: "/images/projectPage/ecommerce.png",
     icon: <Gem />,
@@ -64,6 +67,7 @@ export const projArr = [
     link: "/ecommerce",
   },
   {
+    id: 4,
     name: "Architectural Portfolio",
     img: "/images/projectPage/arch.png",
     icon: <Blocks />,
@@ -81,6 +85,7 @@ export const projArr = [
     link: "/arch",
   },
   {
+    id: 5,
     name: "AI Summariser",
     img: "/images/projectPage/sum.png",
     icon: <BrainCircuit />,
@@ -92,8 +97,8 @@ export const projArr = [
 
 const Projects: React.FC = () => {
   return (
-    <section className="mx-auto min-h-screen w-full p-4 xs:p-8">
-      <div className="">
+    <section className="mx-auto w-full max-w-7xl rounded-lg ">
+      <div className="rounded-lg p-4  dark:bg-[#374955] xs:p-8">
         <h1 className="mb-20 text-center text-3xl font-bold ">Projects</h1>
         <div className="mx-auto flex w-full max-w-7xl flex-col gap-y-16">
           {projArr.map((proj, idx) => (
@@ -110,7 +115,8 @@ const Projects: React.FC = () => {
               />
               <div className="relative flex flex-col justify-start gap-y-12">
                 <div className="w-fit">
-                  <h3 className="my-6 mb-4 text-center text-3xl font-extrabold  lg:text-left">
+                  <h3 className="my-6 mb-4 text-center text-3xl font-extrabold text-acc  lg:text-left">
+                    <span className="mr-5 font-extrabold">{proj.id}</span>
                     {proj.name}
                   </h3>
                   <div className="mb-4 flex max-w-lg flex-row flex-wrap justify-center gap-x-2 gap-y-2 lg:justify-start">
@@ -119,7 +125,7 @@ const Projects: React.FC = () => {
                         <Chip
                           variant="shadow"
                           size="sm"
-                          className="bg-stone-400/40 text-xs font-bold tracking-wide text-slate-700"
+                          className="text-xs font-extrabold tracking-wide text-slate-900 dark:bg-acc/75"
                         >
                           {tech}
                         </Chip>
