@@ -32,7 +32,10 @@ export const portfolioData = {
           perfect as it combined familiar technologies (NextJs and PostgreSQL)
           while also improving my understanding of the{" "}
           <strong>ORM Prisma</strong>. The{" "}
-          <Link href="https://vercel.com/guides/nextjs-prisma-postgres">
+          <Link
+            href="https://vercel.com/guides/nextjs-prisma-postgres"
+            className="font-bold"
+          >
             tutorial
           </Link>{" "}
           showed the functionality behind users creating and publishing a post.
