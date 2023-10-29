@@ -104,7 +104,7 @@ const Projects: React.FC = () => {
           {projArr.map((proj, idx) => (
             <div
               key={idx}
-              className="from-card1 to-card2 relative mx-auto flex w-fit flex-col justify-center justify-items-center gap-x-12 rounded-lg bg-gradient-to-br p-4 lg:flex-row"
+              className="from-card1 to-card2 relative mx-auto flex w-fit flex-col justify-center justify-items-center gap-x-12 rounded-lg bg-gradient-to-br p-10 shadow-xl lg:flex-row"
             >
               <Image
                 removeWrapper
