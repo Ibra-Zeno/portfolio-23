@@ -1,4 +1,5 @@
 import React from "react";
+import Router from "next/router";
 import { projArr } from "./Projects";
 import {
   Navbar,
@@ -98,6 +99,7 @@ const Nav: React.FC = () => {
                 key={i}
                 startContent={proj.icon}
                 description={proj.desc}
+                onClick={() => Router.push(proj.link)}
               >
                 {proj.name}
               </DropdownItem>
