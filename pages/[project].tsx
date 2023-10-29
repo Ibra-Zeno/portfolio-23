@@ -66,14 +66,14 @@ const Project: React.FC = () => {
                   <h2 className="mt-2 text-2xl font-bold tracking-tight  sm:text-4xl">
                     {projectData.title}
                   </h2>
-                  <p className="mt-1 bg-gradient-to-r from-[#C33764] to-[#1D2671] bg-clip-text text-sm font-semibold leading-7 text-transparent md:text-base">
+                  <p className="from-pop1 to-pop2 mt-1 bg-gradient-to-r bg-clip-text text-sm font-semibold leading-7 text-transparent md:text-base">
                     {projectData.tagline}
                   </p>
                   <p className="mb-8 mt-3 flex text-sm font-semibold leading-6 tracking-wide  md:text-base lg:leading-8">
                     {projectData.overview}
                   </p>
                   {projectData.quote !== null && (
-                    <blockquote className="mb-12 rounded-lg border-x-4 border-x-sky-700 bg-gray-50 px-4 py-2 text-center text-base font-bold tracking-wide  shadow-lg sm:px-7 md:leading-normal xl:leading-8">
+                    <blockquote className="mb-12 rounded-lg border-x-4 border-x-sky-700 bg-gray-50 px-4 py-2 text-center text-base font-bold tracking-wide text-slate-950 shadow-lg sm:px-7 md:leading-normal xl:leading-8">
                       {projectData.quote()}
                     </blockquote>
                   )}
@@ -89,12 +89,11 @@ const Project: React.FC = () => {
                   <figcaption className="mt-3 text-center text-sm ">
                     <div className="flex flex-row flex-wrap justify-center gap-x-2 gap-y-2 rounded-full">
                       {projectData.tech.map((tech, idx) => (
-                        <div key={idx} className=" rounded-full bg-gray-100">
+                        <div key={idx} className=" rounded-full">
                           <Chip
                             size="sm"
-                            className="m-1 bg-gradient-to-tr from-[#833ab4] via-[#fd1d1d] to-[#fcb045] bg-clip-text text-xs !font-bold text-transparent hover:bg-gray-200 md:text-sm"
-                            color="primary"
-                            variant="light"
+                            className="m-1 bg-[#707a6b] text-xs !font-bold tracking-wider text-gray-100 shadow-lg dark:bg-[#707a6b]/30 md:text-sm"
+                            variant="solid"
                           >
                             {tech}
                           </Chip>
@@ -110,7 +109,7 @@ const Project: React.FC = () => {
                   {projectData.featuresIntro()}
                   <ul
                     role="list"
-                    className=" flex flex-col gap-y-6 border-l-2  border-l-green-600/40 pl-4 text-xs font-bold leading-7 tracking-wide  xs:gap-y-8 xs:text-sm sm:grid sm:grid-cols-2"
+                    className=" flex flex-col gap-y-6 border-l-2  border-l-acc pl-8 text-xs font-bold leading-7 tracking-wide  xs:gap-y-8 xs:text-sm sm:grid sm:grid-cols-2"
                   >
                     {projectData.features.map((feature, idx) => (
                       <li
@@ -118,7 +117,7 @@ const Project: React.FC = () => {
                         className="flex h-fit w-fit max-w-[30ch] items-center gap-x-3 md:items-start"
                       >
                         <Sparkle
-                          className="h-5 w-5 flex-none text-sky-700"
+                          className="h-5 w-5 flex-none text-main"
                           aria-hidden="true"
                         />
                         <span>{feature}</span>
@@ -157,7 +156,6 @@ const Project: React.FC = () => {
                       size="md"
                       color="primary"
                       className="bg-gradient-to-r from-[#0F2027] via-[#203A43] to-[#2C5364] font-bold text-stone-50 hover:text-stone-300"
-                      variant="shadow"
                       onClick={() => handleOpenLink(projectData.website)}
                       startContent={<Radio />}
                     >

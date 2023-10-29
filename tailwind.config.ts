@@ -77,7 +77,7 @@ module.exports = {
             mine3: "#3d707e",
             mine4: "#627b83",
             flagBg: "",
-            DEFAULT: "#00c6cf",
+            DEFAULT: "#1c485f",
             focus: "#F182F6",
           },
         },

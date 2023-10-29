@@ -127,7 +127,7 @@ const Projects: React.FC = () => {
                         <Chip
                           size="sm"
                           variant="solid"
-                          className=" bg-[#707a6b] text-xs !font-extrabold tracking-wider text-foreground shadow-lg dark:bg-[#707a6b]/30"
+                          className=" bg-[#707a6b] text-xs !font-extrabold tracking-wider text-gray-100 shadow-lg dark:bg-[#707a6b]/30"
                         >
                           {tech}
                         </Chip>
