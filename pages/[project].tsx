@@ -109,7 +109,7 @@ const Project: React.FC = () => {
                   {projectData.featuresIntro()}
                   <ul
                     role="list"
-                    className=" flex flex-col gap-y-6 border-l-2  border-l-acc pl-8 text-xs font-bold leading-7 tracking-wide  xs:gap-y-8 xs:text-sm sm:grid sm:grid-cols-2"
+                    className=" flex flex-col gap-y-6 border-l-2  border-l-acc/60 pl-8 text-xs font-bold leading-7 tracking-wide  xs:gap-y-8 xs:text-sm sm:grid sm:grid-cols-2"
                   >
                     {projectData.features.map((feature, idx) => (
                       <li
