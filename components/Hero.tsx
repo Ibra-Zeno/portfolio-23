@@ -25,7 +25,7 @@ const Hero: React.FC = () => {
                 I&apos;m a full-stack developer of 3 years, focusing on
                 front-end, based in London. With a degree in Physics, I&apos;ve
                 turned to creating projects and design theory. Beyond the code,
-                I enjoy reading and Brazilian Jiu-Jitsu.
+                I enjoy cycling and Brazilian Jiu-Jitsu.
               </p>
             </div>
             <div className="mx-auto mb-8 mt-6 flex w-full justify-center gap-x-6 lg:justify-start">
