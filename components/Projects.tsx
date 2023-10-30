@@ -24,7 +24,7 @@ export const projArr = [
     name: "Odyssey",
     img: "/images/projectPage/odyssey.png",
     icon: <OrbitIcon />,
-    desc: "A blog web application eith user Authentication allowing users to create, like, edit, comment on and delete posts.",
+    desc: "A blog web application with user Authentication allowing users to create, like, edit, comment on and delete posts.",
     tech: [
       "React",
       "TypeScript",
