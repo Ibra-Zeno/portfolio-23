@@ -24,8 +24,8 @@ const Hero: React.FC = () => {
               <p className="mx-auto mt-6 max-w-prose text-center text-base leading-7 md:text-lg lg:text-left">
                 I&apos;m a full-stack developer of 3 years, focusing on
                 front-end, based in London. With a degree in Physics, I&apos;ve
-                turned to creating projects and of design theory. Beyond the
-                code, I enjoy cycling and Brazilian Jiu-Jitsu.
+                turned to creating projects and design theory. Beyond the code,
+                I enjoy reading and Brazilian Jiu-Jitsu.
               </p>
             </div>
             <div className="mx-auto mb-8 mt-6 flex w-full justify-center gap-x-6 lg:justify-start">
